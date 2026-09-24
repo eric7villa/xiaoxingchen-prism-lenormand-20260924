@@ -8,4 +8,6 @@
 
 如果读取工具显示 `Cache miss`，先读 `CACHE_MISS_HANDLING_CN.md`。这不是 bwrap 错误，也不能据此断言 GitHub 文件不存在。
 
+完整执行 Prompt：`PRISM_LOCAL_HANDOFF_PROMPT_CN.md`。旧的目录 Prompt 只是历史入口摘要，不替代完整 Prompt。
+
 本镜像只允许用于一次 Prism 离线审查。完成后请通知 owner 关闭镜像。

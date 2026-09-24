@@ -10,9 +10,9 @@
 
 按以下 commit 固定地址尝试，不要只依赖默认分支缓存：
 
-1. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/blob/prism-handoff-v1/START_HERE_CN.md`
-2. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/raw/prism-handoff-v1/START_HERE_CN.md`
-3. `https://raw.githubusercontent.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/prism-handoff-v1/START_HERE_CN.md`
+1. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/blob/prism-handoff-v2/START_HERE_CN.md`
+2. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/raw/prism-handoff-v2/START_HERE_CN.md`
+3. `https://raw.githubusercontent.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/prism-handoff-v2/START_HERE_CN.md`
 
 成功读到入口后，再按 `START_HERE_CN.md` 的相对路径读取其余文件。不要把公共镜像的 `PUBLIC_MIRROR_SHA256SUMS` 当作原始输入包校验单；脱敏副本使用公共镜像校验单。
 
