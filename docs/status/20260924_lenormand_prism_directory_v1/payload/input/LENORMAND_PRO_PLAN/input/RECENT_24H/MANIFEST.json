@@ -1,0 +1,147 @@
+{
+  "schema_version": "b-lenormand-checkpoint-manifest.v1",
+  "authority": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+  "root": "B_LENORMAND/",
+  "status": "DESIGN_CANDIDATE_READY_FOR_CODEX_REVIEW",
+  "excludes": [
+    "MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "files": [
+    {
+      "path": "ACCEPTANCE.json",
+      "bytes": 25808,
+      "sha256": "94fc238560f52dcb800339db51b8917c3c6390262bf72191eb9713b4cf682ff9"
+    },
+    {
+      "path": "ACCEPTANCE.md",
+      "bytes": 8528,
+      "sha256": "ab3e24114eb5c05bb4ff4991b986b70e031d96af8a71e2aebeb9625d12732b57"
+    },
+    {
+      "path": "BASELINE_COMPARISON.md",
+      "bytes": 7529,
+      "sha256": "6302512cdcfd513528f70b592a8eeb05b945ff59494719d41ae5290e0ab9d1a6"
+    },
+    {
+      "path": "CALLER_REFERENCE_INDEX.json",
+      "bytes": 64951,
+      "sha256": "0cb8a25056ba345ab0655e132c4312f64b49fe0312136d51195baf7c4e0dcad9"
+    },
+    {
+      "path": "CALL_CHAIN.md",
+      "bytes": 9648,
+      "sha256": "960119c4eaa374072a303721c52dc9de8a24eb67228186e370d715b650947cdb"
+    },
+    {
+      "path": "CANDIDATE_FILE_DIFFS.json",
+      "bytes": 4163,
+      "sha256": "15a254a01a7c6c14d56ea31976ca8b7f9a2ae7c05fb64ff7b035d87346f8791d"
+    },
+    {
+      "path": "CANDIDATE_TEST_REVIEW.json",
+      "bytes": 58277,
+      "sha256": "c1953a44b6356889a817f79bd7bc9e020056484437ac13c7ef13779c3843952f"
+    },
+    {
+      "path": "CHECKS.json",
+      "bytes": 5471,
+      "sha256": "38b5e9d85dcedac04b3cae63112dc7df8048774cb5e7aef6cab700ec26419137"
+    },
+    {
+      "path": "DEPENDENCIES.md",
+      "bytes": 4121,
+      "sha256": "fc6a29b655ab628112fc5507142795c7a9995b85095c8921dc27a7e3e913ecac"
+    },
+    {
+      "path": "DS_OUTPUT_DELTA_REVIEW.txt",
+      "bytes": 4766,
+      "sha256": "644d1937efd89d12c977a1e487bf43b93b93ed9a806023c458e7df9ab3200d4d"
+    },
+    {
+      "path": "FIVE_NINE_CANDIDATE.md",
+      "bytes": 10616,
+      "sha256": "e8259c0e9eb697a13b39e3dea0e7ad14f06edba9597874d695b02e452cb03a72"
+    },
+    {
+      "path": "HISTORICAL_CROSSCHECK.md",
+      "bytes": 4437,
+      "sha256": "6f64cb34936beb2ceb437b4344a0f1601d360abe20393ea7db828769ff01e64f"
+    },
+    {
+      "path": "INPUT_IDENTITIES.json",
+      "bytes": 235589,
+      "sha256": "84eadbde8b1fda9d31f7d68311005f42e5e98b4d62d3d1e389b1b2126179f9a1"
+    },
+    {
+      "path": "INPUT_VERIFICATION.json",
+      "bytes": 1628,
+      "sha256": "4d31f7be598f27a0f6167ce85417870e0494abfc6c0999d55b10701e5c94e2d7"
+    },
+    {
+      "path": "INTERFACE_REQUESTS.json",
+      "bytes": 14204,
+      "sha256": "51c036319130369c482fb613230a67ff787978917d362028f5da5a7b13cc2a67"
+    },
+    {
+      "path": "MAIN_D_FILE_DIFFS.json",
+      "bytes": 102875,
+      "sha256": "e6bba1419204342897dc58bd4c40d412f4b47c14953d458d4b577ed9a96cc159"
+    },
+    {
+      "path": "OVERDESIGN_REVIEW.md",
+      "bytes": 9207,
+      "sha256": "2968753fe83687108cd1fae0fc00d3f4b28ae099e0b52600275f960dc16f19c0"
+    },
+    {
+      "path": "PATCH_INSPECTION.json",
+      "bytes": 8397,
+      "sha256": "02b2d487022efcc95de454411c0a6b082d821cc253bf8e0d80b26904713d9192"
+    },
+    {
+      "path": "READING_RECEIPT.json",
+      "bytes": 17662,
+      "sha256": "3655ae76f1b095c74b2d5d24b4e7634da3c6a354e1687f6335fbb382ee7e93be"
+    },
+    {
+      "path": "RETURN.md",
+      "bytes": 6581,
+      "sha256": "d38112771f872f646aae321cbda66de78284d2eb5f7fac01ae813f2045b85738"
+    },
+    {
+      "path": "SOURCE_GAPS_AND_OWNER_DECISIONS.md",
+      "bytes": 7189,
+      "sha256": "10c65cee07bb5a75a458c29dd336733a9a10c85638624045c28b7edbc8b2fbd8"
+    },
+    {
+      "path": "SOURCE_MINING.md",
+      "bytes": 7004,
+      "sha256": "722162b7f2b2605332dc382f774a5bf654e94f0c7257aef1515245ae501eebf7"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 20813,
+      "sha256": "9aeaf927882e81cba1b624c87941a09a803e29517c28f807cd9ff00ae1bad348"
+    },
+    {
+      "path": "STATE.json",
+      "bytes": 5819,
+      "sha256": "698e418cdac9ce6832be394d9f938a5fdcdd28b0e1f52b48cfad1a9582605c56"
+    },
+    {
+      "path": "SYMBOL_INDEX.json",
+      "bytes": 681427,
+      "sha256": "d0d6cc5a3edc32641f2e4cb9e7863478faaa07909d9a1faf997da12d4cbe8486"
+    },
+    {
+      "path": "TASKS.json",
+      "bytes": 50344,
+      "sha256": "24e549e328daa088cd14069d93dbb6642487b65a19e8b609bce1c0c0cf9f763d"
+    },
+    {
+      "path": "TASKS.md",
+      "bytes": 23907,
+      "sha256": "8225bb247270bc7cf91a68f910ba197e5a6275b56f5bfd9848febbb91df4a7e7"
+    }
+  ]
+}

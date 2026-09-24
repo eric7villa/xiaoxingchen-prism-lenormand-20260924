@@ -1,0 +1,97 @@
+STATIC PATCH RECONSTRUCTION ONLY; NOT APPLIED OR EXECUTED
+--- LN/output.py
++++ DS_PATCH_IN_MEMORY/output.py
+@@ -54,7 +54,9 @@
+ )
+ 
+ #: 64 位十六进制 token 或显式 hash 前缀：哈希形状本身就是内部绑定泄漏。
+-_HASH_SHAPED = re.compile(r"\b[0-9a-fA-F]{64}\b|sha256\s*[:=]", re.IGNORECASE)
++#: 不要求 `\b` 词边界：`id<64hex>x` 这类粘连形状仍是内部绑定泄漏（20260920 集成
++#: 审计实测：带边界的正则会把粘连哈希整条放过）。
++_HASH_SHAPED = re.compile(r"[0-9a-fA-F]{64}|sha256\s*[:=]", re.IGNORECASE)
+ #: 公共 no-match 码闭集（唯一主人是 SOURCE_LIFECYCLE_CN.md）；它们是内部码，
+ #: 只有「语义」可以出现在自然判断里，码值本身不得出现。
+ _INTERNAL_NO_MATCH_CODES: tuple[str, ...] = tuple(member.value for member in NoMatchReason)
+@@ -81,19 +83,42 @@
+         return {field: getattr(self, field) for field in PUBLIC_JUDGMENT_FIELDS}
+ 
+ 
+-def _iter_text_values(value: object) -> Sequence[str]:
+-    """把任意嵌套结构里的字符串叶子收集出来（只读，不构造新语义）。"""
++def _iter_text_tokens(value: object) -> Sequence[str]:
++    """把任意嵌套结构里的字符串叶子**与键**都收集出来（只读，不构造新语义）。
++
++    键也要查：用户可见 payload 的内部标识可以直接落在键上（`{item_id: "文本"}`），
++    只看值域会整条放过（20260920 集成审计实测）。
++    """
+ 
+     found: list[str] = []
+     if isinstance(value, str):
+         found.append(value)
+     elif isinstance(value, Mapping):
+-        for nested in value.values():
+-            found.extend(_iter_text_values(nested))
++        for key, nested in value.items():
++            if isinstance(key, str):
++                found.append(key)
++            found.extend(_iter_text_tokens(nested))
+     elif isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+         for nested in value:
+-            found.extend(_iter_text_values(nested))
++            found.extend(_iter_text_tokens(nested))
+     return found
++
++
++def _needle_present(text: str, needle: str) -> bool:
++    """内部标识是否出现在这段文本里。
++
++    - 含数字/分隔符的 `OpaqueId` 常态不会嵌进普通词里，按**子串**判定（更严，
++      粘连出现也要拦）；
++    - **纯字母**标识可能恰好是普通词的片段（`in` 之于 `intent`），必须按
++      token 边界判定，否则会把合理自然语言误挡（COMMON §11「不能把合理条件、
++      机制或来源例子误挡」）；
++    - 大小写变体不是逃生门：两侧统一 casefold。
++    """
++
++    if needle.isalpha():
++        pattern = rf"(?<![0-9A-Za-z]){re.escape(needle)}(?![0-9A-Za-z])"
++        return re.search(pattern, text, re.IGNORECASE) is not None
++    return needle.casefold() in text.casefold()
+ 
+ 
+ def _card_refs_in_keys(value: object, card_ref_set: set[str]) -> list[str]:
+@@ -145,28 +170,28 @@
+ 
+     三类实际越界：
+ 
+-    1. 值里出现哈希形状 token（`sha256:` / 64 位十六进制）；
+-    2. 值里出现本次读牌实际用到的内部 ID（item_id / projection_id / snapshot_id /
++    1. 文本（值**或键**）里出现哈希形状 token（`sha256:` / 64 位十六进制）；
++    2. 文本里出现本次读牌实际用到的内部 ID（item_id / projection_id / snapshot_id /
+        provenance_ref / source_span_ref / query_hash 等，由调用方传入）；
+-    3. 值里出现公共 no-match 码闭集成员——码值是内部工程术语，
++    3. 文本里出现公共 no-match 码闭集成员——码值是内部工程术语，
+        用户可见的只能是它的自然语言语义。
+     """
+ 
+     needles = [needle for needle in internal_identifiers if needle]
+-    for text in _iter_text_values(payload):
++    for text in _iter_text_tokens(payload):
+         if _HASH_SHAPED.search(text):
+             refuse(
+                 LenormandRefusalCode.OUTPUT_INTERNAL_LEAK,
+                 "输出含哈希形状 token；内部绑定值不得进入普通输出",
+             )
+         for needle in needles:
+-            if needle in text:
++            if _needle_present(text, needle):
+                 refuse(
+                     LenormandRefusalCode.OUTPUT_INTERNAL_LEAK,
+                     f"输出含内部标识 {needle!r}；内部 ID 不得进入普通输出",
+                 )
+         for code in _INTERNAL_NO_MATCH_CODES:
+-            if code in text:
++            if code.casefold() in text.casefold():
+                 refuse(
+                     LenormandRefusalCode.OUTPUT_INTERNAL_LEAK,
+                     (f"输出含内部 no-match 码 {code!r}；只能给码的自然语言语义，不得显示码值"),

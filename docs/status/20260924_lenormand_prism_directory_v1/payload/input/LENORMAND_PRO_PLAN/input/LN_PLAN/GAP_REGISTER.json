@@ -1,0 +1,784 @@
+{
+  "inherited_S01_register_unchanged": {
+    "schema": "astra.s01.gap-register.reconciled.v1",
+    "inherited_s01_register_unchanged": {
+      "schema": "astra.s01.gaps.v1",
+      "status": "PARTIAL",
+      "inherited_source_of_truth": "prior/S00/S00/INPUT_GAPS.json",
+      "inheritance_policy": "Frozen navigation view: no original gap status or dependency scope changed.",
+      "inherited_gap_routes": [
+        {
+          "id": "G01",
+          "title": "新增五篇微信单牌正文及24条Mentor候选未随本轮交付",
+          "status": "WAITING_FOR_SOURCE_AND_CANDIDATE_BYTES",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "这批具体条目的来源核验、语义验收、采纳与获准投影"
+          ],
+          "does_not_block": [
+            "不依赖这些内容的工程设计"
+          ],
+          "later_stages": [
+            "S01",
+            "S03",
+            "S06",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G02",
+          "title": "师姐宝剑6/8仍在待挖队列",
+          "status": "WAITING_NOT_MINED_NOT_APPROVED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "这两项具体资料的采纳与验收"
+          ],
+          "does_not_block": [
+            "无依赖工程设计"
+          ],
+          "later_stages": [
+            "S03",
+            "S06"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G03",
+          "title": "旧60单元及最新GLM变更字节未全量验收",
+          "status": "RECEIVED_MUTATED_ATTEMPT_PARTIAL_NOT_APPROVED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "受影响具体条目的选用、批准、投影与真实资料验收"
+          ],
+          "does_not_block": [
+            "consumer及其他无依赖工程设计",
+            "已具独立授权且无冲突的资料处理计划"
+          ],
+          "later_stages": [
+            "S03",
+            "S06",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G04",
+          "title": "PHP集成实施源码未打包",
+          "status": "NOT_SUPPLIED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "现有PHP实现的文件/函数级核验与浏览器验收"
+          ],
+          "does_not_block": [
+            "Engine侧接口与集成边界规划"
+          ],
+          "later_stages": [
+            "S06"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G05",
+          "title": "远端CI完整JUnit与精确故障现场证据未提供",
+          "status": "NOT_SUPPLIED_FOR_SAMPLED_REMOTE_RUN",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "该远端失败的精确根因确认与本次远端验收结论"
+          ],
+          "does_not_block": [
+            "离线CI/DB风险与后续核验方案设计"
+          ],
+          "later_stages": [
+            "S05"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G06",
+          "title": "真实资料运行授权、Provider、DB及生产面未开放",
+          "status": "NOT_AUTHORIZED_NOT_RUN",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "真实Provider/DB/CI/部署执行",
+            "生产及每用户runtime授权验收"
+          ],
+          "does_not_block": [
+            "离线设计"
+          ],
+          "later_stages": [
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G07",
+          "title": "历史完整对话与部分原话未打包",
+          "status": "PARTIAL_HISTORICAL_CONTEXT",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "需要未提供原话才能成立的精确授权主张"
+          ],
+          "does_not_block": [
+            "已有原文支持的需求追踪"
+          ],
+          "later_stages": [
+            "S01",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G08",
+          "title": "源码快照是选择集而非完整仓库历史",
+          "status": "KNOWN_SCOPE_LIMIT",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "只能由特定未打包文件证明的主张"
+          ],
+          "does_not_block": [
+            "已提供快照范围内的设计与核验"
+          ],
+          "later_stages": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G09",
+          "title": "DS旧MENTOR_RESULT.json语法缺陷原样保留",
+          "status": "ORIGINAL_INPUT_INVALID_JSON_PRESERVED_NOT_REPAIRED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "把该文件当作有效JSON自动消费"
+          ],
+          "does_not_block": [
+            "其他独立有效文件",
+            "该文件的只读文本审阅"
+          ],
+          "later_stages": [
+            "S03",
+            "S05"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G10",
+          "title": "旧Codex审核子manifest有3个引用文件未附",
+          "status": "PARTIAL_HISTORICAL_SELECTION_NOT_CLOSED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "旧审核子包的完整封存证明与其原脚本复现"
+          ],
+          "does_not_block": [
+            "当前收到字节的独立核验",
+            "无依赖工程设计"
+          ],
+          "later_stages": [
+            "S03"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G11",
+          "title": "最新GLM作者checksum覆盖7项，不含两个说明文件",
+          "status": "RECEIVED_BYTES_BOUND_OUTER_SEAL_ONLY_FOR_TWO_DOCS",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "当前作者checksum对两个说明文件的完整性主张"
+          ],
+          "does_not_block": [
+            "外层已绑定收到字节的读取与审阅"
+          ],
+          "later_stages": [
+            "S03"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G12",
+          "title": "未继承上一会话Astra设计成果",
+          "status": "USER_REPORTED_NOT_RECOVERED_NO_RETRY",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "复用不存在于已交付检查点中的上一轮新设计"
+          ],
+          "does_not_block": [
+            "原需求、源码与历史计划的正常复用"
+          ],
+          "later_stages": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G13",
+          "title": "本轮不刷新GitHub即时状态",
+          "status": "LIVE_STATE_UNVERIFIED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [
+            "今天即时远端状态主张"
+          ],
+          "does_not_block": [
+            "已固定双基线的离线设计"
+          ],
+          "later_stages": [
+            "S05",
+            "S07"
+          ],
+          "s01_changed_status": false
+        },
+        {
+          "id": "G14",
+          "title": "原ZIP中文文件名默认解码与manifest不一致",
+          "status": "RESOLVED",
+          "immutable_source": "prior/S00/S00/INPUT_GAPS.json",
+          "source_file_sha256": "476fa6a51c20f4a1e00a093a776559f4ef6ee74396544f65bb8314cbc9c122dc",
+          "blocks_only": [],
+          "does_not_block": [
+            "当前已核验BASE_ROOT的全部后续只读使用"
+          ],
+          "later_stages": [],
+          "s01_changed_status": false
+        }
+      ],
+      "new_s01_gaps": [
+        {
+          "id": "G15",
+          "title": "S01扩展穷尽性与schema/fragment对照未完成",
+          "status": "PARTIAL_REQUIREMENT_RECONCILIATION",
+          "detail": "原125逐项追踪已写，但50扩展不是全集证明。RW-01至RW-03记录所有明确待读文件、hash和剩余动作，不把未读当丢失。",
+          "blocks_only": [
+            "S01 COMPLETE与需求全集已穷尽的声明"
+          ],
+          "does_not_block": [
+            "当前184条记录的Codex审核",
+            "无依赖工程设计准备"
+          ],
+          "later_stages": [
+            "S01"
+          ],
+          "refs": [
+            "RW-01",
+            "RW-02",
+            "RW-03"
+          ]
+        },
+        {
+          "id": "G16",
+          "title": "R2补充层与上游mechanism接口未闭合核验",
+          "status": "UNVERIFIED_CALLER_CHAIN",
+          "detail": "OBS-01/04只证明已读局部函数和query门。D consumer存在不证明主阶段已全接线；也不据局部入口宣称全D缺失。",
+          "blocks_only": [
+            "R2 BookT/Mentor调用链完整或功能完成结论"
+          ],
+          "does_not_block": [
+            "无依赖数据生命周期与接口设计",
+            "核心证据和可选层合法空状态追踪"
+          ],
+          "later_stages": [
+            "S02",
+            "S03"
+          ],
+          "refs": [
+            "IR-01",
+            "OBS-01",
+            "OBS-04"
+          ]
+        },
+        {
+          "id": "G17",
+          "title": "多候选匹配语义与首条选择需后续裁决",
+          "status": "SCOPED_STATIC_OBSERVATION_NOT_PRODUCTION_VERDICT",
+          "detail": "OBS-03已读D函数选择首个命中。互补、重复、缺条件、缺上下文、真冲突的处理合同尚待核验，不能一概全拒或无条件全采。",
+          "blocks_only": [
+            "多候选消费行为已满足保真需求的结论"
+          ],
+          "does_not_block": [
+            "独立单条已批准资料的后续验收方案",
+            "不涉及多候选合成的设计"
+          ],
+          "later_stages": [
+            "S03"
+          ],
+          "refs": [
+            "IR-02",
+            "OBS-03",
+            "CF-12"
+          ]
+        },
+        {
+          "id": "G18",
+          "title": "转换底座部分格式在所读注册表仍为stub",
+          "status": "SCOPED_STATIC_STUB_FOUND",
+          "detail": "OBS-05绑定具体main注册表及相同D文件hash；PDF/EPUB/DOCX/ASR_TRANSCRIPT不据此称完成，亦不推断包外转换能力不存在。",
+          "blocks_only": [
+            "所列格式通过该注册表已实现并验收的结论"
+          ],
+          "does_not_block": [
+            "纯文本/已给转写的现有输入追踪",
+            "不依赖这些格式的工程设计"
+          ],
+          "later_stages": [
+            "S03"
+          ],
+          "refs": [
+            "OBS-05",
+            "C18",
+            "C10",
+            "V23-18"
+          ]
+        },
+        {
+          "id": "G19",
+          "title": "R3研究query的冻结R2现象绑定与收据措辞gate待核验",
+          "status": "UNVERIFIED_END_TO_END_RESEARCH",
+          "detail": "OBS-02/06显示局部代码取topic_text且有success wording gate阻断；不扩写为真实调用事故。",
+          "blocks_only": [
+            "R3现象输入与真实搜索结果全链完成结论"
+          ],
+          "does_not_block": [
+            "独立权限、预算、隐私和失败合同设计"
+          ],
+          "later_stages": [
+            "S04"
+          ],
+          "refs": [
+            "IR-05",
+            "OBS-02",
+            "OBS-06"
+          ]
+        },
+        {
+          "id": "G20",
+          "title": "B09文案已定位，实际PHP同步仍未验证",
+          "status": "SOURCE_COPY_BOUND_IMPLEMENTATION_UNVERIFIED",
+          "detail": "three_story/reunion/venus明确示例已绑定旧站参考L171–173和hash，不再列作文案缺件；仅G04实际PHP主库/帮助入口与浏览器验收仍缺。",
+          "blocks_only": [
+            "两个PHP入口已同步指定文案的结论"
+          ],
+          "does_not_block": [
+            "Engine集成接口规划",
+            "已有精确文案的需求追踪"
+          ],
+          "later_stages": [
+            "S06"
+          ],
+          "refs": [
+            "G04",
+            "B09"
+          ]
+        }
+      ],
+      "global_material_wait": false
+    },
+    "status_append_only": [
+      {
+        "id": "GD-01",
+        "affects": [
+          "G01",
+          "X-015"
+        ],
+        "status": "REPORTED_NARROW_DELIVERY_ACCEPTED_RAW_BYTES_STILL_MISSING",
+        "source": {
+          "root": "DISPATCH_ROOT",
+          "path": "supplement/LATEST_DELTA_CN.md",
+          "sha256": "90ff96c70e9a93018c403a64ac8aff92ab6f8e349408a02528448990fb185a1a",
+          "start_line": 5,
+          "end_line": 5,
+          "byte_start": 276,
+          "byte_end_exclusive": 732,
+          "span_sha256": "234d5388b355008e2ddf1d7f6d21fc307cd382ef6b593703d930a147d2d79ccc",
+          "text": "微信五篇/24候选已由GLM复核、DeepSeek窄修，并通过Codex窄修交付验收；新版MENTOR_CANDIDATES_V2.jsonl SHA-256为4b0486095c1ef41a0d1a44b05fd38001c5854d1798d644945293ff45dd83de0e。状态是候选交付验收，不是资料或运行批准，runtime_authorized=false/approval=null/mechanism_ref=null。本包只给验收状态报告，不给新原文或候选内容；不得声称读过。旧60与师姐课不因此完成。281排除。"
+        },
+        "runtime_authorized": false
+      },
+      {
+        "id": "GD-02",
+        "affects": [
+          "G02",
+          "G03",
+          "X-016",
+          "X-017"
+        ],
+        "status": "UNCHANGED_NOT_APPROVED_NOT_MINED",
+        "source": {
+          "root": "DISPATCH_ROOT",
+          "path": "PROMPT_CN.md",
+          "sha256": "59a66192149f5010eecad087fe39d7e3787550ba69830002bf140094daae5e84",
+          "start_line": 11,
+          "end_line": 11,
+          "byte_start": 1241,
+          "byte_end_exclusive": 1552,
+          "span_sha256": "ad851e9b1b0f93e39429bb0c9bea1bb252efdf7eb874b58e7dfefa937a81e188",
+          "text": "额外窄更正：X-018/V23-01等UPRIGHT_ONLY仅指两个具名旧目标MENT-MAGICIAN-FRAME-POSITION和MENT-SWORDS5-CONSTRUCTIVE-DISSENT，不外推到所有魔术师/宝剑五课程。新24条窄修交付已验收但runtime仍未批准，旧60仍独立；按补充状态追加，不修改旧S00缺口原件。"
+        }
+      },
+      {
+        "id": "GD-03",
+        "affects": [
+          "G15"
+        ],
+        "status": "S01_THREE_RECONCILIATION_GROUPS_CLOSED_FOR_CODEX_REVIEW",
+        "source": "RW_CLOSURE.json",
+        "does_not_close_source_or_implementation_gaps": true
+      },
+      {
+        "id": "GD-04",
+        "affects": [
+          "X-035"
+        ],
+        "status": "S00_ZIP_CODEX_REVIEW_UPDATED_S01_OUTER_ZIP_STILL_NOT_INDEPENDENTLY_VERIFIED_BY_CODEX",
+        "source": {
+          "root": "DISPATCH_ROOT",
+          "path": "supplement/LATEST_DELTA_CN.md",
+          "sha256": "90ff96c70e9a93018c403a64ac8aff92ab6f8e349408a02528448990fb185a1a",
+          "start_line": 3,
+          "end_line": 3,
+          "byte_start": 31,
+          "byte_end_exclusive": 275,
+          "span_sha256": "581101afd7719413ce0ac7092cba88f1336f59e9d8a68be7719aabf89f25fc6c",
+          "text": "2026-09-22本地Codex已接受S01为有效PARTIAL检查点，尚未完成；S00原ZIP现已独立核验通过。S01外层原ZIP未在本地收到，收到58件目录通过校验。本次新打包是本地新归档，不能冒充作者原ZIP。"
+        }
+      }
+    ],
+    "new_scoped_gaps": [
+      {
+        "id": "RC-G01",
+        "type": "HISTORICAL_INPUT_GAP",
+        "missing_exact": [
+          {
+            "path": "docs/site_runtime_map.md",
+            "sha256": "NOT_PROVIDED_IN_REFERENCING_PLAN"
+          },
+          {
+            "path": "ops_record.json",
+            "sha256": "9872c90135ba68cf4aa2276b716f6a7595044aa589d2be5bdcc4bfe6d87a44d9"
+          },
+          {
+            "path": "<local-path>",
+            "sha256": "6d26a5dd6e6bc420e14883923499d30aeb7e0ff2cd428de88a8d6603c765f8bc"
+          },
+          {
+            "path": "old_Prism_C/PROMPT_CN.md",
+            "sha256": "NOT_PROVIDED"
+          },
+          {
+            "path": "old_Prism_C/PACKAGE_INPUT_INDEX.json",
+            "sha256": "NOT_PROVIDED"
+          },
+          {
+            "path": "glm53_prompt/GLM53_FLASH_MENTOR_MINING_PROMPT_CN.md",
+            "sha256": "NOT_PROVIDED"
+          }
+        ],
+        "effect": "不证明旧站身份/旧运维授权/第三方skill原文或Prism原192封存/旧挖掘权限；不恢复旧任务，不阻塞本轮已完成的文本对账。",
+        "dependent_ids": [
+          "F04",
+          "F06",
+          "F12",
+          "B01",
+          "X-031",
+          "X-032"
+        ],
+        "blocks_all_engineering": false
+      },
+      {
+        "id": "RC-G02",
+        "type": "CURRENT_SOURCE_BYTES_MISSING",
+        "missing_exact": [
+          "五篇微信文章正文",
+          "MENTOR_CANDIDATES_V2.jsonl"
+        ],
+        "reported_candidate_sha256": "4b0486095c1ef41a0d1a44b05fd38001c5854d1798d644945293ff45dd83de0e",
+        "effect": "无法独立核新24字节/语义，只追加窄修交付状态；旧60、师姐6/8不受此验收覆盖。",
+        "dependent_ids": [
+          "X-015",
+          "X-016",
+          "X-017"
+        ],
+        "blocks_all_engineering": false
+      },
+      {
+        "id": "RC-G03",
+        "type": "FUTURE_SCHEMA_REPAIR_AND_EVIDENCE",
+        "finding_ids": [
+          "RF-01",
+          "RF-02",
+          "RF-03",
+          "RF-04",
+          "RF-05",
+          "RF-06",
+          "RF-07",
+          "RF-08",
+          "RF-09",
+          "RF-10",
+          "RF-11",
+          "RF-12",
+          "RF-13"
+        ],
+        "effect": "已完成字段差异对账，原JSON未修。后续具体schema/映射/素材身份验收须独立授权；不能称原APPLIED全一致。",
+        "dependent_ids": [
+          "X-036",
+          "X-037",
+          "X-038",
+          "X-039",
+          "X-040",
+          "X-041",
+          "X-042",
+          "X-043",
+          "X-044",
+          "X-046"
+        ],
+        "blocks_all_engineering": false
+      },
+      {
+        "id": "RC-G04",
+        "type": "FUTURE_INTERFACE_NOT_APPROVED",
+        "interface_ids": [
+          "IR-01",
+          "IR-02",
+          "IR-03",
+          "IR-04",
+          "IR-05"
+        ],
+        "effect": "discovery、五类多命中、Consultation时点、安全DTO、双任务query/receipt尚需后续接口合同与调用链实测；公共no-match码不是未决。",
+        "dependent_ids": [
+          "X-012",
+          "X-045",
+          "X-024",
+          "D05",
+          "V23-07"
+        ],
+        "blocks_all_engineering": false
+      },
+      {
+        "id": "RC-G05",
+        "type": "HISTORICAL_AUTHORITY_EVIDENCE_MISSING",
+        "missing_exact": [
+          "Fable正式report/spec/125trace/tasks/acceptance完整回包",
+          "原read-13-files逐文件日志",
+          "原终端连接错误画面/日志",
+          "未完整提供的爸爸历史原聊天决定"
+        ],
+        "effect": "不得从转述认定Fable成果/错误因果/历史授权；沿G07/G12，禁止搜救。",
+        "dependent_ids": [
+          "X-030",
+          "E07",
+          "E18"
+        ],
+        "blocks_all_engineering": false
+      }
+    ],
+    "global_material_wait": false,
+    "current_s01_reconciliation_work_remaining": [],
+    "supplemental_precise_reference_gaps": [
+      {
+        "id": "RC-G06",
+        "exact_reference": "r2_mentor_context_attestation_contract.md",
+        "source": {
+          "root": "BASE_ROOT",
+          "path": "requirements/mining_alignment/CORRECTED_AGENT_ROLE_MAPPING.md",
+          "sha256": "9d5e18b2cbcf3b2759a50b85487b1625211b402bd7e3f787bcbf52f7bc19fabc",
+          "start_line": 120,
+          "end_line": 120,
+          "byte_start": 6700,
+          "byte_end_exclusive": 6874,
+          "span_sha256": "14d9d2d3de9325694d285617370e4adf5fbc2124b2357d730fb92839f8483fd2",
+          "text": "**依据**：`r2_mentor_context_attestation_contract.md` 规定多候选时结果为 `INVALID`——\"v1 intentionally does not guess between candidates\"。抹平 = 猜测。"
+        },
+        "actual_file_matches": [],
+        "status": "INPUT_GAP_HISTORICAL_CONTRACT_BYTES",
+        "effect": "只能确认旧role mapping报告该合同，不确认合同原版本或采用“多候选一律INVALID”；当前五类差异处理与IR-02不变。",
+        "blocks_only": [
+          "历史R2合同原文字节/版本核验"
+        ],
+        "does_not_block": [
+          "当前S01对账交回",
+          "无依赖工程设计"
+        ],
+        "minimum_positive": "两个兼容互补候选不因该历史未取到字节的引用被统一拒绝。",
+        "minimum_negative": "伪造缺失合同原文或据此建立未批准的全局INVALID门。",
+        "product_tests": "NOT_RUN"
+      }
+    ]
+  },
+  "current_append_only_updates": [
+    {
+      "id": "W-01",
+      "prior_gap_refs": "G01/RC-G02",
+      "current_status": "RECEIVED_C_BYTES_NOT_APPROVED",
+      "task_ids": [
+        "S03-T08"
+      ],
+      "detail": "C source/candidate bytes and bindings are in current packet; new24 hash measured unchanged. Not a fresh A semantic audit.",
+      "blocks_only": "Only real adoption/approval/activation of these items",
+      "global_block": false
+    },
+    {
+      "id": "W-02",
+      "prior_gap_refs": "G02",
+      "current_status": "C_SISTER_FOUR_AUTHOR_REVIEWED_NOT_APPROVED",
+      "task_ids": [
+        "S03-T08"
+      ],
+      "detail": "Two source articles produced four candidates; do not require 86 count; no A mining.",
+      "blocks_only": "These specific source approvals",
+      "global_block": false
+    },
+    {
+      "id": "W-03",
+      "prior_gap_refs": "G03",
+      "current_status": "OLD60_TWELVE_AUTHOR_DONE_FORTYEIGHT_PENDING_ALL_UNAPPROVED",
+      "task_ids": [
+        "S03-T08"
+      ],
+      "detail": "Full exact48 queue preserved in S03/C_DATA_QUEUE.json with source hashes and next actions.",
+      "blocks_only": "Review/approval of each affected item only, not all engineering",
+      "global_block": false
+    },
+    {
+      "id": "W-04",
+      "prior_gap_refs": "G04/G20",
+      "current_status": "B09_COPY_BOUND_PHP_IMPLEMENTATION_MISSING",
+      "task_ids": [
+        "S06-T05"
+      ],
+      "detail": "Exact current PHP question library, help/fallback/render route and current commit needed; do not invent filename.",
+      "blocks_only": "Old-site synchronization validation only",
+      "global_block": false
+    },
+    {
+      "id": "W-05",
+      "prior_gap_refs": "G05",
+      "current_status": "EXACT_REMOTE_JUNIT_MISSING",
+      "task_ids": [
+        "S05-T06"
+      ],
+      "detail": "test_consume_stage_artifacts_revalidates_before_assembly: full traceback+SQLSTATE, driver/schema/commit and actual PR11 artifact identity.",
+      "blocks_only": "Consume historical failure root-cause repair only",
+      "global_block": false
+    },
+    {
+      "id": "W-06",
+      "prior_gap_refs": "G06/G13",
+      "current_status": "CURRENT_EXECUTION_NOT_AUTHORIZED_LIVE_STATE_UNVERIFIED",
+      "task_ids": [
+        "S05-T09",
+        "S07-T03"
+      ],
+      "detail": "No current DB/Provider/CI/server/production authority; exact future environment/grants are separate.",
+      "blocks_only": "Actual execution and deployment, not design",
+      "global_block": false
+    },
+    {
+      "id": "W-07",
+      "prior_gap_refs": "G07/G08/G09/G10/G11/G12",
+      "current_status": "PRIOR_EVIDENCE_LIMITS_RETAINED",
+      "task_ids": [
+        "S07-T01"
+      ],
+      "detail": "Selected snapshots, old malformed DS JSON, missing historical seal members/checksum coverage and unrecovered prior conversation unchanged.",
+      "blocks_only": "Claims that specifically depend on absent original evidence",
+      "global_block": false
+    },
+    {
+      "id": "W-08",
+      "prior_gap_refs": "G14",
+      "current_status": "PREVIOUSLY_RESOLVED_RETAINED",
+      "task_ids": [],
+      "detail": "UTF-8 filename decoding resolution retained; no source bytes changed.",
+      "blocks_only": "None",
+      "global_block": false
+    },
+    {
+      "id": "W-09",
+      "prior_gap_refs": "G15",
+      "current_status": "S01_RECONCILED_RESULT_REUSED",
+      "task_ids": [
+        "S07-T01"
+      ],
+      "detail": "Three reconciliation groups already closed for review in supplied S01; no repeat count.",
+      "blocks_only": "No S02-S07 design block",
+      "global_block": false
+    },
+    {
+      "id": "W-10",
+      "prior_gap_refs": "G16/G17/G19/RC-G04",
+      "current_status": "INTERFACES_DESIGNED_IMPLEMENTATION_AND_TESTS_NOT_RUN",
+      "task_ids": [
+        "S02-T07",
+        "S03-T05",
+        "S04-T07"
+      ],
+      "detail": "IC-04/05v2/08/12/13/17/22 provide now-detailed contracts; Q3 remains separately pending.",
+      "blocks_only": "Real caller-chain/semantics proof only",
+      "global_block": false
+    },
+    {
+      "id": "W-11",
+      "prior_gap_refs": "G18",
+      "current_status": "CONVERSION_DESIGNED_NOT_IMPLEMENTED",
+      "task_ids": [
+        "S03-T01"
+      ],
+      "detail": "Per-format conversion design exists; raw/provenance conversion validation remains future scoped work.",
+      "blocks_only": "Use of unimplemented formats only",
+      "global_block": false
+    },
+    {
+      "id": "W-12",
+      "prior_gap_refs": "RC-G03",
+      "current_status": "RF13_DESIGN_RESOLUTIONS_WRITTEN_NOT_APPLIED",
+      "task_ids": [
+        "S03-T06"
+      ],
+      "detail": "S03/SCHEMA_RESOLUTION.json maps 13 differences to V2 schema/adapters and acceptance.",
+      "blocks_only": "Actual schema migration/real data semantics",
+      "global_block": false
+    },
+    {
+      "id": "W-13",
+      "prior_gap_refs": "RC-G01/RC-G05/RC-G06",
+      "current_status": "EXACT_HISTORICAL_MISSING_REFERENCES_RETAINED",
+      "task_ids": [
+        "S07-T01"
+      ],
+      "detail": "See unchanged inherited records for exact historical paths/hashes; no rescue or guessed reconstruction.",
+      "blocks_only": "Only historical proof, not new independent design",
+      "global_block": false
+    }
+  ],
+  "remaining_design_work": [],
+  "external_waits_do_not_mean_design_incomplete": true,
+  "global_material_wait": false
+}

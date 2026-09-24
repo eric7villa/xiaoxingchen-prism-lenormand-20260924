@@ -1,0 +1,1128 @@
+{
+  "schema_version": "b-lenormand-tasks.v1",
+  "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+  "target_root": "base/baseline/d_candidate (frozen reference only; do not edit this attachment)",
+  "implementation_authorized": false,
+  "tasks": [
+    {
+      "id": "B-LN-T00",
+      "title": "基线重绑与候选采用台账",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_baseline_binding.py",
+      "requirements": [
+        "B-LN-R01",
+        "B-LN-R12",
+        "B-LN-R14"
+      ],
+      "depends_on": [],
+      "owner": "Codex 集成主人",
+      "work": "目标以 D 为参考；逐文件采用 L/P，不整树覆盖。L 的 DS08 BASE_READING_SHA256 与 D 不同且 patch 未携该行；按真实目标重审重绑，不改 reading.py 凑 hash。",
+      "write_set": [
+        {
+          "path": "docs/design/lenormand/BASELINE_ADOPTION.md",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "baseline_adoption_ledger"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+          "existing_symbols": [
+            "test_domain_modules_resolve_into_the_candidate_workdir"
+          ],
+          "proposed_symbols": [
+            "reviewed_BASE_READING_SHA256_binding"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "c3490cf3971162550533817e895803c8f976264cf02a314fea2f4a2477d5ec3c",
+          "candidate_source_sha256": "6c89fb92d1aa32f7fb8116b9e8a5f71e301b975aa3174e015d129d3fe1176b85"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_baseline_binding.py",
+          "proposed_symbols": [
+            "paired_baseline_binding_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "baseline SHA、采用/拒绝 delta、导入根；错版本停止本批",
+      "producer_consumer": "冻结 M/D/L/P -> 目标worktree/采用台账/测试",
+      "permissions": "另批代码授权；不改 A/原附件/旧检查点",
+      "migration": "无",
+      "rollback": "撤自己工作树增量，保留采用记录，不回写输入",
+      "ci_gate": "模块导入根与基线hash、写集闭合；153/164不继承",
+      "owner_decision": "工程建议 D 为目标逐文件吸收，无需爸爸技术投票",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-01",
+        "AC-B-02"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_baseline_binding.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T01",
+      "title": "三牌规范槽与有向关系几何",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_geometry.py",
+      "requirements": [
+        "B-LN-R02",
+        "B-LN-R03",
+        "B-LN-R11"
+      ],
+      "depends_on": [
+        "B-LN-T00"
+      ],
+      "owner": "LN结构主人",
+      "work": "复用 THREE_CARD_LINE 和 ln-three；保留原始用户 facts，按明确显示槽而非任意数组顺序构造关系；不抽牌/不补牌/不逆位，结构仍 NOT_APPROVED。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+          "existing_symbols": [
+            "LayoutMode",
+            "parse_lenormand_request_payload"
+          ],
+          "proposed_symbols": [
+            "ResolvedLayoutInput"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "975324f278e6e23c23b23df7ae1d6b5c136cf1b480dffea8f9f0a9c9575bb10b",
+          "candidate_source_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5"
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+          "existing_symbols": [
+            "ModeSpec",
+            "validate_layout",
+            "slot_facts"
+          ],
+          "proposed_symbols": [
+            "canonicalize_three_card_slots",
+            "spread_slug_for_mode"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03",
+          "candidate_source_sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03"
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+          "existing_symbols": [
+            "assemble_three_card_relations",
+            "dedupe_relation_instances"
+          ],
+          "proposed_symbols": [
+            "validate_relation_identity",
+            "parse_relation_id"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "6ff24eb9e66c86529afb2969c5db57715605f45862dd37ffddf63454ea11b2b3",
+          "candidate_source_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+          "candidate_only_symbols": [
+            "parse_relation_id"
+          ]
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_geometry.py",
+          "proposed_symbols": [
+            "paired_geometry_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "规范左中右、ref-slot一一映射、draw_order排列、direction/kind/members一致；非法输入沿用受治拒绝",
+      "producer_consumer": "用户确认 -> layout -> relation instances -> 准入",
+      "permissions": "局部代码授权；几何不依赖原书，不启用入口",
+      "migration": "无；registry数据版本变化需显式绑定",
+      "rollback": "回退局部几何，不改原输入或默认关闭",
+      "ci_gate": "输入/槽/方向正反与跨系统回归",
+      "owner_decision": "推荐显式显示槽映射，不增加过去现在未来职责",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-03",
+        "AC-B-04",
+        "AC-B-05"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_geometry.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T02",
+      "title": "私有授权读模型与public去标识",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_private_contract.py",
+      "requirements": [
+        "B-LN-R04",
+        "B-LN-R05",
+        "B-LN-R08",
+        "B-LN-R13"
+      ],
+      "depends_on": [
+        "B-LN-T00"
+      ],
+      "owner": "S02合同 + S04数据主人",
+      "work": "复用 RetrievalResult/LenormandEvidenceItem，增加既有 DB 事实镜像，不创造第二审批源。旧无绑定fixture仍可做结构测试但不得生产开门。public投影保持不增身份字段。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/domain/evidence.py",
+          "existing_symbols": [
+            "RetrievalResult",
+            "LenormandEvidenceItem",
+            "PublicRetrievalResult"
+          ],
+          "proposed_symbols": [
+            "ProjectionConsumptionBinding",
+            "EvidenceApprovalBinding"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "dc40394b89a2fc4168c79c44a539954160adee89d757bc754a47feac2a86a2d5",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "src/xiaoxingchen_core/retrieval/repository.py",
+          "existing_symbols": [
+            "EvidenceRepository",
+            "RepositoryRouter"
+          ],
+          "proposed_symbols": [
+            "private_binding_contract_notes"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "129c14d1aa6200d26125ac824642cc946f574d9cdc51837a3fd9e8e1e4d65d2f",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "schemas/v1/contracts/retrieval-result.schema.json",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "consumption_binding_schema"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "774df12341304c19c28ece63a6f829bbebd43332d28e4d0edb7d80669cc299ec",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "schemas/v1/contracts/evidence-item.schema.json",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "lenormand_approval_binding_schema"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "9e569c569f2c96c07d66d71c4b65cb659fd18d3e70b3be6d911e8e9ed17cf856",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_private_contract.py",
+          "proposed_symbols": [
+            "paired_private_contract_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "system/query_hash/snapshot_id/release_id/release_sha256/contract_version/lexeme_profile；item的candidate/hash/review/user_approval绑定；错误非public第五码",
+      "producer_consumer": "受信PG -> internal result -> LN；public单向剥离",
+      "permissions": "IR-B-LN-01/02先接受；客户端不能自报approved",
+      "migration": "本任务无；SQL在T03。schema只允许这两份预期变化，导出额外改动须归因",
+      "rollback": "回退可选载体与schema但保持核心关闭",
+      "ci_gate": "public不泄漏、系统schema隔离、伪绑定不准入",
+      "owner_decision": "推荐扩展原合同不建LN审批表；未接受不写共享文件",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-06",
+        "AC-B-07"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_private_contract.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T03",
+      "title": "PG私有检索、批准链与撤回",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_postgres_consumption.py",
+      "requirements": [
+        "B-LN-R04",
+        "B-LN-R05",
+        "B-LN-R06",
+        "B-LN-R13"
+      ],
+      "depends_on": [
+        "B-LN-T02"
+      ],
+      "owner": "S04 DB/权限主人",
+      "work": "新增内部 EvidenceRepository，通过最小函数join既有release/items/candidate/review/user_approvals，保留八段filter。快照存在性与空项分开。复核pin后撤回；需要立即停用入口时操作既有SUPERSEDED并写审计。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/retrieval/postgres_repository.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "PostgresEvidenceRepository",
+            "retrieve",
+            "revalidate_bound_snapshot"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "alembic/versions/20260922_0010_lenormand_private_consumption.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "upgrade",
+            "downgrade",
+            "lenormand_projection.read_bound_evidence",
+            "lenormand_projection.supersede_bound_release"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_postgres_consumption.py",
+          "proposed_symbols": [
+            "paired_postgres_consumption_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "projection_id就是release_id；同事务header/item/approval/hash完整；pin幂等非持续有效证明；身份错误拒绝",
+      "producer_consumer": "既有来源治理/发布 -> 受限SQL函数 -> internal repository -> LN",
+      "permissions": "另批临时PG17授权；MCP账户不得读raw/governance或另一system；不存DSN",
+      "migration": "新增迁移；0010以当前0009为父仅预留，实施HEAD有冲突先由S04重分配并更新写集，不改历史迁移",
+      "rollback": "先关消费者撤新函数execute；不复活旧release、不删批准/交付记录；downgrade仅撤本次函数面",
+      "ci_gate": "真实PG角色/过滤/并发撤回测试，缺环境BLOCKED_NOT_RUN，synthetic不得替代PASS",
+      "owner_decision": "IR-B-LN-02冻结最小ACL/锁顺序；建议消费与交付提交重验同事务",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-08",
+        "AC-B-09",
+        "AC-B-10",
+        "AC-B-11",
+        "AC-B-12"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_postgres_consumption.py -m integration",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T04",
+      "title": "获准目录与方法内容解码",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_source_payloads.py",
+      "requirements": [
+        "B-LN-R02",
+        "B-LN-R04",
+        "B-LN-R05",
+        "B-LN-R11"
+      ],
+      "depends_on": [
+        "B-LN-T02"
+      ],
+      "owner": "S03来源/LN；资料批准仅爸爸",
+      "work": "用既有CandidateItem.content存严格ln-catalog-v1/ln-method-v1规范JSON；解析不授予权利。36稳定身份，单值别名；方法含kind/arity/order/条件/反例。没有原书不补义、不伪AUTHOR_TEXT。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/conversion/lenormand_payloads.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "LenormandCatalogPayload",
+            "LenormandMethodPayload",
+            "decode_lenormand_payload"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+          "existing_symbols": [
+            "LenormandRuntimeRequest"
+          ],
+          "proposed_symbols": [
+            "ResolvedDeckCatalog",
+            "resolve_authorized_catalog"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "975324f278e6e23c23b23df7ae1d6b5c136cf1b480dffea8f9f0a9c9575bb10b",
+          "candidate_source_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5"
+        },
+        {
+          "path": "schemas/v1/lenormand-catalog-content.schema.json",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "ln_catalog_v1"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "schemas/v1/lenormand-method-content.schema.json",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "ln_method_v1"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_source_payloads.py",
+          "proposed_symbols": [
+            "paired_source_payloads_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "目录/方法版本、系统、唯一卡/别名、顺序/适用范围；绑定T02，synthetic不进生产；缺词表保留review不改GLOBAL",
+      "producer_consumer": "原始受权材料 -> 既有conversion/review/publish -> decoder -> LN",
+      "permissions": "schema另批实施；原书读取/规范化/批准需新授权，本轮不挖掘",
+      "migration": "无新权威表，复用content/hash/span/approval；不增来源层",
+      "rollback": "停对应decoder消费，保留源/候选/审计；不得格式错退成UNBOUND绕过",
+      "ci_gate": "目录36唯一/别名冲突/hash/源版本/synthetic生产拒绝；语义独立验收",
+      "owner_decision": "SG-01/02/03原件权利/目录/具体规则待批准；格式技术推荐",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-13",
+        "AC-B-14",
+        "AC-B-15"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_source_payloads.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T05",
+      "title": "二次收窄、支持图与生成前门",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_authorized_admission.py",
+      "requirements": [
+        "B-LN-R04",
+        "B-LN-R05",
+        "B-LN-R06",
+        "B-LN-R11"
+      ],
+      "depends_on": [
+        "B-LN-T01",
+        "B-LN-T02",
+        "B-LN-T04"
+      ],
+      "owner": "LN消费主人",
+      "work": "吸收L角色/scope修复，替换unbound仍开门的旧预期。显式关系集合；core/method分查，GLOBAL method无cards不误删。允许批准规则+多条成员证据，禁止单牌词并集或一个邻接撑整组。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+          "existing_symbols": [
+            "LenormandEvidencePort",
+            "admit_relation_evidence",
+            "CoreEvidenceGate",
+            "gate_from_admissions",
+            "guarded_generate"
+          ],
+          "proposed_symbols": [
+            "ClaimSupport",
+            "validate_consumption_binding",
+            "admit_method_support",
+            "require_complete_core_support"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "7df63e27250171232699ef9a721db6f2f52030a81b3d5e61e56e319a51837966",
+          "candidate_source_sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5"
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+          "existing_symbols": [
+            "LenormandRuntime",
+            "PreparedLenormandReading",
+            "port_retriever"
+          ],
+          "proposed_symbols": [
+            "prepare_authorized"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "a1402a676e87cf1fda381bdc854444ff0dca4f39c91fe7fe35a11d81560a6b38",
+          "candidate_source_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e"
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "validate_method_application",
+            "require_relation_interpretation_authority"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "6ff24eb9e66c86529afb2969c5db57715605f45862dd37ffddf63454ea11b2b3",
+          "candidate_source_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+          "candidate_only_symbols": [
+            "require_relation_interpretation_authority"
+          ]
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "reviewed_public_exports"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "3ea39d21b6446524de599b03b5cafaa97e3a2a1a50dccbb3b3a568ff07bc3e9c",
+          "candidate_source_sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "rebound_candidate_tests_without_unbound_green"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_authorized_admission.py",
+          "proposed_symbols": [
+            "paired_authorized_admission_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "UNBOUND不开核心；完整目录/snapshot/release/审批、明确policy、方法/成员/方向/冲突支持；主张依赖图不是新审批库",
+      "producer_consumer": "绑定query/result + 目录/方法 -> ClaimSupport -> core gate -> 受控调用者",
+      "permissions": "不签运行权、不批准来源；生产只接受受信端口",
+      "migration": "无；依赖T02/03读取合同",
+      "rollback": "关闭authorized prepare只留结构，不能恢复简化fail-open门",
+      "ci_gate": "正反模型计数、method无cards、scope未知、截断、多证据、双作者不过挡",
+      "owner_decision": "IR-B-LN-03方法profile；OD-F-01 / OD-F-04具体Matthews-only范围仍须产品批准",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-16",
+        "AC-B-17",
+        "AC-B-18",
+        "AC-B-19",
+        "AC-B-20",
+        "AC-B-21",
+        "AC-B-22"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_authorized_admission.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T06",
+      "title": "公共输出、防泄漏与不过挡",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_public_output.py",
+      "requirements": [
+        "B-LN-R07",
+        "B-LN-R08",
+        "B-LN-R11"
+      ],
+      "depends_on": [
+        "B-LN-T02",
+        "B-LN-T05"
+      ],
+      "owner": "LN输出 + S04公共投影主人",
+      "work": "选择性移植P相对L输出增量，补完整身份清单与短ID正常词对照，保留StrictModel/禁词典。生成前与render后门分别验收，字段正确不等于语义正确。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+          "existing_symbols": [
+            "LenormandJudgment",
+            "LenormandOutputPort",
+            "assert_no_per_card_glossary"
+          ],
+          "proposed_symbols": [
+            "collect_private_tokens",
+            "assert_no_internal_identifiers",
+            "project_reviewed_judgment"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "5bde1cdd632011b5bae650bdcc1c3f8c754dfdbbb8727cc74198cec2588b72ee",
+          "candidate_source_sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b"
+        },
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+          "existing_symbols": [
+            "LenormandRuntime"
+          ],
+          "proposed_symbols": [
+            "complete_internal_identifier_inventory"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "a1402a676e87cf1fda381bdc854444ff0dca4f39c91fe7fe35a11d81560a6b38",
+          "candidate_source_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_ds_integration_output_leak_hardening.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "reviewed_P_output_leak_regressions"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_public_output.py",
+          "proposed_symbols": [
+            "paired_public_output_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "candidate/approval/snapshot/query/relation/span身份；public只判断/条件/路径/阻力/验证/边界/退出；错则受控重生成或停，不字符串替换放行",
+      "producer_consumer": "审查主张+私有支持 -> public projector -> demo/交付",
+      "permissions": "不增public来源权限、不回显内部错误/ID",
+      "migration": "无",
+      "rollback": "关闭输出路径，保留最小公共面与核心门，不恢复泄漏版",
+      "ci_gate": "helper/finalrender、中文短ID、大小写、嵌hash、嵌套键值、用户事实支持",
+      "owner_decision": "技术推荐；公开来源依原许可，不向爸爸询问正则细节",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-23",
+        "AC-B-24",
+        "AC-B-25",
+        "AC-B-26"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_public_output.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T07",
+      "title": "体系隔离由身份而非普通子串决定",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_cross_system.py",
+      "requirements": [
+        "B-LN-R05",
+        "B-LN-R08",
+        "B-LN-R11"
+      ],
+      "depends_on": [
+        "B-LN-T02"
+      ],
+      "owner": "LN来源边界主人",
+      "work": "分离registry键/system/layer与展示文字；修复PLACE/GD普通词误挡但不取消体系门。未解析来源保留review不入核心。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/cross_system.py",
+          "existing_symbols": [
+            "assert_no_forbidden_provenance",
+            "assert_cross_system_clean"
+          ],
+          "proposed_symbols": [
+            "validate_provenance_identity"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497",
+          "candidate_source_sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_cross_system.py",
+          "proposed_symbols": [
+            "paired_cross_system_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "typed身份精确校验；未知来源与禁用体系分开；不能自然词contains判权威",
+      "producer_consumer": "来源注册身份 -> cross_system -> admission",
+      "permissions": "不增allowlist、不接Tarot/RWS/GD兜底",
+      "migration": "无",
+      "rollback": "停未解析身份消费，不恢复自然文本黑名单作为唯一判据",
+      "ci_gate": "workplace/replacement好例与伪装Tarot坏例成对",
+      "owner_decision": "工程修复推荐，不需新增产品裁定",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-27",
+        "AC-B-28"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_cross_system.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T08",
+      "title": "LN编排、现实核对与独立审查",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_orchestration.py",
+      "requirements": [
+        "B-LN-R06",
+        "B-LN-R07",
+        "B-LN-R08",
+        "B-LN-R13"
+      ],
+      "depends_on": [
+        "B-LN-T03",
+        "B-LN-T05",
+        "B-LN-T06",
+        "B-LN-T07"
+      ],
+      "owner": "S02编排 + S03 LN + S04运行权威",
+      "work": "IR-B-LN-05先冻结system-specific operation载体再接线。复用安全/隔离/预算/时钟/撤权/工件，不调用TarotStageExecutor或继承R1-R4职责。研究默认关闭，工件与交付回读明确。默认factory不启用。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/orchestration.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "LenormandOrchestrator",
+            "prepare",
+            "compose",
+            "review",
+            "deliver"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "src/xiaoxingchen_core/demo/lenormand_port.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "LenormandDemoRuntimePort"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_orchestration.py",
+          "proposed_symbols": [
+            "paired_orchestration_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "确认事实、当次身份/authority、支持图、research状态、review结论、交付digest；本地操作不自封共享阶段",
+      "producer_consumer": "DemoRuntimePort -> LN编排 -> 受控模型/研究/clock/store适配 -> public交付",
+      "permissions": "阻塞于共享operation权威合同；不新建issuer/state/approval表；运行另批",
+      "migration": "本任务不改reading状态机；若共享合同需扩展由S02/S04另给精确写集，完成前不得接真库",
+      "rollback": "移除适配注入回到UnavailableRuntimePort；不复活终态",
+      "ci_gate": "零调用前门、过期/撤回/换人、研究未发生不伪结果、不套塔罗、交付回读",
+      "owner_decision": "IR-B-LN-05必要共享缺口；不以本任务宣布S03整体完成",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-29",
+        "AC-B-30",
+        "AC-B-31",
+        "AC-B-32"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_orchestration.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T09",
+      "title": "五牌候选几何与中轴非独断",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_five_candidate.py",
+      "requirements": [
+        "B-LN-R09",
+        "B-LN-R11",
+        "B-LN-R12"
+      ],
+      "depends_on": [
+        "B-LN-T01"
+      ],
+      "owner": "LN五牌候选主人",
+      "work": "选择性引入L候选模块/测试；固定五标签、四邻接，先去重再参与/非中轴覆盖；支持图审查与计数分开，仍默认不可达。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "CandidateModePlan",
+            "assemble_candidate_relations",
+            "assert_pivot_is_not_sole_authority",
+            "validate_candidate_slots"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "rebound_L_candidate_geometry_tests"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_five_candidate.py",
+          "proposed_symbols": [
+            "paired_five_candidate_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "FIVE_CARD_LINE、5唯一槽/卡、pivot2、四邻接、两翼支持；validator通过不改变关闭",
+      "producer_consumer": "synthetic用户几何 -> 候选关系 -> 审计，不到生产generator",
+      "permissions": "另批候选代码/测试；无书本/模式运行授权",
+      "migration": "无",
+      "rollback": "撤候选增量或保持不可达；不改生产数据",
+      "ci_gate": "缺槽/重复/越界/缺邻接、中心独断、重复充计数、两翼反证",
+      "owner_decision": "本站标签依本任务设计；真语义/运行OD-F-02 / OD-F-03 / OD-F-05另批",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-33",
+        "AC-B-34",
+        "AC-B-35"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_five_candidate.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T10",
+      "title": "九牌候选与对角辅助边界",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_nine_candidate.py",
+      "requirements": [
+        "B-LN-R10",
+        "B-LN-R11",
+        "B-LN-R12"
+      ],
+      "depends_on": [
+        "B-LN-T09"
+      ],
+      "owner": "LN九牌候选主人",
+      "work": "复用T09新增候选模块，固定3x3中心/周围集合/横纵；用坐标规则识别正交边、一步对角、跨行；缺对角只去辅助不关闭独立主干。",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "is_orthogonal_edge",
+            "validate_candidate_relation_geometry",
+            "assert_diagonal_is_support_only",
+            "candidate_module_is_imported_by_consumer"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7"
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_nine_candidate.py",
+          "proposed_symbols": [
+            "paired_nine_candidate_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "NINE_CARD_GRID_3X3、center4、ring无向、3row3column、diagonal辅助；priority非语义权重",
+      "producer_consumer": "规范坐标 -> 候选关系 -> 结构/支持审计",
+      "permissions": "另批工程测试，无语义/运行批准",
+      "migration": "无",
+      "rollback": "只回退新增候选分支，不改三牌/DS07原账本",
+      "ci_gate": "12边、一步对角/跨行/远角、ring不定方向、无对角不过挡、中心非独断",
+      "owner_decision": "对角最多辅助且需要具体方法授权，不建议提高职责",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-36",
+        "AC-B-37",
+        "AC-B-38",
+        "AC-B-39"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_nine_candidate.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T11",
+      "title": "未来五九牌分模式开放（当前禁止）",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_mode_activation.py",
+      "requirements": [
+        "B-LN-R09",
+        "B-LN-R10",
+        "B-LN-R13"
+      ],
+      "depends_on": [
+        "B-LN-T08"
+      ],
+      "owner": "爸爸明确授权范围；S02/S03/S04实施",
+      "work": "只有目录/方法/PG/运行权/语义和负例验收全满足才按单模式开放。五九牌独立，九牌对角可单独仍关。候选flag/import不是授权。 Conditional dependencies: FIVE_CARD_LINE requires T09; NINE_CARD_GRID_3X3 requires T10. Neither mode waits for approval of the other mode.",
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+          "existing_symbols": [
+            "ModeSpec",
+            "assert_mode_open"
+          ],
+          "proposed_symbols": [
+            "authorized_mode_release_mapping"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03",
+          "candidate_source_sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03"
+        },
+        {
+          "path": "src/xiaoxingchen_core/demo/catalog.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "reviewed_ln_five_nine_intake_records"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "48fb3325c89b79f3558031fd383ec68fe2ac98c32be97bf5437f8c939f10ec37",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "src/xiaoxingchen_core/demo/cli.py",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "explicit_authorized_ln_factory_injection"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "e9f3d4ee938eee0f3d3e9e584934774b1cb6d7e0429576e714033655b1c55e75",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_mode_activation.py",
+          "proposed_symbols": [
+            "paired_mode_activation_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "模式slug/layout_version/资料release/批准/runtime grant分别绑定；缺必要前提保持关，不能减牌",
+      "producer_consumer": "具体产品/资料授权+已验收实现 -> 服务端策略 -> 显式入口",
+      "permissions": "本轮没有；必须新授权，技术任务不能自动启用",
+      "migration": "不新建来源权威；共享运行DB先由S02/S04完成",
+      "rollback": "关闭相关模式与新运行、撤当次runtime权；不删除历史交付",
+      "ci_gate": "默认都拒绝、单模式不连开、撤回/故障/原文语义验收",
+      "owner_decision": "OD-F-02 / OD-F-03 / OD-F-05分别决定5/9及对角范围，当前未决/关闭",
+      "conditional_dependencies": {
+        "FIVE_CARD_LINE": [
+          "B-LN-T09"
+        ],
+        "NINE_CARD_GRID_3X3": [
+          "B-LN-T10"
+        ]
+      },
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-40",
+        "AC-B-41"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_mode_activation.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "B-LN-T12",
+      "title": "回归CI与可复核交付",
+      "primary_test_path": "tests/sprint48/lenormand/test_b_ci_boundaries.py",
+      "requirements": [
+        "B-LN-R01",
+        "B-LN-R12",
+        "B-LN-R13",
+        "B-LN-R14"
+      ],
+      "depends_on": [
+        "B-LN-T00",
+        "B-LN-T05",
+        "B-LN-T06",
+        "B-LN-T07",
+        "B-LN-T09",
+        "B-LN-T10"
+      ],
+      "owner": "Codex/CI主人",
+      "work": "建立精确写集、源身份、schema差异、synthetic与DB/源语义分轨结果。默认CI不联网/真实provider；每项记真实结果或NOT_RUN，封存manifest/hash。",
+      "write_set": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "lenormand_design_regression_job"
+          ],
+          "target_status": "EXISTING_D",
+          "baseline_sha256": "246d306f5720059dc41ed6d44ae2f0a4834ecabf2e48cd4107b2464d7008ec19",
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "docs/design/lenormand/ACCEPTANCE_RECEIPT.md",
+          "existing_symbols": [],
+          "proposed_symbols": [
+            "observed_command_results_with_scope"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        },
+        {
+          "path": "tests/sprint48/lenormand/test_b_ci_boundaries.py",
+          "proposed_symbols": [
+            "paired_ci_boundaries_controls"
+          ],
+          "target_status": "PROPOSED_NEW",
+          "baseline_sha256": null,
+          "candidate_source_sha256": null
+        }
+      ],
+      "fields_states_failure": "scope/status/baseline/command/result；缺依赖精准作用面；无测试不填PASS",
+      "producer_consumer": "实际代码diff/测试/授权 -> CI证据 -> reviewer",
+      "permissions": "CI改动另批；不连生产DB/provider、不读禁挖资料",
+      "migration": "无",
+      "rollback": "禁新job保留旧安全检查与历史证据",
+      "ci_gate": "正反/过挡有真实结果或明确阻塞；无越界/secret/输入变更",
+      "owner_decision": "技术推荐；远端CI本轮不刷新",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "execution": "NOT_RUN",
+      "baseline_precondition": "D=dfbb7474a664c6c40feb66ef61eb21099b28ecc9 selected bytes; rebind actual target before implementation; L/P are unapplied inputs, not authority",
+      "acceptance_ids": [
+        "AC-B-42",
+        "AC-B-43",
+        "AC-B-44"
+      ],
+      "red_green": {
+        "RED": "Implement paired tests first and record the actual failure against the rebound baseline; never invent an observed red result. If already passing, record and preserve it.",
+        "GREEN": "After separately authorized implementation, run both valid and invalid controls; source/DB-dependent cases remain blocked until prerequisites exist.",
+        "execution": "NOT_RUN"
+      },
+      "commands": [
+        {
+          "command": "python -m pytest -q tests/sprint48/lenormand/test_b_ci_boundaries.py -m 'not integration and not mutation'",
+          "status": "NOT_RUN"
+        }
+      ]
+    }
+  ]
+}

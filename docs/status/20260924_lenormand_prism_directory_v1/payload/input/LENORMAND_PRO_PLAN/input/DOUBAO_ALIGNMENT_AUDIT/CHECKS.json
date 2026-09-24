@@ -1,0 +1,51 @@
+{
+  "artifact": "CHECKS",
+  "generated_utc": "2026-09-23T06:48:14Z",
+  "status_convention": "以 AGENTS §3 为准（CONFIRMED/OUTDATED/PARTIALLY_TRUE/FALSE/UNVERIFIED；PASS/NOT_RUN；DESIGNED_NOT_IMPLEMENTED）",
+  "static_checks": {
+    "governance_hashes": {
+      "PRODUCT_FOUNDATION_REFERENCE_CN.md": {
+        "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+        "match_anchor": true
+      },
+      "AGENTS.md": {
+        "sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8",
+        "match_anchor": true
+      },
+      "SOURCE_LIFECYCLE_CN.md": {
+        "sha256": "5b807f2db1c032ab8e1e48a14f04d9974cdad2a526fc194cc8e0c8779aa6ff1d",
+        "match_anchor": true
+      }
+    },
+    "ancestry": "CONFIRMED: ecdfb895 -> 49b5fb58 -> 1d7eef14 -> 5d771be（直系后代）",
+    "patch_reconciliation": "CONFIRMED: BASE_TO_CANDIDATE.patch 引用 144 文件 == candidate/baseline 实际差异 144，双向差集均 0",
+    "three_locks": "CONFIRMED: runtime_authorized=False(receipts.py ClassVar)；候选 approval=null；mechanism_ref=null",
+    "counts": {
+      "candidate_py": 647,
+      "baseline_py": 562,
+      "pytest_tmp_per_tree": 63,
+      "unreadable_corrupt": 31,
+      "a_plan_tasks": 56,
+      "a_plan_acceptance": 290
+    },
+    "no_ocr_gate": "CONFIRMED: grep 无 OCR 引用，未新增普遍 OCR 硬门",
+    "no_zero_search_shortcut": "CONFIRMED: 无『觉得够了就零搜索』成功路径",
+    "ln_no_orientation": "CONFIRMED: 携带 orientation 键即拒 ORIENTATION_FORBIDDEN",
+    "blind_sealed": "CONFIRMED: BLIND_FINDINGS sha256 2d94eaa7df2db9e8706657dcda4707df571c1b0e3f5aa7e4ab59107456e32792（只读）"
+  },
+  "reopen_verification": {
+    "preseal_zip": {
+      "zip": "_preseal.zip",
+      "sha256": "5a42a86d72213c91d09379fd80f4f5ac2198fa97aeae1ceb795b78ceb555d90e",
+      "bytes": 23645,
+      "members": 11,
+      "testzip_crc_bad": null,
+      "sha256sum_exit": 0,
+      "sha256sum_tail": [
+        "CHECKS.json: OK",
+        "MANIFEST.json: OK"
+      ]
+    },
+    "final_zip": "最终包与预封口仅 CHECKS.reopen 字段不同，结构同构；最终包重开结果见外部 sidecar CHECKPOINT_DOUBAO_ALIGNMENT_AUDIT.zip.sha256 与交付说明（P07 同款，避免自引用）"
+  }
+}

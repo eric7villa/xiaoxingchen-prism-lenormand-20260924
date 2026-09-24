@@ -1,0 +1,313 @@
+{
+  "schema_version": "b-lenormand-interface-requests.v1",
+  "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+  "shared_contract_authority_created": false,
+  "requests": [
+    {
+      "id": "IR-B-LN-01",
+      "title": "内部受权检索与 public 投影分离",
+      "absorb_by": [
+        "S02 检索/领域合同主人",
+        "S04 数据合同主人"
+      ],
+      "tasks": [
+        "B-LN-T02",
+        "B-LN-T03",
+        "B-LN-T05"
+      ],
+      "existing_anchors": [
+        "src/xiaoxingchen_core/domain/evidence.py::LenormandEvidenceItem",
+        "src/xiaoxingchen_core/domain/evidence.py::RetrievalResult",
+        "src/xiaoxingchen_core/domain/evidence.py::PublicRetrievalResult.from_internal",
+        "src/xiaoxingchen_core/retrieval/repository.py::EvidenceRepository",
+        "src/xiaoxingchen_core/mcp/postgres_tools.py::PostgresEvidenceTools"
+      ],
+      "producer": "同一有效性读取边界内的 PostgreSQL 既有发布/投影/批准链",
+      "consumer": "内部 EvidenceRepository -> LN 准入；MCP 继续只消费 public 投影",
+      "candidate_delta": "扩展既有内部读模型，新增 ProjectionConsumptionBinding/EvidenceApprovalBinding 派生载体；不增设独立批准表、不从 public 内容反造身份。",
+      "fields": [
+        "system",
+        "snapshot_id",
+        "projection_id=release_id",
+        "release_sha256",
+        "release_status",
+        "item_id/content_sha256",
+        "candidate_id/candidate_sha256",
+        "review_decision_id/user_approval_id",
+        "query_hash",
+        "contract_version",
+        "lexeme_profile",
+        "source_layer/purpose/scope/usage_boundary",
+        "provenance_ref/source_span_ref"
+      ],
+      "invariants": [
+        "release/snapshot/hash/approval 绑定是同时满足，不是任选一项",
+        "空快照与无匹配项分别判断",
+        "实际批准实值只能来自受权服务端",
+        "public 检索对象不增加上述私有身份"
+      ],
+      "failures": [
+        "保持现有四种 public no-match",
+        "完整性不匹配为拒绝，不伪装无匹配",
+        "旧无绑定内部对象可做结构 fixture，不能进入生产核心门"
+      ],
+      "compatibility": "S02 决定字段版本与兼容窗口；更新实际受影响的 JSON schema 并核查 diff；Tarot 消费行为不得被 LN 字段追加强制约束。",
+      "decision_type": "ENGINEERING_RECOMMENDATION",
+      "recommendation": "采用内部协议实现，不扩张 MCP public 合同；B 只提出合同差量。",
+      "acceptance_ids": [
+        "AC-B-06",
+        "AC-B-07",
+        "AC-B-08",
+        "AC-B-09",
+        "AC-B-10"
+      ]
+    },
+    {
+      "id": "IR-B-LN-02",
+      "title": "最小权限私有读取、快照复核与撤回事务",
+      "absorb_by": [
+        "S04 数据库/权限/运行主人"
+      ],
+      "tasks": [
+        "B-LN-T03",
+        "B-LN-T08"
+      ],
+      "existing_anchors": [
+        "alembic/versions/20260825_0001_foundation.py",
+        "alembic/versions/20260826_0002_foundation_authority.py",
+        "alembic/versions/20260919_0008_reading_delivery_binding_p04.py",
+        "src/xiaoxingchen_core/mcp/postgres_tools.py::PostgresEvidenceTools"
+      ],
+      "anchor_note": "Actual D snapshot paths, hash-bound in INPUT_IDENTITIES.json; referenced SQL functions: publish_candidate, verify_decision_integrity, verify_release_integrity, pin_source_snapshot.",
+      "producer": "受限数据库函数及既有生命周期/运行权威",
+      "consumer": "PROPOSED_NEW PostgresEvidenceRepository 与 LN 调用/交付边界",
+      "candidate_delta": "新增只读受限函数返回最小私有结果；最小执行角色不得读取 raw vault 全表。需要立即停用入口时操作既有发布状态并审计，不建立新的批准台账。",
+      "fields": [
+        "读取角色",
+        "query/snapshot identity",
+        "依赖 item/catalog/method 集",
+        "当次有效性结果",
+        "reading/source binding",
+        "撤回作用范围"
+      ],
+      "invariants": [
+        "pin 同 ID 幂等返回不是持续 ACTIVE 证明",
+        "生成前及交付提交前复核依赖项，不静默换快照",
+        "只撤回相关依赖；可选补充退出须重做受影响主张",
+        "不向 mcp_readonly 放宽 raw/governance 读取"
+      ],
+      "failures": [
+        "过期/撤权/源失效停止当次副作用",
+        "并发撤回不能在已失效源上提交交付",
+        "有限重试且不自动重发运行授权"
+      ],
+      "migration": "需要新的受限函数/授权迁移。任务中的 0010 是 PROPOSED_NEW 预留名；实施时按真实 HEAD 分配，不改历史迁移。",
+      "rollback": "先关闭 LN 新消费入口，再回退自己新增函数/权限；保留既有审计和已交付历史，不恢复已撤回来源。",
+      "decision_type": "ENGINEERING_RECOMMENDATION",
+      "recommendation": "由 S04 冻结事务边界、锁顺序、读模型签名和最小执行角色；B 不执行 SQL。",
+      "acceptance_scope": "T03 全部成对用例及 T08 撤权/零副作用用例；真实 PG17 环境另批授权后验证。"
+    },
+    {
+      "id": "IR-B-LN-03",
+      "title": "目录/方法内容 profile 与多证据支持",
+      "absorb_by": [
+        "S03 LN/来源主人",
+        "S02 证据合同主人"
+      ],
+      "tasks": [
+        "B-LN-T04",
+        "B-LN-T05",
+        "B-LN-T07"
+      ],
+      "existing_anchors": [
+        "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py::LenormandDeckCatalog",
+        "src/xiaoxingchen_core/lenormand_runtime/evidence.py::admit_relation_evidence",
+        "src/xiaoxingchen_core/lenormand_runtime/evidence.py::CoreEvidenceGate",
+        "src/xiaoxingchen_core/domain/evidence.py::LenormandEvidenceItem"
+      ],
+      "producer": "既有 SourceDocument/SourceVersion/SourceSpan/MappingProfile/CandidateItem 经真实审阅发布",
+      "consumer": "PROPOSED_NEW decode_lenormand_payload / ResolvedDeckCatalog / ClaimSupport",
+      "candidate_delta": "用既有 CandidateItem.content 承载严格 ln-catalog-v1 与 ln-method-v1 内容，复用批准链；方法与核心分开检索，允许多条证据形成支持图。",
+      "fields": [
+        "36 个唯一 card_ref",
+        "版次/语言/原文定位",
+        "规范 mode/spread",
+        "显式 relation kind/方向",
+        "适用条件与 scope",
+        "成员支持/方法支持/主张依赖",
+        "来源归属及 synthetic 标志"
+      ],
+      "invariants": [
+        "synthetic 目录永不成为生产 BOUND",
+        "GLOBAL 方法不必绑定具体 cards",
+        "requested scope=None 不通配所有 SCOPED 证据",
+        "没有方法许可不能由三个单牌关键词拼出语法",
+        "Matthews 主干与 Rana 补充分工，不要求每条双作者"
+      ],
+      "failures": [
+        "未知牌表只保留结构；真实目录中未知 ref 精准拒绝",
+        "缺必要方法关闭核心；缺可选补充仅停止该补充",
+        "未知关系不参与解释，不能关闭无关有效关系"
+      ],
+      "decision_type": "MIXED",
+      "engineering_recommendation": "复用来源生命周期和既有内部检索接口；将解码失败、身份失败与主张不足分层。",
+      "father_decisions_only": [
+        "具体原书版本/权利及候选条目的真实资料批准",
+        "任何替代既定主干来源的产品/资料例外"
+      ]
+    },
+    {
+      "id": "IR-B-LN-04",
+      "title": "模式/slug 与本站位置、作者方法分账",
+      "absorb_by": [
+        "S03 LN/布局主人",
+        "S02 入口合同主人"
+      ],
+      "tasks": [
+        "B-LN-T01",
+        "B-LN-T09",
+        "B-LN-T10",
+        "B-LN-T11"
+      ],
+      "existing_anchors": [
+        "src/xiaoxingchen_core/lenormand_runtime/layout.py::ModeSpec",
+        "src/xiaoxingchen_core/lenormand_runtime/contracts.py::LayoutMode",
+        "src/xiaoxingchen_core/demo/catalog.py",
+        "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py"
+      ],
+      "producer": "版本化布局 registry + 本站产品定义 + 具体获准方法",
+      "consumer": "输入适配、结构组装、显式准入策略及入口开关",
+      "candidate_delta": "三牌复用 ln-three；五牌/九牌候选 slug 仅预留，保持默认关闭。本站标签与源中方法各自留证，不以结构 participation 数值授予语义权重。",
+      "fields": [
+        "mode/spread_slug/version",
+        "规范槽/显示位置/抽牌顺序",
+        "relation kind allow-list",
+        "本站标签归属",
+        "method item identity",
+        "每模式授权映射"
+      ],
+      "invariants": [
+        "五牌第三槽是阻力且是中轴，不能单张独断",
+        "九牌横纵主结构，对角仅辅助",
+        "五九独立产品授权，不能相互继承",
+        "三牌不偷用过去/现在/未来；所有模式无逆位"
+      ],
+      "failures": [
+        "缺槽/重复/多余/越界分别拒绝",
+        "步长对角不伪装正交邻接",
+        "改变布尔开关或 import 不构成运行授权"
+      ],
+      "decision_type": "MIXED",
+      "engineering_recommendation": "规范几何与默认关闭先独立实现；真实开放单独批次、单独模式决策。",
+      "father_decisions_only": [
+        "五牌本站语义标签与具体规则的实际启用范围",
+        "九牌具体获准方法和是否采用某条辅助对角方法",
+        "每模式新的运行授权"
+      ]
+    },
+    {
+      "id": "IR-B-LN-05",
+      "title": "LN 专用编排接入既有运行权威",
+      "absorb_by": [
+        "S02 编排/操作载体主人",
+        "S03 LN 主人",
+        "S04 reading authority 主人"
+      ],
+      "tasks": [
+        "B-LN-T08"
+      ],
+      "existing_anchors": [
+        "src/xiaoxingchen_core/stages/ports.py",
+        "src/xiaoxingchen_core/stages/executor.py::TarotStageExecutor",
+        "src/xiaoxingchen_core/domain/reading.py",
+        "src/xiaoxingchen_core/demo/ports.py::DemoRuntimePort",
+        "src/xiaoxingchen_core/lenormand_runtime/runtime.py::LenormandRuntime"
+      ],
+      "producer": "既有运行 grant/TTL/预算/工件/交付机制的 LN 专用操作授权",
+      "consumer": "PROPOSED_NEW LenormandOrchestrator / LenormandDemoRuntimePort",
+      "candidate_delta": "共享主人定义 LN 的准备、组合、现实核对、独立审查、交付操作载体；复用 authority 机制，但不沿用 Tarot R1-R4 职责或另造 B 自签 token。",
+      "fields": [
+        "reading/request id",
+        "system=LENORMAND",
+        "operation",
+        "grant/TTL/budget",
+        "dependency digest",
+        "generation/review artifact identity",
+        "delivery receipt/readback"
+      ],
+      "invariants": [
+        "证据足够与运行授权有效是两个独立条件",
+        "任何必要门失败时模型/研究/写入计数为零",
+        "无研究权不得请求 provider 或伪造成功回执",
+        "本次事实和来源变化使旧工件失效"
+      ],
+      "failures": [
+        "共享操作载体尚未获合同主人吸收，T08 不得擅改 reading.py",
+        "缺原书/授权不会被编排自动补齐",
+        "真实研究失败与未授权关闭分开"
+      ],
+      "required_owner_return": [
+        "具体复用或扩展的接口签名/路径",
+        "LN 操作与预算/TTL 检查位置",
+        "新迁移是否需要",
+        "受控交付与复核原子性",
+        "版本/兼容和每项成对验收"
+      ],
+      "decision_type": "ENGINEERING_RECOMMENDATION",
+      "recommendation": "先吸收共享合同再实施 T08；不等待 A 才完成 B 设计，不以 B 文档强行冻结共享接口。"
+    },
+    {
+      "id": "IR-B-LN-06",
+      "title": "受控公共输出、审查与交付回读",
+      "absorb_by": [
+        "S04 公共投影/交付主人",
+        "S03 LN 输出主人",
+        "S02 工件合同主人"
+      ],
+      "tasks": [
+        "B-LN-T06",
+        "B-LN-T08",
+        "B-LN-T12"
+      ],
+      "existing_anchors": [
+        "src/xiaoxingchen_core/lenormand_runtime/output.py::LenormandOutputPort",
+        "src/xiaoxingchen_core/lenormand_runtime/output.py::LenormandJudgment",
+        "src/xiaoxingchen_core/domain/evidence.py::PublicRetrievalResult",
+        "src/xiaoxingchen_core/stages/executor.py::TarotStageExecutor"
+      ],
+      "producer": "受权生成后的结构化主张、依赖图与独立审查",
+      "consumer": "公共判断投影及既有受控交付/回读机制",
+      "candidate_delta": "私有身份不进入公开正文，优先不进入生成上下文；递归键和值检查真实身份，保留合法自然词。复用交付工件机制，不复用 Tarot 语义阶段。",
+      "fields": [
+        "条件性主判断",
+        "用户事实/未知项",
+        "路径与阻力",
+        "替代解释",
+        "验证信号与退出",
+        "source dependency digest (private only)",
+        "review/delivery receipt (private only)"
+      ],
+      "invariants": [
+        "intent 不因内部 id=in 被全局禁止",
+        "正常提牌名不等于逐牌词典",
+        "实际私有身份、键和值泄漏都拒绝",
+        "删泄漏字符串后不能直接宣称正文可交付",
+        "输出结构通过不证明语义与用户事实正确"
+      ],
+      "failures": [
+        "来源撤回或 grant 失效，停止交付",
+        "造用户长期画像/事实需审查拒绝，不以顶层字段黑名单自证解决",
+        "没有可用 path 时诚实说明，不强迫伪造方案"
+      ],
+      "decision_type": "ENGINEERING_RECOMMENDATION",
+      "recommendation": "优先采用 P 的键值/casefold 改善但补足 Unicode/短 ID 对照；完整受权消费仍必须靠上游真身份与隔离，不把字符串过滤当全部安全。"
+    }
+  ],
+  "candidate_surface_corrections": [
+    {
+      "request": "IR-B-LN-03",
+      "anchor": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py::LenormandDeckCatalog",
+      "surface": "L_CANDIDATE_NOT_D"
+    }
+  ]
+}

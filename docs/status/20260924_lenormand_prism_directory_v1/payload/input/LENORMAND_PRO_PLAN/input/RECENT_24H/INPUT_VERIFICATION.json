@@ -1,0 +1,72 @@
+{
+  "scope": "TRANSPORT_IDENTITY_ONLY_NOT_SOURCE_APPROVAL",
+  "checks": [
+    {
+      "check": "S00_1097_IDENTITY_REBIND",
+      "status": "PASS",
+      "checked": 1097,
+      "failures": []
+    },
+    {
+      "check": "S00_ZIP_SEAL",
+      "status": "PASS",
+      "payload_members": 26,
+      "zip_members": 28,
+      "failures": [],
+      "crc_bad_member": null
+    },
+    {
+      "check": "BASE_MANIFEST",
+      "status": "PASS",
+      "entries": 1058,
+      "failures": []
+    },
+    {
+      "check": "RESTART_MANIFEST",
+      "status": "PASS",
+      "entries": 35,
+      "failures": []
+    },
+    {
+      "check": "BASE_RECEIVED_INDEX",
+      "status": "PASS",
+      "entries": 1057,
+      "failures": []
+    },
+    {
+      "check": "SNAPSHOT_COUNTS",
+      "status": "PASS",
+      "snapshots": [
+        {
+          "name": "main",
+          "commit": "ecdfb895fcbbc3f80cc97269388bc0111bc999e0",
+          "files": 271,
+          "declared_files": 271,
+          "matches": true
+        },
+        {
+          "name": "d_candidate",
+          "commit": "dfbb7474a664c6c40feb66ef61eb21099b28ecc9",
+          "files": 392,
+          "declared_files": 392,
+          "matches": true
+        }
+      ],
+      "scope": "MANIFEST_HASH_BOUND_NOT_LIVE_GIT"
+    },
+    {
+      "check": "CHECKPOINT_FROZEN_INPUTS",
+      "status": "PASS",
+      "files": 58,
+      "basis": "outer manifest checks and final unchanged-byte check"
+    },
+    {
+      "check": "ORIGINAL_ZIP_VS_BASE",
+      "status": "PASS",
+      "file_members": 1060,
+      "filename_utf8_recoveries": 1,
+      "failures": [],
+      "crc_bad_member": null
+    }
+  ]
+}

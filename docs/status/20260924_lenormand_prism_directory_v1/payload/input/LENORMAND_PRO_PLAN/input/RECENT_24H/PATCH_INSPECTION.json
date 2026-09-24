@@ -1,0 +1,168 @@
+[
+  {
+    "patch": "base/candidates/LENORMAND.diff",
+    "sha256": "351271ca27cc5ae756dc8c10619a878344feaaced2f14bb1351695adeb25858f",
+    "method": "STDLIB_UNIFIED_DIFF_CONTEXT_CHECK_AND_IN_MEMORY_RECONSTRUCTION_NO_TARGET_FILES_WRITTEN",
+    "files": [
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4",
+        "D_sha256": "3ea39d21b6446524de599b03b5cafaa97e3a2a1a50dccbb3b3a568ff07bc3e9c",
+        "LN_sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+        "D_sha256": "975324f278e6e23c23b23df7ae1d6b5c136cf1b480dffea8f9f0a9c9575bb10b",
+        "LN_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+        "D_sha256": "7df63e27250171232699ef9a721db6f2f52030a81b3d5e61e56e319a51837966",
+        "LN_sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7",
+        "D_sha256": null,
+        "LN_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b",
+        "D_sha256": "5bde1cdd632011b5bae650bdcc1c3f8c754dfdbbb8727cc74198cec2588b72ee",
+        "LN_sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+        "D_sha256": "6ff24eb9e66c86529afb2969c5db57715605f45862dd37ffddf63454ea11b2b3",
+        "LN_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+        "D_sha256": "a1402a676e87cf1fda381bdc854444ff0dca4f39c91fe7fe35a11d81560a6b38",
+        "LN_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+        "D_sha256": null,
+        "LN_sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+        "D_sha256": null,
+        "LN_sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+        "equals_LN_candidate": true
+      }
+    ]
+  },
+  {
+    "patch": "base/candidates/DS_INTEGRATED/patches/0002-lenormand-port.patch",
+    "sha256": "8e10ef0b567e46aa3b6bd6c697e73d0e85e36230ef1a7e6e9bc80e24ebcf150d",
+    "method": "STDLIB_UNIFIED_DIFF_CONTEXT_CHECK_AND_IN_MEMORY_RECONSTRUCTION_NO_TARGET_FILES_WRITTEN",
+    "files": [
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4",
+        "D_sha256": "3ea39d21b6446524de599b03b5cafaa97e3a2a1a50dccbb3b3a568ff07bc3e9c",
+        "LN_sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+        "D_sha256": "975324f278e6e23c23b23df7ae1d6b5c136cf1b480dffea8f9f0a9c9575bb10b",
+        "LN_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+        "D_sha256": "7df63e27250171232699ef9a721db6f2f52030a81b3d5e61e56e319a51837966",
+        "LN_sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7",
+        "D_sha256": null,
+        "LN_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "790f7d1b8fcc01208407db59e10740fd128c1b8ea2db1f12ba30dd9a54d8d816",
+        "D_sha256": "5bde1cdd632011b5bae650bdcc1c3f8c754dfdbbb8727cc74198cec2588b72ee",
+        "LN_sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b",
+        "equals_LN_candidate": false
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+        "D_sha256": "6ff24eb9e66c86529afb2969c5db57715605f45862dd37ffddf63454ea11b2b3",
+        "LN_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+        "D_sha256": "a1402a676e87cf1fda381bdc854444ff0dca4f39c91fe7fe35a11d81560a6b38",
+        "LN_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "tests/sprint48/lenormand/test_ds_integration_output_leak_hardening.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "e3ca263d3d12a3c6911f9731aaefb7b58fa9ab31d650c2d845e41be6d280a16e",
+        "D_sha256": null,
+        "LN_sha256": null,
+        "equals_LN_candidate": null
+      },
+      {
+        "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+        "D_sha256": null,
+        "LN_sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+        "equals_LN_candidate": true
+      },
+      {
+        "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+        "context_match": "PASS",
+        "reconstructed_sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+        "D_sha256": null,
+        "LN_sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+        "equals_LN_candidate": true
+      }
+    ]
+  }
+]

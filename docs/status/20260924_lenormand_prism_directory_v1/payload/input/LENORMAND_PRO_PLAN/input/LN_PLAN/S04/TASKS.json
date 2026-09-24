@@ -1,0 +1,2990 @@
+{
+  "stage": "S04",
+  "tasks": [
+    {
+      "id": "S04-T01",
+      "title": "final R2 seed、先沟通后解决与kind/channel分轴",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "A08",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 20,
+            "end_line": 20,
+            "byte_start": 1656,
+            "byte_end_exclusive": 1833,
+            "span_sha256": "b7545aee935cc3eec40498713810f9d9c2329bb5736b48f28cd247110c7aa21c",
+            "text": "| A08 | R3 每题强制联网，不允许模型自证“不需要搜” | R3 Incident、Father Decisions | COVERED | COVERED | O-RESEARCH；no-search 路径类型层不可达 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R3 每题强制联网，不允许模型自证“不需要搜”"
+        },
+        {
+          "id": "V23-06",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 13,
+            "end_line": 13,
+            "byte_start": 914,
+            "byte_end_exclusive": 1035,
+            "span_sha256": "935b82312a8de0e44fe8ea84374a6b8ff016f3fa4eae232cfd77b4accb3bb4e6",
+            "text": "| V23-06 | R2 形成可研究的现象包/ResearchSeedPacket | 交研究问题和未知项，不直接替 R3 选答案 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R2 形成可研究的现象包/ResearchSeedPacket"
+        },
+        {
+          "id": "V23-07",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 14,
+            "end_line": 14,
+            "byte_start": 1035,
+            "byte_end_exclusive": 1158,
+            "span_sha256": "d1c7538fd0b89a72771d776980021b217cb8a3ffcb0aefd67cfb0a0e55e3961e",
+            "text": "| V23-07 | R3 先查降维沟通，再查升维解决 | 两步顺序写进状态/查询合同，不能只做泛泛搜索 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R3 先查降维沟通，再查升维解决"
+        },
+        {
+          "id": "V23-08",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 15,
+            "end_line": 15,
+            "byte_start": 1158,
+            "byte_end_exclusive": 1306,
+            "span_sha256": "d12f36082f8e6c6cc0fa198d7110fdb807b91136f85542a134765fa11e570f61",
+            "text": "| V23-08 | 降维沟通必须落到用户听得懂、说得出、做得到 | 至少有当次话术/动作/流程，不接受“多沟通”空话 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "降维沟通必须落到用户听得懂、说得出、做得到"
+        },
+        {
+          "id": "V23-09",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 16,
+            "end_line": 16,
+            "byte_start": 1306,
+            "byte_end_exclusive": 1451,
+            "span_sha256": "e5d1f8b8e1ef6eff32fedd7df3c0ac32841fc209c3c3218fd8aaea4f3a6cb54d",
+            "text": "| V23-09 | 升维解决必须改变问题结构并可验证、可退出、可迁移 | 有机制、动作、验证信号、代价/边界/退出 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "升维解决必须改变问题结构并可验证、可退出、可迁移"
+        },
+        {
+          "id": "V23-17",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 24,
+            "end_line": 24,
+            "byte_start": 2381,
+            "byte_end_exclusive": 2478,
+            "span_sha256": "13738fbdf8693aeab32c36156ad69bd1392bf105005bf7ae5dad92f3f75dadc0",
+            "text": "| V23-17 | 不新增成本层、R5 或第五阶段 | 现实成本/选择/验证是答案内容 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "不新增成本层、R5 或第五阶段"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/domain/research.py",
+          "symbols": [
+            "ResearchRunResult",
+            "ResearchLegResult",
+            "ResearchSeedPacket",
+            "KindOutcome"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "03e461288152bffb1e3d1d0bc16be6de36f72566789fce0000c6c309d77335f3",
+              "symbol_anchors": [
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "ResearchLegResult",
+                  "line_start": 196,
+                  "line_end": 235,
+                  "file_sha256": "03e461288152bffb1e3d1d0bc16be6de36f72566789fce0000c6c309d77335f3",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "ResearchRunResult",
+                  "line_start": 238,
+                  "line_end": 294,
+                  "file_sha256": "03e461288152bffb1e3d1d0bc16be6de36f72566789fce0000c6c309d77335f3",
+                  "kind": "ClassDef"
+                }
+              ]
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "c7645b6160b7ed03adb1722c0feba9bff20e6862b44ab22425ba58886c636521",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "ResearchLegResult",
+                  "line_start": 197,
+                  "line_end": 236,
+                  "file_sha256": "c7645b6160b7ed03adb1722c0feba9bff20e6862b44ab22425ba58886c636521",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "ResearchRunResult",
+                  "line_start": 239,
+                  "line_end": 295,
+                  "file_sha256": "c7645b6160b7ed03adb1722c0feba9bff20e6862b44ab22425ba58886c636521",
+                  "kind": "ClassDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [
+            "ResearchSeedPacket",
+            "KindOutcome"
+          ],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/seed.py",
+          "symbols": [
+            "build_research_seed",
+            "validate_final_r2_binding"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "build_research_seed",
+            "validate_final_r2_binding"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/gate.py",
+          "symbols": [
+            "LegPreflightDecision",
+            "preflight_leg"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "6aaffd949c8d7b7d326198862fda9648bb8ff58e59b564910a20929548205b95",
+              "symbol_anchors": [
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/research/gate.py",
+                  "symbol": "LegPreflightDecision",
+                  "line_start": 44,
+                  "line_end": 66,
+                  "file_sha256": "6aaffd949c8d7b7d326198862fda9648bb8ff58e59b564910a20929548205b95",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/research/gate.py",
+                  "symbol": "preflight_leg",
+                  "line_start": 69,
+                  "line_end": 92,
+                  "file_sha256": "6aaffd949c8d7b7d326198862fda9648bb8ff58e59b564910a20929548205b95",
+                  "kind": "FunctionDef"
+                }
+              ]
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "4ec35ed93e48d8bf0ecae39518023e545724a3293786e63b8b2721557a645ebb",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/research/gate.py",
+                  "symbol": "LegPreflightDecision",
+                  "line_start": 46,
+                  "line_end": 68,
+                  "file_sha256": "4ec35ed93e48d8bf0ecae39518023e545724a3293786e63b8b2721557a645ebb",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/research/gate.py",
+                  "symbol": "preflight_leg",
+                  "line_start": 71,
+                  "line_end": 94,
+                  "file_sha256": "4ec35ed93e48d8bf0ecae39518023e545724a3293786e63b8b2721557a645ebb",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t01.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/domain/research.py",
+        "src/xiaoxingchen_core/research/seed.py",
+        "src/xiaoxingchen_core/research/gate.py",
+        "tests/final_plan/s04_t01.py"
+      ],
+      "depends_on": [
+        "S02-T05"
+      ],
+      "work": [
+        "只接S02最终一致R2及IC-05，不从原始topic绕开R2或循环喂回Mentor",
+        "先针对可理解/可说/可做的降维目标准备查询与证据适用，再处理改变结构/验证/退出的升维目标；支持同份已获取证据显式共享，不重复完整梯",
+        "多channel attempts与两kind结论分轴，AVAILABLE preflight无supported终态；network-not-authorized有准确独立原因",
+        "kind缺证据就保留无支持，不用某一kind成功掩盖另一个失败；事实层完整，route只归约"
+      ],
+      "input_contracts": [
+        "IC-05 + frozen R2 + authority/budget policy"
+      ],
+      "output_contracts": [
+        "validated ResearchSeedPacket + ordered GoalPlan",
+        "PREFLIGHT facts distinct from terminal evidence"
+      ],
+      "interface_ids": [
+        "IC-05",
+        "IC-12"
+      ],
+      "states_and_failures": [
+        "validated ResearchSeedPacket + ordered GoalPlan",
+        "PREFLIGHT facts distinct from terminal evidence"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T01-P1",
+        "AC-S04-T01-P2",
+        "AC-S04-T01-N1",
+        "AC-S04-T01-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t01.py::test_s04_t01_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t01.py::test_s04_t01_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t01.py::test_s04_t01_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t01.py::test_s04_t01_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T02",
+      "title": "两条独立MCP通道、重试和预算粒度闭合",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "A09",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 21,
+            "end_line": 21,
+            "byte_start": 1833,
+            "byte_end_exclusive": 1994,
+            "span_sha256": "fe03253dd030dffaf714c528d73cc701774570a667222ef7cdbb7963b8a8086d",
+            "text": "| A09 | Grok 3 次后 Tavily 独立 search+fetch 3 次；2s/8s | Father Current Decisions | COVERED | COVERED | O-RESEARCH；Provider 状态机与重试合同 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Grok 3 次后 Tavily 独立 search+fetch 3 次；2s/8s"
+        },
+        {
+          "id": "A10",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 22,
+            "end_line": 22,
+            "byte_start": 1994,
+            "byte_end_exclusive": 2150,
+            "span_sha256": "2f6eddb2f6f7b5b13dbcd1da67ea28eaadfb40ec341760cb90089ea81a29fab0",
+            "text": "| A10 | 两路失败只给 R1/R2；搜索成功无解是另一结果 | Father Decisions | COVERED | COVERED | O-RESEARCH/O-OUTPUT；状态与文案分离 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "两路失败只给 R1/R2；搜索成功无解是另一结果"
+        },
+        {
+          "id": "V23-10",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 17,
+            "end_line": 17,
+            "byte_start": 1451,
+            "byte_end_exclusive": 1594,
+            "span_sha256": "7d9382c7ba2add452943fb13d42a0abcb6b60f2c96a916b6219ba163e94d26e3",
+            "text": "| V23-10 | Grok 与 Tavily 都通过 MCP，但职责和故障必须独立 | Grok 失败时 Tavily 可独立 search+fetch；有独立 receipt |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Grok 与 Tavily 都通过 MCP，但职责和故障必须独立"
+        },
+        {
+          "id": "V23-11",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 18,
+            "end_line": 18,
+            "byte_start": 1594,
+            "byte_end_exclusive": 1735,
+            "span_sha256": "7e7dd47e0549f1baf609a7b13cab4a0d508130b0cf6ee977b40db63dec4ae277",
+            "text": "| V23-11 | MCP 设计必须比较至少两种物理拓扑 | 比较故障、权限、凭据、测试、回滚；不直接复制参考项目 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "MCP 设计必须比较至少两种物理拓扑"
+        },
+        {
+          "id": "X-010",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 37,
+            "end_line": 47,
+            "byte_start": 2251,
+            "byte_end_exclusive": 3122,
+            "span_sha256": "4e6c2635b7bfcea2b3c5ddc0706096b9aa273027d6e8dd548f99b05b119eb2d7",
+            "text": "### R3｜强制现实研究并透过现象说本质\n\n每个合法读牌 run 都必须根据 R2 phenomenon 进入现实研究状态，不存在“模型觉得资料\n够了所以零搜索”的成功路径。先使用 Grok Search，首次失败后再重试 2 次，退避为\n2s / 8s；Grok 仍失败后，Tavily 作为独立的 search + fetch 通道运行，同样最多 3 次并\n使用 2s / 8s。两路必须可独立工作，一路故障不能使另一路失效。\n\n两路都失败时，必须明确说明联网失败，并只用已有 R1/R2 内容作答；不得用模型记忆或\n伪造来源补齐。研究成功但没有可靠解决办法也是合法结果，必须与联网失败分开表达。\nConsultation Method 属 R3 解法层，只能在 R1/R2 coherent 后按当次机制使用；它不得\n替代强制联网，准确装配时序由后续实施合同冻结。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "研究失败、无可靠解法、Provider关闭分别报告"
+        },
+        {
+          "id": "X-023",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 37,
+            "end_line": 47,
+            "byte_start": 2251,
+            "byte_end_exclusive": 3122,
+            "span_sha256": "4e6c2635b7bfcea2b3c5ddc0706096b9aa273027d6e8dd548f99b05b119eb2d7",
+            "text": "### R3｜强制现实研究并透过现象说本质\n\n每个合法读牌 run 都必须根据 R2 phenomenon 进入现实研究状态，不存在“模型觉得资料\n够了所以零搜索”的成功路径。先使用 Grok Search，首次失败后再重试 2 次，退避为\n2s / 8s；Grok 仍失败后，Tavily 作为独立的 search + fetch 通道运行，同样最多 3 次并\n使用 2s / 8s。两路必须可独立工作，一路故障不能使另一路失效。\n\n两路都失败时，必须明确说明联网失败，并只用已有 R1/R2 内容作答；不得用模型记忆或\n伪造来源补齐。研究成功但没有可靠解决办法也是合法结果，必须与联网失败分开表达。\nConsultation Method 属 R3 解法层，只能在 R1/R2 coherent 后按当次机制使用；它不得\n替代强制联网，准确装配时序由后续实施合同冻结。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Grok3与Tavily3独立预算及退避"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/providers.py",
+          "symbols": [
+            "ProviderLegClient.dispatch",
+            "PayloadComposer",
+            "UnavailablePayloadComposer"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "65d5e7675e7a96f6c7b2e0077259b8a8ada11708f7f1594418ef136f03911953",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/providers.py",
+                  "symbol": "PayloadComposer",
+                  "line_start": 143,
+                  "line_end": 144,
+                  "file_sha256": "65d5e7675e7a96f6c7b2e0077259b8a8ada11708f7f1594418ef136f03911953",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/providers.py",
+                  "symbol": "UnavailablePayloadComposer",
+                  "line_start": 147,
+                  "line_end": 152,
+                  "file_sha256": "65d5e7675e7a96f6c7b2e0077259b8a8ada11708f7f1594418ef136f03911953",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/providers.py",
+                  "symbol": "ProviderLegClient.dispatch",
+                  "line_start": 235,
+                  "line_end": 345,
+                  "file_sha256": "65d5e7675e7a96f6c7b2e0077259b8a8ada11708f7f1594418ef136f03911953",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/ladder.py",
+          "symbols": [
+            "RunChannelLedger",
+            "assert_single_run_ledger"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "4c188bf965f3b11f53336e35412632fc3a3544e9cf74c77a760c28b79f37cd02",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/ladder.py",
+                  "symbol": "RunChannelLedger",
+                  "line_start": 51,
+                  "line_end": 76,
+                  "file_sha256": "4c188bf965f3b11f53336e35412632fc3a3544e9cf74c77a760c28b79f37cd02",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/ladder.py",
+                  "symbol": "assert_single_run_ledger",
+                  "line_start": 79,
+                  "line_end": 88,
+                  "file_sha256": "4c188bf965f3b11f53336e35412632fc3a3544e9cf74c77a760c28b79f37cd02",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/coordinator.py",
+          "symbols": [
+            "ResearchCoordinator",
+            "ChannelAttemptPlanner"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "ResearchCoordinator",
+            "ChannelAttemptPlanner"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t02.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/runtime_adapters/providers.py",
+        "src/xiaoxingchen_core/runtime_adapters/ladder.py",
+        "src/xiaoxingchen_core/research/coordinator.py",
+        "tests/final_plan/s04_t02.py"
+      ],
+      "depends_on": [
+        "S04-T01"
+      ],
+      "work": [
+        "按IC-12用唯一run账本；Grok最多3尝试/2s8s，失败后Tavily独立search+fetch最多3，不依赖GrokURL",
+        "分别计logical attempt与每次wire send，发送前DB原子reserve/CAS；旧per-leg reservation不能包裹不限重试",
+        "定义compound search+fetch与strict outbound两种显式budget_unit兼容见BUDGET_ACCOUNTING.md；本次推荐新版本compound+独立wire cap，旧grant不自动扩量",
+        "超时/5xx预算内退避；429/鉴权/合同错误终止本通道，不取消另一通道；body schema错不得当无解",
+        "provider API文档profile未在包内，保持UnavailablePayloadComposer，接口及验收先固定"
+      ],
+      "input_contracts": [
+        "ResearchSeedPacket + two independently sealed channel profiles"
+      ],
+      "output_contracts": [
+        "all channel attempts facts",
+        "Grok exhausted then Tavily independent fallback",
+        "accurate partial/failure/no-support result"
+      ],
+      "interface_ids": [
+        "IC-12",
+        "IC-14"
+      ],
+      "states_and_failures": [
+        "all channel attempts facts",
+        "Grok exhausted then Tavily independent fallback",
+        "accurate partial/failure/no-support result"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T02-P1",
+        "AC-S04-T02-P2",
+        "AC-S04-T02-N1",
+        "AC-S04-T02-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t02.py::test_s04_t02_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t02.py::test_s04_t02_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t02.py::test_s04_t02_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t02.py::test_s04_t02_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 16,
+        "conservative": 28,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T03",
+      "title": "实际出站去标识、逐跳SSRF与资源门",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "D04",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 89,
+            "end_line": 89,
+            "byte_start": 11389,
+            "byte_end_exclusive": 11559,
+            "span_sha256": "aeedcb2658acd765ebd495edc20b689994cdbf1a286e73c4fe78ce3def1512d0",
+            "text": "| D04 | MCP command/cwd/environment、DB URL/role、transport 要 allowlist | A1 current-byte finding | MISSING | 补后 PARTIAL | O-MCP threat model + DeepSeek 审查 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "MCP command/cwd/environment、DB URL/role、transport 要 allowlist"
+        },
+        {
+          "id": "D12",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 97,
+            "end_line": 97,
+            "byte_start": 12644,
+            "byte_end_exclusive": 12800,
+            "span_sha256": "7a6f2c3edeb7d67c361a928ffdcd9aa5a71973dc42a7ae083cf588e1d8f28440",
+            "text": "| D12 | R3 worker 防 SSRF、DNS rebinding、重定向、注入、PII、资源耗尽 | Old plan | COVERED | PARTIAL | O-RESEARCH + DeepSeek threat review |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R3 worker 防 SSRF、DNS rebinding、重定向、注入、PII、资源耗尽"
+        },
+        {
+          "id": "X-023",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 37,
+            "end_line": 47,
+            "byte_start": 2251,
+            "byte_end_exclusive": 3122,
+            "span_sha256": "4e6c2635b7bfcea2b3c5ddc0706096b9aa273027d6e8dd548f99b05b119eb2d7",
+            "text": "### R3｜强制现实研究并透过现象说本质\n\n每个合法读牌 run 都必须根据 R2 phenomenon 进入现实研究状态，不存在“模型觉得资料\n够了所以零搜索”的成功路径。先使用 Grok Search，首次失败后再重试 2 次，退避为\n2s / 8s；Grok 仍失败后，Tavily 作为独立的 search + fetch 通道运行，同样最多 3 次并\n使用 2s / 8s。两路必须可独立工作，一路故障不能使另一路失效。\n\n两路都失败时，必须明确说明联网失败，并只用已有 R1/R2 内容作答；不得用模型记忆或\n伪造来源补齐。研究成功但没有可靠解决办法也是合法结果，必须与联网失败分开表达。\nConsultation Method 属 R3 解法层，只能在 R1/R2 coherent 后按当次机制使用；它不得\n替代强制联网，准确装配时序由后续实施合同冻结。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Grok3与Tavily3独立预算及退避"
+        },
+        {
+          "id": "X-048",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "planning/baseline_rebind/HANDOFF_DELTA_AND_CORRECTIONS_CN.md",
+            "sha256": "1f7a31ff53a4de2e3b2b5ce32519b713db33acec225296a78497da46e11e20bc",
+            "start_line": 48,
+            "end_line": 50,
+            "byte_start": 5773,
+            "byte_end_exclusive": 6490,
+            "span_sha256": "0c94e3cb4273d2d60ebd90b4c75d2f09f38d573263d2818ca55cd9970d24bd7d",
+            "text": "用户明确要求向已打开Fable会话输入任务。终端只读接口确认目标在TarotEngine、停于attempt_015。UI工具拒绝控制Terminal/Codex；随后写 /dev/ttys006 的尝试仅产生输出回显，未证明Fable收到任务。`FABLE_PROMPT_INJECTED`/`ENTER_SENT`不是接收回执。停止这种通道，不再尝试注入、重启或绕过。\n\n该排查过程中不恰当地读取了宿主会话资料及本地peer认证文件，并将认证内容带入工具输出，超出任务所需。任何交接文件都不得复制其值，也不得利用其socket/key进行通信。后续只用获准接口或用户手工输入。Fable任务尚未确认启动，dispatch_status=NOT_SUBMITTED_CONFIRMED。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "交接不得使用宿主秘密或绕过被拒接口"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/research/deidentify.py",
+          "symbols": [
+            "deidentify_query",
+            "dispatch_with_reservation"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "7396c50ee447e58032b5cea785514d49bdb1fa6e68b508797d98e52de67bc649",
+              "symbol_anchors": [
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/research/deidentify.py",
+                  "symbol": "deidentify_query",
+                  "line_start": 187,
+                  "line_end": 206,
+                  "file_sha256": "7396c50ee447e58032b5cea785514d49bdb1fa6e68b508797d98e52de67bc649",
+                  "kind": "FunctionDef"
+                }
+              ]
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "e3f5e61ce35da1ce356251c91940d776a662dcb9cc2cfb9e52f33703c7a0194a",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/research/deidentify.py",
+                  "symbol": "deidentify_query",
+                  "line_start": 188,
+                  "line_end": 207,
+                  "file_sha256": "e3f5e61ce35da1ce356251c91940d776a662dcb9cc2cfb9e52f33703c7a0194a",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/research/deidentify.py",
+                  "symbol": "dispatch_with_reservation",
+                  "line_start": 289,
+                  "line_end": 321,
+                  "file_sha256": "e3f5e61ce35da1ce356251c91940d776a662dcb9cc2cfb9e52f33703c7a0194a",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/guards.py",
+          "symbols": [
+            "HostGuard.guard",
+            "parse_https_url",
+            "assert_public_address"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "f72c1faad60439d05cef2d481837c18d28383cdd49bd4a84544be2beba2bb6ba",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/guards.py",
+                  "symbol": "parse_https_url",
+                  "line_start": 111,
+                  "line_end": 141,
+                  "file_sha256": "f72c1faad60439d05cef2d481837c18d28383cdd49bd4a84544be2beba2bb6ba",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/guards.py",
+                  "symbol": "assert_public_address",
+                  "line_start": 144,
+                  "line_end": 166,
+                  "file_sha256": "f72c1faad60439d05cef2d481837c18d28383cdd49bd4a84544be2beba2bb6ba",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/guards.py",
+                  "symbol": "HostGuard.guard",
+                  "line_start": 183,
+                  "line_end": 193,
+                  "file_sha256": "f72c1faad60439d05cef2d481837c18d28383cdd49bd4a84544be2beba2bb6ba",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/transport.py",
+          "symbols": [
+            "GuardedTransport.fetch",
+            "ConnectionPort"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "c8ff5c5eab2eef059647a5beed84470f529bf0db9f97bfe060d7fa5fe320ed29",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/transport.py",
+                  "symbol": "ConnectionPort",
+                  "line_start": 122,
+                  "line_end": 125,
+                  "file_sha256": "c8ff5c5eab2eef059647a5beed84470f529bf0db9f97bfe060d7fa5fe320ed29",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/transport.py",
+                  "symbol": "GuardedTransport.fetch",
+                  "line_start": 180,
+                  "line_end": 202,
+                  "file_sha256": "c8ff5c5eab2eef059647a5beed84470f529bf0db9f97bfe060d7fa5fe320ed29",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/egress_policy.py",
+          "symbols": [
+            "validate_redacted_payload",
+            "allow_public_fetch_target"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "validate_redacted_payload",
+            "allow_public_fetch_target"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t03.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/research/deidentify.py",
+        "src/xiaoxingchen_core/runtime_adapters/guards.py",
+        "src/xiaoxingchen_core/runtime_adapters/transport.py",
+        "src/xiaoxingchen_core/research/egress_policy.py",
+        "tests/final_plan/s04_t03.py"
+      ],
+      "depends_on": [
+        "S04-T01",
+        "S04-T02"
+      ],
+      "work": [
+        "seed只携机制/非识别现实约束，去人名/精地址/电话/长期画像/牌名/内部资料标识；保留必要两周等范围事实，不全删导致无效问题",
+        "对组合后实际发送body/path/query/非秘密headers再扫；credential注入仅受信连接层，日志无secret",
+        "DNS所有地址公网上验证并pin连接，Host/SNI/TLS验证原host；每redirect解析相对URL、重验域/IP/预算，不跨origin转发Authorization/Cookie",
+        "空allowlist在real profile表示deny-all；主动选定检索结果公网页面进入单run短期fetch范围，不开放任意URL",
+        "流式限制压缩/解压后bytes、wall time、content type、并发与总bytes，不等完全读取再截断为证据"
+      ],
+      "input_contracts": [
+        "redacted seed + sealed egress grant + trusted DNS/connection ports"
+      ],
+      "output_contracts": [
+        "guarded outbound request with payload hash",
+        "PREOUTBOUND_REFUSED or actual attempt fact"
+      ],
+      "interface_ids": [
+        "IC-14"
+      ],
+      "states_and_failures": [
+        "guarded outbound request with payload hash",
+        "PREOUTBOUND_REFUSED or actual attempt fact"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T03-P1",
+        "AC-S04-T03-P2",
+        "AC-S04-T03-N1",
+        "AC-S04-T03-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t03.py::test_s04_t03_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t03.py::test_s04_t03_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t03.py::test_s04_t03_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t03.py::test_s04_t03_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 14,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T04",
+      "title": "真实attempt/receipt/claim绑定和迟到回包",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "D11",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 96,
+            "end_line": 96,
+            "byte_start": 12505,
+            "byte_end_exclusive": 12644,
+            "span_sha256": "ddd1eb0e8da1f12c17398a3d844ab66a9ffbc04c550fdfddc04437cb2b361527",
+            "text": "| D11 | artifact/claim/manifest/JCS/replay/TTL 全链可重算 | Old plan/O-W1 | COVERED | COVERED | O-RUNTIME/O-OUTPUT；CANON-1 对拍 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "artifact/claim/manifest/JCS/replay/TTL 全链可重算"
+        },
+        {
+          "id": "D12",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 97,
+            "end_line": 97,
+            "byte_start": 12644,
+            "byte_end_exclusive": 12800,
+            "span_sha256": "7a6f2c3edeb7d67c361a928ffdcd9aa5a71973dc42a7ae083cf588e1d8f28440",
+            "text": "| D12 | R3 worker 防 SSRF、DNS rebinding、重定向、注入、PII、资源耗尽 | Old plan | COVERED | PARTIAL | O-RESEARCH + DeepSeek threat review |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R3 worker 防 SSRF、DNS rebinding、重定向、注入、PII、资源耗尽"
+        },
+        {
+          "id": "F12",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 144,
+            "end_line": 144,
+            "byte_start": 19477,
+            "byte_end_exclusive": 19666,
+            "span_sha256": "f4c2426a928e8dcfc2908ec434e69f821090005ab831adf14a858a5109b89f74",
+            "text": "| F12 | 生产 worker/provider/host 身份必须现场从 site map/runbook 核验，不能按历史标签猜 | `docs/ai_worker_linux.md` | PARTIAL | MISSING | O-X8/P13 现场核验清单 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "生产 worker/provider/host 身份必须现场从 site map/runbook 核验，不能按历史标签猜"
+        },
+        {
+          "id": "X-010",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 37,
+            "end_line": 47,
+            "byte_start": 2251,
+            "byte_end_exclusive": 3122,
+            "span_sha256": "4e6c2635b7bfcea2b3c5ddc0706096b9aa273027d6e8dd548f99b05b119eb2d7",
+            "text": "### R3｜强制现实研究并透过现象说本质\n\n每个合法读牌 run 都必须根据 R2 phenomenon 进入现实研究状态，不存在“模型觉得资料\n够了所以零搜索”的成功路径。先使用 Grok Search，首次失败后再重试 2 次，退避为\n2s / 8s；Grok 仍失败后，Tavily 作为独立的 search + fetch 通道运行，同样最多 3 次并\n使用 2s / 8s。两路必须可独立工作，一路故障不能使另一路失效。\n\n两路都失败时，必须明确说明联网失败，并只用已有 R1/R2 内容作答；不得用模型记忆或\n伪造来源补齐。研究成功但没有可靠解决办法也是合法结果，必须与联网失败分开表达。\nConsultation Method 属 R3 解法层，只能在 R1/R2 coherent 后按当次机制使用；它不得\n替代强制联网，准确装配时序由后续实施合同冻结。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "研究失败、无可靠解法、Provider关闭分别报告"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+          "symbols": [
+            "ReceiptFactory",
+            "ReceiptLedger",
+            "RequestByteBinding"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "93da9df7a05d2c1925a229dc927fc1f97fe04d5556cdcfe3fa24c14a0e436932",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+                  "symbol": "RequestByteBinding",
+                  "line_start": 80,
+                  "line_end": 98,
+                  "file_sha256": "93da9df7a05d2c1925a229dc927fc1f97fe04d5556cdcfe3fa24c14a0e436932",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+                  "symbol": "ReceiptFactory",
+                  "line_start": 101,
+                  "line_end": 138,
+                  "file_sha256": "93da9df7a05d2c1925a229dc927fc1f97fe04d5556cdcfe3fa24c14a0e436932",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+                  "symbol": "ReceiptLedger",
+                  "line_start": 148,
+                  "line_end": 185,
+                  "file_sha256": "93da9df7a05d2c1925a229dc927fc1f97fe04d5556cdcfe3fa24c14a0e436932",
+                  "kind": "ClassDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/worker.py",
+          "symbols": [
+            "ResearchWorker.run_leg",
+            "ResearchWorker.reconcile",
+            "ResearchWorker.ingest_late_response"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "f11c3719dcd40d9033dcc549881d0f9ab189cb006eac73c07e3a19ee57459b51",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/worker.py",
+                  "symbol": "ResearchWorker.run_leg",
+                  "line_start": 419,
+                  "line_end": 492,
+                  "file_sha256": "f11c3719dcd40d9033dcc549881d0f9ab189cb006eac73c07e3a19ee57459b51",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/worker.py",
+                  "symbol": "ResearchWorker.reconcile",
+                  "line_start": 551,
+                  "line_end": 649,
+                  "file_sha256": "f11c3719dcd40d9033dcc549881d0f9ab189cb006eac73c07e3a19ee57459b51",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/worker.py",
+                  "symbol": "ResearchWorker.ingest_late_response",
+                  "line_start": 651,
+                  "line_end": 679,
+                  "file_sha256": "f11c3719dcd40d9033dcc549881d0f9ab189cb006eac73c07e3a19ee57459b51",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/domain/research.py",
+          "symbols": [
+            "OperationReceipt",
+            "ResearchRunResult"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "03e461288152bffb1e3d1d0bc16be6de36f72566789fce0000c6c309d77335f3",
+              "symbol_anchors": [
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "OperationReceipt",
+                  "line_start": 172,
+                  "line_end": 185,
+                  "file_sha256": "03e461288152bffb1e3d1d0bc16be6de36f72566789fce0000c6c309d77335f3",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "ResearchRunResult",
+                  "line_start": 238,
+                  "line_end": 294,
+                  "file_sha256": "03e461288152bffb1e3d1d0bc16be6de36f72566789fce0000c6c309d77335f3",
+                  "kind": "ClassDef"
+                }
+              ]
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "c7645b6160b7ed03adb1722c0feba9bff20e6862b44ab22425ba58886c636521",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "OperationReceipt",
+                  "line_start": 173,
+                  "line_end": 186,
+                  "file_sha256": "c7645b6160b7ed03adb1722c0feba9bff20e6862b44ab22425ba58886c636521",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/domain/research.py",
+                  "symbol": "ResearchRunResult",
+                  "line_start": 239,
+                  "line_end": 295,
+                  "file_sha256": "c7645b6160b7ed03adb1722c0feba9bff20e6862b44ab22425ba58886c636521",
+                  "kind": "ClassDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/claims.py",
+          "symbols": [
+            "ClaimBinding",
+            "validate_claim_lineage"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "ClaimBinding",
+            "validate_claim_lineage"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t04.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+        "src/xiaoxingchen_core/runtime_adapters/worker.py",
+        "src/xiaoxingchen_core/domain/research.py",
+        "src/xiaoxingchen_core/research/claims.py",
+        "tests/final_plan/s04_t04.py"
+      ],
+      "depends_on": [
+        "S04-T02",
+        "S04-T03"
+      ],
+      "work": [
+        "IC-13逐wire绑定实际请求/response/时间/worker，失败发生在发送前后分开；response未观测不造sha/receipt",
+        "通道attempt索引run级唯一，不每kind从1重置碰撞；同ID同payload仅回读，异payload拒绝",
+        "保留429真实response记录再关通道；超时可能已发送标COST_UNCERTAIN，不能释放后重新发冒首次",
+        "settle失败写可续接任务，用原request/reservation继续核实，ABANDONED后迟到只审计不复活终态",
+        "claim引用到确切response片段、种类、source日期及适用，正文过期不能靠hash恢复主张"
+      ],
+      "input_contracts": [
+        "transport observations + S05 budget persistence + extracted candidate claims"
+      ],
+      "output_contracts": [
+        "append-only attempts/receipts",
+        "validated claims or exact pending reconciliation"
+      ],
+      "interface_ids": [
+        "IC-13"
+      ],
+      "states_and_failures": [
+        "append-only attempts/receipts",
+        "validated claims or exact pending reconciliation"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T04-P1",
+        "AC-S04-T04-P2",
+        "AC-S04-T04-N1",
+        "AC-S04-T04-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t04.py::test_s04_t04_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t04.py::test_s04_t04_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t04.py::test_s04_t04_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t04.py::test_s04_t04_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 18,
+        "conservative": 30,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T05",
+      "title": "非信任网页抽取、主张支持及成功无解判定",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "A10",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 22,
+            "end_line": 22,
+            "byte_start": 1994,
+            "byte_end_exclusive": 2150,
+            "span_sha256": "2f6eddb2f6f7b5b13dbcd1da67ea28eaadfb40ec341760cb90089ea81a29fab0",
+            "text": "| A10 | 两路失败只给 R1/R2；搜索成功无解是另一结果 | Father Decisions | COVERED | COVERED | O-RESEARCH/O-OUTPUT；状态与文案分离 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "两路失败只给 R1/R2；搜索成功无解是另一结果"
+        },
+        {
+          "id": "A15",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 27,
+            "end_line": 27,
+            "byte_start": 2796,
+            "byte_end_exclusive": 2966,
+            "span_sha256": "ddae60905d02b729623012770f10977f3ca94c018decb9b7fcf1799d90b9803a",
+            "text": "| A15 | 条件预测、锋利机制和策略允许，但不发明私事实 | 当前旧站 AGENTS | PARTIAL | PARTIAL | O-PRODUCT/O-OUTPUT；事实与机制推断分型 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "条件预测、锋利机制和策略允许，但不发明私事实"
+        },
+        {
+          "id": "A20",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 32,
+            "end_line": 32,
+            "byte_start": 3590,
+            "byte_end_exclusive": 3762,
+            "span_sha256": "d051eece9a97d16fe086e9396ea585e69866b0029cc0c64311fee4013a6cfc03",
+            "text": "| A20 | 无可靠解法时可以不提供行动，不用安慰填空 | Father Decisions、Product Foundation | COVERED | PARTIAL | O-RESEARCH/O-OUTPUT 的合法无解态 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "无可靠解法时可以不提供行动，不用安慰填空"
+        },
+        {
+          "id": "D12",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 97,
+            "end_line": 97,
+            "byte_start": 12644,
+            "byte_end_exclusive": 12800,
+            "span_sha256": "7a6f2c3edeb7d67c361a928ffdcd9aa5a71973dc42a7ae083cf588e1d8f28440",
+            "text": "| D12 | R3 worker 防 SSRF、DNS rebinding、重定向、注入、PII、资源耗尽 | Old plan | COVERED | PARTIAL | O-RESEARCH + DeepSeek threat review |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R3 worker 防 SSRF、DNS rebinding、重定向、注入、PII、资源耗尽"
+        },
+        {
+          "id": "V23-08",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 15,
+            "end_line": 15,
+            "byte_start": 1158,
+            "byte_end_exclusive": 1306,
+            "span_sha256": "d12f36082f8e6c6cc0fa198d7110fdb807b91136f85542a134765fa11e570f61",
+            "text": "| V23-08 | 降维沟通必须落到用户听得懂、说得出、做得到 | 至少有当次话术/动作/流程，不接受“多沟通”空话 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "降维沟通必须落到用户听得懂、说得出、做得到"
+        },
+        {
+          "id": "V23-09",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 16,
+            "end_line": 16,
+            "byte_start": 1306,
+            "byte_end_exclusive": 1451,
+            "span_sha256": "e5d1f8b8e1ef6eff32fedd7df3c0ac32841fc209c3c3218fd8aaea4f3a6cb54d",
+            "text": "| V23-09 | 升维解决必须改变问题结构并可验证、可退出、可迁移 | 有机制、动作、验证信号、代价/边界/退出 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "升维解决必须改变问题结构并可验证、可退出、可迁移"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/extraction.py",
+          "symbols": [
+            "extract_assertions",
+            "ExtractedEvidence",
+            "build_visible_source"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "e4333981e7537e12e6697f91f652b236342b127a11cea75217c68c05399d603c",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/extraction.py",
+                  "symbol": "extract_assertions",
+                  "line_start": 42,
+                  "line_end": 51,
+                  "file_sha256": "e4333981e7537e12e6697f91f652b236342b127a11cea75217c68c05399d603c",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/extraction.py",
+                  "symbol": "ExtractedEvidence",
+                  "line_start": 54,
+                  "line_end": 70,
+                  "file_sha256": "e4333981e7537e12e6697f91f652b236342b127a11cea75217c68c05399d603c",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/extraction.py",
+                  "symbol": "build_visible_source",
+                  "line_start": 73,
+                  "line_end": 87,
+                  "file_sha256": "e4333981e7537e12e6697f91f652b236342b127a11cea75217c68c05399d603c",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/evidence_gate.py",
+          "symbols": [
+            "ResearchEvidenceGate"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "6560759468aa484a300c48172226c4e4313c9d817f5914c4c40a506101a3b441",
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "6560759468aa484a300c48172226c4e4313c9d817f5914c4c40a506101a3b441",
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "ResearchEvidenceGate"
+          ],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/support_review.py",
+          "symbols": [
+            "evaluate_claim_support",
+            "classify_source_outcome"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "evaluate_claim_support",
+            "classify_source_outcome"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t05.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/runtime_adapters/extraction.py",
+        "src/xiaoxingchen_core/research/evidence_gate.py",
+        "src/xiaoxingchen_core/research/support_review.py",
+        "tests/final_plan/s04_t05.py"
+      ],
+      "depends_on": [
+        "S04-T04"
+      ],
+      "work": [
+        "替换ASSERT:前缀演示式可靠性判断，parse检索结果/正文→受限text spans→带来源日期/适用/反例的claim；原网页不进系统指令",
+        "恶意页面请求执行工具/泄secret/忽略规则一律数据看待；没有格式前缀的正常正文仍可抽取",
+        "成功空结果、抓取失败、解析失败、来源不可信、来源真冲突和确无适用办法分别记录；不将解析失败说无解",
+        "沟通可说/可做与结构改动可验证/可退出人审样例，少数意见不是自动错，研究不能推翻R1/R2核心"
+      ],
+      "input_contracts": [
+        "observed response bytes + IC-13 receipt + ordered kind goal"
+      ],
+      "output_contracts": [
+        "source-bound claim candidates and supported/no-support/conflict/untrustworthy verdict",
+        "no raw-page downstream"
+      ],
+      "interface_ids": [
+        "IC-13"
+      ],
+      "states_and_failures": [
+        "source-bound claim candidates and supported/no-support/conflict/untrustworthy verdict",
+        "no raw-page downstream"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T05-P1",
+        "AC-S04-T05-P2",
+        "AC-S04-T05-N1",
+        "AC-S04-T05-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t05.py::test_s04_t05_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t05.py::test_s04_t05_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t05.py::test_s04_t05_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t05.py::test_s04_t05_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 14,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T06",
+      "title": "Consultation精确时点的受限候选接线",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "C15",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 71,
+            "end_line": 71,
+            "byte_start": 8840,
+            "byte_end_exclusive": 9019,
+            "span_sha256": "3da07d920298823fcf7ffdd009a38bb1a1e74882453a0f45f214c1f7fd58d847",
+            "text": "| C15 | Consultation 是独立 R3 解法层，不是牌义/Mentor | 当前旧站/Engine Product Foundation | PARTIAL | PARTIAL | O-CONSULTATION；来源、消费和表达分层 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Consultation 是独立 R3 解法层，不是牌义/Mentor"
+        },
+        {
+          "id": "C16",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 72,
+            "end_line": 72,
+            "byte_start": 9019,
+            "byte_end_exclusive": 9176,
+            "span_sha256": "1e0a2158f670a713a32b686083642daaaea4eb300808564ae3736ce3b9a67287",
+            "text": "| C16 | Consultation 在 R3 的准确时序 Q-3 仍由爸爸决定 | 当前 O-W1 候选 | COVERED | COVERED | `HOLD_FOR_FATHER`；不得由模型硬编码 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Consultation 在 R3 的准确时序 Q-3 仍由爸爸决定"
+        },
+        {
+          "id": "C20",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 76,
+            "end_line": 76,
+            "byte_start": 9703,
+            "byte_end_exclusive": 9913,
+            "span_sha256": "b6b17db22355d82598dbbc145ef077f363f44b9bbdf59af11028209b50ec42c4",
+            "text": "| C20 | Consultation 方法要按问题机制选择，可组合但不能固定单一框架或强制 NVC | 当前旧站 AGENTS §152-163 | PARTIAL | PARTIAL | O-X2 资料接口 + O-X5 R3 路由；Q-3 仍 HOLD |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Consultation 方法要按问题机制选择，可组合但不能固定单一框架或强制 NVC"
+        },
+        {
+          "id": "C21",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 77,
+            "end_line": 77,
+            "byte_start": 9913,
+            "byte_end_exclusive": 10129,
+            "span_sha256": "db39302790602496fd9f6b3ff863cd6e35cf49d7af81fdca29f25de374be8a25",
+            "text": "| C21 | 支持关系主动修复、互惠投资等条件性策略，不把主动都判成操控，也不承诺结果 | 当前旧站 AGENTS §158-163 | MISSING | MISSING | O-X1/O-X5/O-X6 机制保真与安全负例 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "支持关系主动修复、互惠投资等条件性策略，不把主动都判成操控，也不承诺结果"
+        },
+        {
+          "id": "X-024",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 37,
+            "end_line": 47,
+            "byte_start": 2251,
+            "byte_end_exclusive": 3122,
+            "span_sha256": "4e6c2635b7bfcea2b3c5ddc0706096b9aa273027d6e8dd548f99b05b119eb2d7",
+            "text": "### R3｜强制现实研究并透过现象说本质\n\n每个合法读牌 run 都必须根据 R2 phenomenon 进入现实研究状态，不存在“模型觉得资料\n够了所以零搜索”的成功路径。先使用 Grok Search，首次失败后再重试 2 次，退避为\n2s / 8s；Grok 仍失败后，Tavily 作为独立的 search + fetch 通道运行，同样最多 3 次并\n使用 2s / 8s。两路必须可独立工作，一路故障不能使另一路失效。\n\n两路都失败时，必须明确说明联网失败，并只用已有 R1/R2 内容作答；不得用模型记忆或\n伪造来源补齐。研究成功但没有可靠解决办法也是合法结果，必须与联网失败分开表达。\nConsultation Method 属 R3 解法层，只能在 R1/R2 coherent 后按当次机制使用；它不得\n替代强制联网，准确装配时序由后续实施合同冻结。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Consultation后置使用与具体时点未决"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/research/consultation.py",
+          "symbols": [
+            "ConsultationPolicy",
+            "apply_optional_consultation"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "ConsultationPolicy",
+            "apply_optional_consultation"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/stages/r3.py",
+          "symbols": [
+            "build_r3_reality_plan"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "build_r3_reality_plan"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t06.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/research/consultation.py",
+        "src/xiaoxingchen_core/stages/r3.py",
+        "tests/final_plan/s04_t06.py"
+      ],
+      "depends_on": [
+        "S04-T05",
+        "S03-T02"
+      ],
+      "work": [
+        "推荐Q-3方案：R1/R2一致→研究终态/claim支持→按机制匹配获准Consultation→最终现实方案；备选只把沟通方法查询准备前置，禁止提前决定结论",
+        "在爸爸确认Q-3前默认CONSULTATION_TIMING_PENDING并跳过可选层，研究主干继续；不选择代批",
+        "两路真实网络失败严格仅R1R2，不能引入Consultation新方法伪降级补全；无匹配不强制NVC",
+        "任何关系修复/互惠/退出建议须条件、代价、边界，不将策略变操控保证"
+      ],
+      "input_contracts": [
+        "coherent R1/R2 + research terminal facts + approved optional methods + Q-3 policy"
+      ],
+      "output_contracts": [
+        "optional contribution or NO_OPTIONAL_METHOD/TIMING_PENDING",
+        "R3 support trace"
+      ],
+      "interface_ids": [
+        "IC-15"
+      ],
+      "states_and_failures": [
+        "optional contribution or NO_OPTIONAL_METHOD/TIMING_PENDING",
+        "R3 support trace"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T06-P1",
+        "AC-S04-T06-P2",
+        "AC-S04-T06-N1",
+        "AC-S04-T06-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t06.py::test_s04_t06_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t06.py::test_s04_t06_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t06.py::test_s04_t06_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t06.py::test_s04_t06_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 6,
+        "conservative": 10,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "OPTIONAL_CONSULTATION",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T07",
+      "title": "ResearchPort生产适配与S02闭环（默认关）",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "A08",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 20,
+            "end_line": 20,
+            "byte_start": 1656,
+            "byte_end_exclusive": 1833,
+            "span_sha256": "b7545aee935cc3eec40498713810f9d9c2329bb5736b48f28cd247110c7aa21c",
+            "text": "| A08 | R3 每题强制联网，不允许模型自证“不需要搜” | R3 Incident、Father Decisions | COVERED | COVERED | O-RESEARCH；no-search 路径类型层不可达 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R3 每题强制联网，不允许模型自证“不需要搜”"
+        },
+        {
+          "id": "A09",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 21,
+            "end_line": 21,
+            "byte_start": 1833,
+            "byte_end_exclusive": 1994,
+            "span_sha256": "fe03253dd030dffaf714c528d73cc701774570a667222ef7cdbb7963b8a8086d",
+            "text": "| A09 | Grok 3 次后 Tavily 独立 search+fetch 3 次；2s/8s | Father Current Decisions | COVERED | COVERED | O-RESEARCH；Provider 状态机与重试合同 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Grok 3 次后 Tavily 独立 search+fetch 3 次；2s/8s"
+        },
+        {
+          "id": "A10",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 22,
+            "end_line": 22,
+            "byte_start": 1994,
+            "byte_end_exclusive": 2150,
+            "span_sha256": "2f6eddb2f6f7b5b13dbcd1da67ea28eaadfb40ec341760cb90089ea81a29fab0",
+            "text": "| A10 | 两路失败只给 R1/R2；搜索成功无解是另一结果 | Father Decisions | COVERED | COVERED | O-RESEARCH/O-OUTPUT；状态与文案分离 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "两路失败只给 R1/R2；搜索成功无解是另一结果"
+        },
+        {
+          "id": "A11",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 23,
+            "end_line": 23,
+            "byte_start": 2150,
+            "byte_end_exclusive": 2283,
+            "span_sha256": "be1c81f8f1514a288b182cdd1e1bd6f2e3cc16293a404f113e757fcb78f2fa1b",
+            "text": "| A11 | R4 独立 reviewer，审查后重组完整答案 | Stage Decisions | COVERED | COVERED | O-OUTPUT/O-RUNTIME；R4 零工具 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R4 独立 reviewer，审查后重组完整答案"
+        },
+        {
+          "id": "D01",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 86,
+            "end_line": 86,
+            "byte_start": 10886,
+            "byte_end_exclusive": 11074,
+            "span_sha256": "39a18b3ad2d71aa970b49919debabea241d8af05c1c88eeeced9335176140333",
+            "text": "| D01 | 现有 MCP 是 2026-08-25 建的 provider-off 检索底座，不等于 Agent MCP | Git current bytes | WRONG/PARTIAL | 初版 MISSING，补后 PARTIAL | O-MCP 独立主设计包 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "现有 MCP 是 2026-08-25 建的 provider-off 检索底座，不等于 Agent MCP"
+        },
+        {
+          "id": "D03",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 88,
+            "end_line": 88,
+            "byte_start": 11227,
+            "byte_end_exclusive": 11389,
+            "span_sha256": "ed26cc4e95201e8fb01065a5781e387a8308aeb956371cac0e214125a2f2e647",
+            "text": "| D03 | R4 零工具；R3 Research Worker 与只读 MCP 的边界 | Product Foundation/Opus candidate | PARTIAL | PARTIAL | O-MCP/O-RESEARCH 共同冻结接口 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R4 零工具；R3 Research Worker 与只读 MCP 的边界"
+        },
+        {
+          "id": "D11",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 96,
+            "end_line": 96,
+            "byte_start": 12505,
+            "byte_end_exclusive": 12644,
+            "span_sha256": "ddd1eb0e8da1f12c17398a3d844ab66a9ffbc04c550fdfddc04437cb2b361527",
+            "text": "| D11 | artifact/claim/manifest/JCS/replay/TTL 全链可重算 | Old plan/O-W1 | COVERED | COVERED | O-RUNTIME/O-OUTPUT；CANON-1 对拍 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "artifact/claim/manifest/JCS/replay/TTL 全链可重算"
+        },
+        {
+          "id": "V23-06",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 13,
+            "end_line": 13,
+            "byte_start": 914,
+            "byte_end_exclusive": 1035,
+            "span_sha256": "935b82312a8de0e44fe8ea84374a6b8ff016f3fa4eae232cfd77b4accb3bb4e6",
+            "text": "| V23-06 | R2 形成可研究的现象包/ResearchSeedPacket | 交研究问题和未知项，不直接替 R3 选答案 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R2 形成可研究的现象包/ResearchSeedPacket"
+        },
+        {
+          "id": "V23-12",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 19,
+            "end_line": 19,
+            "byte_start": 1735,
+            "byte_end_exclusive": 1858,
+            "span_sha256": "31283100d765bc53d06ab77516173fb457b1ae58e7e6135c704485aa5290bd2d",
+            "text": "| V23-12 | R4 不调用 MCP，只审查冻结产物并重组成文 | 工具面为空；不得新增事实或重新搜索 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R4 不调用 MCP，只审查冻结产物并重组成文"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/stages/ports.py",
+          "symbols": [
+            "ResearchPort",
+            "ResearchRunOutcome"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "d9be07ad2ef743ba45bf710e2df2fe2f8594a7a4403ea2c2c0e23eca40692bc6",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/stages/ports.py",
+                  "symbol": "ResearchRunOutcome",
+                  "line_start": 65,
+                  "line_end": 70,
+                  "file_sha256": "d9be07ad2ef743ba45bf710e2df2fe2f8594a7a4403ea2c2c0e23eca40692bc6",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/stages/ports.py",
+                  "symbol": "ResearchPort",
+                  "line_start": 102,
+                  "line_end": 103,
+                  "file_sha256": "d9be07ad2ef743ba45bf710e2df2fe2f8594a7a4403ea2c2c0e23eca40692bc6",
+                  "kind": "ClassDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/research_port.py",
+          "symbols": [
+            "BoundResearchPort"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "BoundResearchPort"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/stages/executor.py",
+          "symbols": [
+            "TarotStageExecutor._run_research",
+            "TarotStageExecutor._record_attempt"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "4041d1e2637b8e5c749d722ef1b1b0ce0183d38e408e670c19d3ed05f71add32",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/stages/executor.py",
+                  "symbol": "TarotStageExecutor._run_research",
+                  "line_start": 561,
+                  "line_end": 609,
+                  "file_sha256": "4041d1e2637b8e5c749d722ef1b1b0ce0183d38e408e670c19d3ed05f71add32",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/stages/executor.py",
+                  "symbol": "TarotStageExecutor._record_attempt",
+                  "line_start": 611,
+                  "line_end": 637,
+                  "file_sha256": "4041d1e2637b8e5c749d722ef1b1b0ce0183d38e408e670c19d3ed05f71add32",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/wording.py",
+          "symbols": [
+            "research_status_wording"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "1c3adcdd6f4f94519b5a9c664f9c0034d03299e6bc821ba2e2152ca0a3e7bcbb",
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "1c3adcdd6f4f94519b5a9c664f9c0034d03299e6bc821ba2e2152ca0a3e7bcbb",
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "research_status_wording"
+          ],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t07.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/stages/ports.py",
+        "src/xiaoxingchen_core/runtime_adapters/research_port.py",
+        "src/xiaoxingchen_core/stages/executor.py",
+        "src/xiaoxingchen_core/research/wording.py",
+        "tests/final_plan/s04_t07.py"
+      ],
+      "depends_on": [
+        "S04-T04",
+        "S04-T05",
+        "S04-T09",
+        "S05-T04"
+      ],
+      "work": [
+        "按typed finalR2 seed接协调器，将真实全attempt/claim/privatebindings回传S02；删除生产上的topic直接deidentify、首receipt、合成started_at及callerworker捷径",
+        "BOUND_BLOCKED只在真实端到端权威/DB/claim链已实测后解除，缺API/profile/DB凭据准确尚未研究；不把stub当真的联网",
+        "失败两路只允许R1R2，成功无解与source conflict/untrusted分开措辞；部分成功按kind显示已核实范围",
+        "R4只接immutableR1-R3+已绑定claim，不注入MCP/研究rawpage，不透出receipt IDs"
+      ],
+      "input_contracts": [
+        "IC-05 seed + coordinator outcomes + S05 ports"
+      ],
+      "output_contracts": [
+        "ResearchRunOutcome with complete facts/claim_refs/source bindings",
+        "controlled status text + private data only"
+      ],
+      "interface_ids": [
+        "IC-05",
+        "IC-12",
+        "IC-13",
+        "IC-15"
+      ],
+      "states_and_failures": [
+        "ResearchRunOutcome with complete facts/claim_refs/source bindings",
+        "controlled status text + private data only"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T07-P1",
+        "AC-S04-T07-P2",
+        "AC-S04-T07-N1",
+        "AC-S04-T07-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t07.py::test_s04_t07_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t07.py::test_s04_t07_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t07.py::test_s04_t07_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t07.py::test_s04_t07_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 12,
+        "conservative": 22,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T08",
+      "title": "研究7/30天清理、公开来源与不可重放",
+      "stage": "S04",
+      "owner": "O-RESEARCH",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "C17",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 73,
+            "end_line": 73,
+            "byte_start": 9176,
+            "byte_end_exclusive": 9334,
+            "span_sha256": "50cfb517e7fd4b63d2fd5389e458e7829500686248883c793cdcbc335e633540",
+            "text": "| C17 | 网页研究是短期资料，不自动进入 RAG/Mentor/Book T/Source Vault | 两个 AGENTS | COVERED | PARTIAL | O-RESEARCH/O-RAG 物理无写权 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "网页研究是短期资料，不自动进入 RAG/Mentor/Book T/Source Vault"
+        },
+        {
+          "id": "D05",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 90,
+            "end_line": 90,
+            "byte_start": 11559,
+            "byte_end_exclusive": 11713,
+            "span_sha256": "2f5508126b5f6474da1c139b66fea4f44d9971588046ea56716e0619468ae91c",
+            "text": "| D05 | MCP public DTO 不能泄漏私有全文；公网来源名/URL 可见 | Product Foundation、A1 | PARTIAL | PARTIAL | O-MCP/O-OUTPUT；P0-a/P0-b |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "MCP public DTO 不能泄漏私有全文；公网来源名/URL 可见"
+        },
+        {
+          "id": "D11",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 96,
+            "end_line": 96,
+            "byte_start": 12505,
+            "byte_end_exclusive": 12644,
+            "span_sha256": "ddd1eb0e8da1f12c17398a3d844ab66a9ffbc04c550fdfddc04437cb2b361527",
+            "text": "| D11 | artifact/claim/manifest/JCS/replay/TTL 全链可重算 | Old plan/O-W1 | COVERED | COVERED | O-RUNTIME/O-OUTPUT；CANON-1 对拍 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "artifact/claim/manifest/JCS/replay/TTL 全链可重算"
+        },
+        {
+          "id": "X-008",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 186,
+            "end_line": 197,
+            "byte_start": 12769,
+            "byte_end_exclusive": 13756,
+            "span_sha256": "9b2949437016f04d16500bda46b1f51ae8f080edd486b15a6b4b56d807ca6f01",
+            "text": "## 9. 外部研究、可见性与保留\n\n- R3 公网来源名称与 canonical URL 可以直接向用户显示，公共 evidence JSON 可按需展开；\n  公开来源可见不等于内部资料身份可见。\n- 内部 claim/attempt ID、错误码、Prompt、secret、凭据、私钥、生产配置、用户或第三方\n  隐私、完整私有课程正文、内部来源路径与 hash 永不进入普通输出。\n- 任何公开研究结论必须绑定真实检索记录、页面内容 hash、精确证据片段与抓取时间；\n  没有绑定记录时不得显示来源或声称完成联网。\n- 网页正文与研究 claims 最多保留 7 天；只保留必要的最小审计 metadata 30 天。\n  研究材料不得自动进入 Source Vault、RAG、Mentor、Book T 或长期知识。\n- 网页内容只作为不可信数据进入隔离提取，不得成为 system instruction；页面中的指令\n  永不执行。查询离开系统前必须去标识化，不携带完整私人叙事。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "对外来源透明与内部审计元数据隔离"
+        },
+        {
+          "id": "X-009",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+            "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+            "start_line": 186,
+            "end_line": 197,
+            "byte_start": 12769,
+            "byte_end_exclusive": 13756,
+            "span_sha256": "9b2949437016f04d16500bda46b1f51ae8f080edd486b15a6b4b56d807ca6f01",
+            "text": "## 9. 外部研究、可见性与保留\n\n- R3 公网来源名称与 canonical URL 可以直接向用户显示，公共 evidence JSON 可按需展开；\n  公开来源可见不等于内部资料身份可见。\n- 内部 claim/attempt ID、错误码、Prompt、secret、凭据、私钥、生产配置、用户或第三方\n  隐私、完整私有课程正文、内部来源路径与 hash 永不进入普通输出。\n- 任何公开研究结论必须绑定真实检索记录、页面内容 hash、精确证据片段与抓取时间；\n  没有绑定记录时不得显示来源或声称完成联网。\n- 网页正文与研究 claims 最多保留 7 天；只保留必要的最小审计 metadata 30 天。\n  研究材料不得自动进入 Source Vault、RAG、Mentor、Book T 或长期知识。\n- 网页内容只作为不可信数据进入隔离提取，不得成为 system instruction；页面中的指令\n  永不执行。查询离开系统前必须去标识化，不携带完整私人叙事。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "研究正文7日、claim元数据30日保留边界"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/retention.py",
+          "symbols": [
+            "sweep_retention",
+            "assert_not_budget_evasion"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "f26e620dc8a799aa93cb8410e44a51f46b955c6fe5b8b783848d367b39ad295d",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/retention.py",
+                  "symbol": "sweep_retention",
+                  "line_start": 59,
+                  "line_end": 90,
+                  "file_sha256": "f26e620dc8a799aa93cb8410e44a51f46b955c6fe5b8b783848d367b39ad295d",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/runtime_adapters/retention.py",
+                  "symbol": "assert_not_budget_evasion",
+                  "line_start": 93,
+                  "line_end": 102,
+                  "file_sha256": "f26e620dc8a799aa93cb8410e44a51f46b955c6fe5b8b783848d367b39ad295d",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/public_sources.py",
+          "symbols": [
+            "project_verified_sources"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "project_verified_sources"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/research/retention_store.py",
+          "symbols": [
+            "ResearchRetentionStore",
+            "purge_expired_copies"
+          ],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "ResearchRetentionStore",
+            "purge_expired_copies"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t08.py",
+          "symbols": [],
+          "write_owner": "O-RESEARCH",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/runtime_adapters/retention.py",
+        "src/xiaoxingchen_core/research/public_sources.py",
+        "src/xiaoxingchen_core/research/retention_store.py",
+        "tests/final_plan/s04_t08.py"
+      ],
+      "depends_on": [
+        "S04-T04",
+        "S04-T05"
+      ],
+      "work": [
+        "body/claims及含它们的R3/R4/答案服务端副本最多7天，最小审计metadata30天；保存source URL须去凭据/跟踪/私人参数",
+        "对所有cache/index/副本清理落回执，不能只清内存tuple；不写知识库，不凭研究自动形成Candidate",
+        "预算/authority撤权不因删除内容重置；30天后只允许拒绝过期操作，不根据缺账启动新调用",
+        "公开来源只名称+有效canonical HTTPS URL，绑定真实receipt和被采用claim；内部教材/版本/hash/span不能泄漏"
+      ],
+      "input_contracts": [
+        "IC-13 bound sources + actual clock + lineage expiry"
+      ],
+      "output_contracts": [
+        "purge receipts + minimal metadata",
+        "public source projection; expired claim nondeliverable"
+      ],
+      "interface_ids": [
+        "IC-15"
+      ],
+      "states_and_failures": [
+        "purge receipts + minimal metadata",
+        "public source projection; expired claim nondeliverable"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T08-P1",
+        "AC-S04-T08-P2",
+        "AC-S04-T08-N1",
+        "AC-S04-T08-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t08.py::test_s04_t08_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t08.py::test_s04_t08_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t08.py::test_s04_t08_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t08.py::test_s04_t08_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    },
+    {
+      "id": "S04-T09",
+      "title": "两进程MCP物理profile与可信装配",
+      "stage": "S04",
+      "owner": "O-HOST",
+      "status": "DESIGNED_NOT_IMPLEMENTED",
+      "implementation_authorized": false,
+      "requirements": [
+        {
+          "id": "D01",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 86,
+            "end_line": 86,
+            "byte_start": 10886,
+            "byte_end_exclusive": 11074,
+            "span_sha256": "39a18b3ad2d71aa970b49919debabea241d8af05c1c88eeeced9335176140333",
+            "text": "| D01 | 现有 MCP 是 2026-08-25 建的 provider-off 检索底座，不等于 Agent MCP | Git current bytes | WRONG/PARTIAL | 初版 MISSING，补后 PARTIAL | O-MCP 独立主设计包 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "现有 MCP 是 2026-08-25 建的 provider-off 检索底座，不等于 Agent MCP"
+        },
+        {
+          "id": "D02",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 87,
+            "end_line": 87,
+            "byte_start": 11074,
+            "byte_end_exclusive": 11227,
+            "span_sha256": "ca941f04d2465d3295c5479576edd25d3b5553285955f7383d7895656ea14f6e",
+            "text": "| D02 | R1/R2/R3/R4 的 MCP/工具能力矩阵必须专门设计 | 爸爸当前纠正 | MISSING | 初版 MISSING | K-MCP→O-MCP→GLM/DeepSeek 双审 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R1/R2/R3/R4 的 MCP/工具能力矩阵必须专门设计"
+        },
+        {
+          "id": "D03",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 88,
+            "end_line": 88,
+            "byte_start": 11227,
+            "byte_end_exclusive": 11389,
+            "span_sha256": "ed26cc4e95201e8fb01065a5781e387a8308aeb956371cac0e214125a2f2e647",
+            "text": "| D03 | R4 零工具；R3 Research Worker 与只读 MCP 的边界 | Product Foundation/Opus candidate | PARTIAL | PARTIAL | O-MCP/O-RESEARCH 共同冻结接口 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R4 零工具；R3 Research Worker 与只读 MCP 的边界"
+        },
+        {
+          "id": "D04",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/22_requirement_traceability_replan/01_REQUIREMENT_TRACEABILITY_MATRIX_CN.md",
+            "sha256": "8ac5147bab68c4dfc5956374f12fdffab93e8915e82e5e6dd94a925e2c652d6a",
+            "start_line": 89,
+            "end_line": 89,
+            "byte_start": 11389,
+            "byte_end_exclusive": 11559,
+            "span_sha256": "aeedcb2658acd765ebd495edc20b689994cdbf1a286e73c4fe78ce3def1512d0",
+            "text": "| D04 | MCP command/cwd/environment、DB URL/role、transport 要 allowlist | A1 current-byte finding | MISSING | 补后 PARTIAL | O-MCP threat model + DeepSeek 审查 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "MCP command/cwd/environment、DB URL/role、transport 要 allowlist"
+        },
+        {
+          "id": "V23-10",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 17,
+            "end_line": 17,
+            "byte_start": 1451,
+            "byte_end_exclusive": 1594,
+            "span_sha256": "7d9382c7ba2add452943fb13d42a0abcb6b60f2c96a916b6219ba163e94d26e3",
+            "text": "| V23-10 | Grok 与 Tavily 都通过 MCP，但职责和故障必须独立 | Grok 失败时 Tavily 可独立 search+fetch；有独立 receipt |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "Grok 与 Tavily 都通过 MCP，但职责和故障必须独立"
+        },
+        {
+          "id": "V23-11",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 18,
+            "end_line": 18,
+            "byte_start": 1594,
+            "byte_end_exclusive": 1735,
+            "span_sha256": "7e7dd47e0549f1baf609a7b13cab4a0d508130b0cf6ee977b40db63dec4ae277",
+            "text": "| V23-11 | MCP 设计必须比较至少两种物理拓扑 | 比较故障、权限、凭据、测试、回滚；不直接复制参考项目 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "MCP 设计必须比较至少两种物理拓扑"
+        },
+        {
+          "id": "V23-12",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "requirements/original_history/20260831/23_analogy_lift_source_mining_and_v23/00C_V23_REQUIREMENTS_REGISTRY_CN.md",
+            "sha256": "e6d33a956b678703c0c9ad92e11c91dcb76f65187605dc4601a1840c3c4fa20c",
+            "start_line": 19,
+            "end_line": 19,
+            "byte_start": 1735,
+            "byte_end_exclusive": 1858,
+            "span_sha256": "31283100d765bc53d06ab77516173fb457b1ae58e7e6135c704485aa5290bd2d",
+            "text": "| V23-12 | R4 不调用 MCP，只审查冻结产物并重组成文 | 工具面为空；不得新增事实或重新搜索 |",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "R4 不调用 MCP，只审查冻结产物并重组成文"
+        },
+        {
+          "id": "X-048",
+          "relationship": "direct",
+          "original_source": {
+            "root": "BASE_ROOT",
+            "path": "planning/baseline_rebind/HANDOFF_DELTA_AND_CORRECTIONS_CN.md",
+            "sha256": "1f7a31ff53a4de2e3b2b5ce32519b713db33acec225296a78497da46e11e20bc",
+            "start_line": 48,
+            "end_line": 50,
+            "byte_start": 5773,
+            "byte_end_exclusive": 6490,
+            "span_sha256": "0c94e3cb4273d2d60ebd90b4c75d2f09f38d573263d2818ca55cd9970d24bd7d",
+            "text": "用户明确要求向已打开Fable会话输入任务。终端只读接口确认目标在TarotEngine、停于attempt_015。UI工具拒绝控制Terminal/Codex；随后写 /dev/ttys006 的尝试仅产生输出回显，未证明Fable收到任务。`FABLE_PROMPT_INJECTED`/`ENTER_SENT`不是接收回执。停止这种通道，不再尝试注入、重启或绕过。\n\n该排查过程中不恰当地读取了宿主会话资料及本地peer认证文件，并将认证内容带入工具输出，超出任务所需。任何交接文件都不得复制其值，也不得利用其socket/key进行通信。后续只用获准接口或用户手工输入。Fable任务尚未确认启动，dispatch_status=NOT_SUBMITTED_CONFIRMED。",
+            "source_kind": "PACKAGED_DOCUMENT_NOT_AUTOMATIC_AUTHORIZATION"
+          },
+          "original_statement": "交接不得使用宿主秘密或绕过被拒接口"
+        }
+      ],
+      "write_set": [
+        {
+          "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+          "symbols": [
+            "HostProfileResolver.open_toolset",
+            "resolve_profile",
+            "SealedProfileRecord"
+          ],
+          "write_owner": "O-HOST",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+              "symbol_anchors": [
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+                  "symbol": "SealedProfileRecord",
+                  "line_start": 166,
+                  "line_end": 180,
+                  "file_sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+                  "symbol": "resolve_profile",
+                  "line_start": 325,
+                  "line_end": 366,
+                  "file_sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+                  "symbol": "HostProfileResolver.open_toolset",
+                  "line_start": 406,
+                  "line_end": 413,
+                  "file_sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+                  "kind": "FunctionDef"
+                }
+              ]
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+                  "symbol": "SealedProfileRecord",
+                  "line_start": 166,
+                  "line_end": 180,
+                  "file_sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+                  "kind": "ClassDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+                  "symbol": "resolve_profile",
+                  "line_start": 325,
+                  "line_end": 366,
+                  "file_sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+                  "kind": "FunctionDef"
+                },
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/hosts/sealed_profile.py",
+                  "symbol": "HostProfileResolver.open_toolset",
+                  "line_start": 406,
+                  "line_end": 413,
+                  "file_sha256": "25f1a31120dc548cae8624db7bdcf93cfd301961807b7e5bced059b35e6958b2",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/hosts/research_profiles.py",
+          "symbols": [
+            "resolve_research_profiles"
+          ],
+          "write_owner": "O-HOST",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "resolve_research_profiles"
+          ],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/runtime_adapters/system.py",
+          "symbols": [
+            "build_authorized_research_system"
+          ],
+          "write_owner": "O-HOST",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "a2e7cec6879f6563c171f1fe73aa13f2e3323cba94902530943c6851b819133b",
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [
+            "build_authorized_research_system"
+          ],
+          "change_class": "SELECTIVE_PORT_D_NOT_MERGED",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "src/xiaoxingchen_core/hosts/pydantic_ai_mcp.py",
+          "symbols": [
+            "local_readonly_mcp_toolset"
+          ],
+          "write_owner": "O-HOST",
+          "baselines": {
+            "MAIN": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "d72dc1b739aad36625f73078ba2c980e9c75f87919ff139ae2eeaf72bc884a6f",
+              "symbol_anchors": [
+                {
+                  "baseline": "MAIN",
+                  "path": "src/xiaoxingchen_core/hosts/pydantic_ai_mcp.py",
+                  "symbol": "local_readonly_mcp_toolset",
+                  "line_start": 24,
+                  "line_end": 51,
+                  "file_sha256": "d72dc1b739aad36625f73078ba2c980e9c75f87919ff139ae2eeaf72bc884a6f",
+                  "kind": "FunctionDef"
+                }
+              ]
+            },
+            "D": {
+              "presence": "EXISTING_IN_SELECTED_SNAPSHOT",
+              "sha256": "d72dc1b739aad36625f73078ba2c980e9c75f87919ff139ae2eeaf72bc884a6f",
+              "symbol_anchors": [
+                {
+                  "baseline": "D",
+                  "path": "src/xiaoxingchen_core/hosts/pydantic_ai_mcp.py",
+                  "symbol": "local_readonly_mcp_toolset",
+                  "line_start": 24,
+                  "line_end": 51,
+                  "file_sha256": "d72dc1b739aad36625f73078ba2c980e9c75f87919ff139ae2eeaf72bc884a6f",
+                  "kind": "FunctionDef"
+                }
+              ]
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "MODIFY_EXISTING_MAIN",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        },
+        {
+          "path": "tests/final_plan/s04_t09.py",
+          "symbols": [],
+          "write_owner": "O-HOST",
+          "baselines": {
+            "MAIN": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            },
+            "D": {
+              "presence": "ABSENT_IN_SELECTED_SNAPSHOT",
+              "sha256": null,
+              "symbol_anchors": []
+            }
+          },
+          "proposed_symbols": [],
+          "change_class": "PROPOSED_NEW",
+          "target": "MAIN_AFTER_SEPARATE_AUTHORIZATION; D is a reference, not an already merged tree"
+        }
+      ],
+      "parallel_write_set": [
+        "src/xiaoxingchen_core/hosts/sealed_profile.py",
+        "src/xiaoxingchen_core/hosts/research_profiles.py",
+        "src/xiaoxingchen_core/runtime_adapters/system.py",
+        "src/xiaoxingchen_core/hosts/pydantic_ai_mcp.py",
+        "tests/final_plan/s04_t09.py"
+      ],
+      "depends_on": [
+        "S04-T02"
+      ],
+      "work": [
+        "采用最小独立两MCP worker+控制器共享账本，Grok/Tavily不同sealedprofile/凭据/timeout/进程，数据只读MCP独立",
+        "runtime只收profile_id，冻结执行文件hash/cwd/env键/DBrole/transport/endpoint contract；dev caller物理参数口不复用为runtime",
+        "R4freshworker零MCP注册、无研究凭据/DB写权；共享基础设施限时钟/日志规范不共享故障开关",
+        "部署实际command/env/identity/profile可另填但必须精确身份核验，未填默认deny，不给当前网络权"
+      ],
+      "input_contracts": [
+        "IC-14 profile registry + separate future host authorization"
+      ],
+      "output_contracts": [
+        "trusted workers or disabled precise reason",
+        "no runtime access via dev seam"
+      ],
+      "interface_ids": [
+        "IC-14"
+      ],
+      "states_and_failures": [
+        "trusted workers or disabled precise reason",
+        "no runtime access via dev seam"
+      ],
+      "permissions": {
+        "this_round": "documents_and_offline_archives_only",
+        "future_code": "separate scoped implementation grant; protect dirty changes",
+        "database": "separate provision/migrate/test/release identities; no implicit grant",
+        "runtime": "per-user authority distinct from Development Harness",
+        "data": "no candidate approval inferred from implementation or tests"
+      },
+      "acceptance_ids": [
+        "AC-S04-T09-P1",
+        "AC-S04-T09-P2",
+        "AC-S04-T09-N1",
+        "AC-S04-T09-N2"
+      ],
+      "test_commands": [
+        "python -m pytest tests/final_plan/s04_t09.py::test_s04_t09_positive_1 -q",
+        "python -m pytest tests/final_plan/s04_t09.py::test_s04_t09_positive_2 -q",
+        "python -m pytest tests/final_plan/s04_t09.py::test_s04_t09_negative_1 -q",
+        "python -m pytest tests/final_plan/s04_t09.py::test_s04_t09_negative_2 -q"
+      ],
+      "test_execution": "NOT_RUN",
+      "entry_gates": [
+        "verify actual repository/origin/HEAD/dirty changes and AGENTS against authorized batch",
+        "bound source/schema versions match approved contract"
+      ],
+      "exit_gates": [
+        "all listed positive/negative tests actually run on exact target or remain explicitly NOT_RUN",
+        "source/semantic approval and runtime enablement tracked separately",
+        "closure receipts and touched-scope evidence recorded"
+      ],
+      "rollback": "Disable the affected new capability; revert only this task commit and versioned contract changes in dependency order. Preserve prior artifacts, audit history, user dirty changes and withdrawn-source state; never downgrade authority checks.",
+      "effort_hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "release_tier": "CORE",
+      "red_green_plan": "First run the named negative/regression cases against the authorized starting subject and record actual signals; then implement minimal changes and rerun both sides. No pre-change failure is asserted by this plan."
+    }
+  ]
+}

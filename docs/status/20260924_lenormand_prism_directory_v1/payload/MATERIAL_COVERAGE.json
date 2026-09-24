@@ -1,0 +1,33 @@
+{
+  "status": "AUDITED_NOT_AUTHORIZED",
+  "project": "<local-path>",
+  "ln_minimum": "three_card_only_candidate",
+  "book_t": {
+    "runtime_and_contract_candidates": "IN_SCOPE_PRESENT",
+    "original_full_text": "UNAVAILABLE",
+    "approved_projection": "UNAVAILABLE",
+    "runtime_authorized": false,
+    "ln_input": false
+  },
+  "mentor": {
+    "schema_consumer_and_candidate_code": "IN_SCOPE_PRESENT",
+    "non281_current_candidate_subset": "PARTIAL",
+    "non281_complete_original_sources": "PARTIAL_UNVERIFIED",
+    "historical_281_and_derivatives": "EXPLICITLY_EXCLUDED",
+    "old60_new24_sister6_8": "NOT_LN_INPUT",
+    "runtime_authorized": false
+  },
+  "lenormand_sources": {
+    "36_card_authorized_catalog": "PARTIAL_UNVERIFIED",
+    "matthews_rana_full_authorized_sources": "UNAVAILABLE_OR_NOT_PROVEN",
+    "approved_projection": "UNAVAILABLE",
+    "runtime_authorized": false
+  },
+  "returns_7": {
+    "sha256_verified": true,
+    "source_identity_records": 20,
+    "available": 7,
+    "unavailable": 13,
+    "product_implementation_applied": false
+  }
+}

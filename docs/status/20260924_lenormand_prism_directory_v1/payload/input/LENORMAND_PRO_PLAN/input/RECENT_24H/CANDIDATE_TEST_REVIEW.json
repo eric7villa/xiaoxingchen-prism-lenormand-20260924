@@ -1,0 +1,2095 @@
+[
+  {
+    "path": "ln_candidate/tests/sprint48/lenormand/__init__.py",
+    "sha256": "210b95bfd0ea93e933c0702082abcab8e73dcd65aa3ef934999b411d96f868e8",
+    "lines": 1,
+    "execution": "NOT_RUN",
+    "symbols": []
+  },
+  {
+    "path": "ln_candidate/tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+    "sha256": "6c89fb92d1aa32f7fb8116b9e8a5f71e301b975aa3174e015d129d3fe1176b85",
+    "lines": 1065,
+    "execution": "NOT_RUN",
+    "symbols": [
+      {
+        "symbol": "sha256_file",
+        "lines": [
+          124,
+          125
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "payload",
+        "lines": [
+          128,
+          143
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "ln_item",
+        "lines": [
+          146,
+          179
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "retrieval_result",
+        "lines": [
+          182,
+          209
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "open_gate_for",
+        "lines": [
+          212,
+          214
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "_relation_of",
+        "lines": [
+          217,
+          218
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_domain_modules_resolve_into_the_candidate_workdir",
+        "lines": [
+          226,
+          235
+        ],
+        "test": true,
+        "doc": "防 editable 安装回落主树：被测模块必须来自本次候选副本。",
+        "assertions": [
+          "sha256_file(Path(reading_module.__file__).resolve()) == BASE_READING_SHA256",
+          "module_path.is_relative_to(WORKDIR.resolve())"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_runtime_does_not_import_tarot_stage_semantics",
+        "lines": [
+          238,
+          259
+        ],
+        "test": true,
+        "doc": "LN 路径不得复制 Tarot 阶段语义或新增状态边。",
+        "assertions": [
+          "not imported & forbidden_names",
+          "node.module not in forbidden_modules"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_tarot_names_in_runtime_are_refusal_only",
+        "lines": [
+          262,
+          273
+        ],
+        "test": true,
+        "doc": "运行路径里出现的 Tarot 名字只能是拒绝面用的查询类型。",
+        "assertions": [
+          "tarot_like <= allowed_tarot_names"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_input_port_rejects_orientation_key_whatever_the_value",
+        "lines": [
+          282,
+          298
+        ],
+        "test": true,
+        "doc": "Lenormand 没有 orientation 维度：键存在即拒，值不参与判断。",
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.ORIENTATION_FORBIDDEN",
+          "'orientation' in detail",
+          "'Lenormand 没有 orientation 维度' in detail",
+          "'Tarot reading requires orientation' not in detail",
+          "'每张牌必填' not in detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_orientation_scan_is_independent_of_card_shape",
+        "lines": [
+          301,
+          306
+        ],
+        "test": true,
+        "doc": "orientation 扫描先于其他字段合法性：形状非法也先报 orientation 拒绝。",
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.ORIENTATION_FORBIDDEN"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_request_level_orientation_key_is_rejected",
+        "lines": [
+          309,
+          314
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.ORIENTATION_FORBIDDEN"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_lenormand_reading_card_has_no_orientation_field",
+        "lines": [
+          317,
+          323
+        ],
+        "test": true,
+        "doc": "v1 P1 形状：LenormandReadingCard 携带 orientation 即被 extra=forbid 拒。",
+        "assertions": [],
+        "raises": [
+          "pytest.raises(ValidationError)"
+        ]
+      },
+      {
+        "symbol": "_intake_rejection",
+        "lines": [
+          326,
+          333
+        ],
+        "test": false,
+        "doc": "pydantic 会把合同抛出的 ReadingIntakeRejected 包进 ValidationError。",
+        "assertions": [
+          "len(errors) == 1",
+          "isinstance(error, ReadingIntakeRejected)"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_domain_layer_keeps_tarot_orientation_required",
+        "lines": [
+          336,
+          354
+        ],
+        "test": true,
+        "doc": "正向控制：我们没有放宽共享合同——Tarot 仍然逐牌必填 orientation。",
+        "assertions": [
+          "'Tarot reading requires orientation on every card' in str(_intake_rejection(excinfo))"
+        ],
+        "raises": [
+          "pytest.raises(ValidationError)"
+        ]
+      },
+      {
+        "symbol": "test_domain_layer_rejects_tarot_card_in_lenormand_reading",
+        "lines": [
+          357,
+          376
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "'Lenormand reading cannot carry orientation' in str(_intake_rejection(excinfo))"
+        ],
+        "raises": [
+          "pytest.raises(ValidationError)"
+        ]
+      },
+      {
+        "symbol": "test_input_port_rejects_unknown_field",
+        "lines": [
+          379,
+          384
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.INPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_input_port_parses_valid_payload",
+        "lines": [
+          387,
+          391
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "request.spread_mode is LayoutMode.THREE_CARD_LINE",
+          "request.position_semantics is PositionSemantics.UNDEFINED",
+          "tuple((card.card_ref.ref for card in request.cards)) == SYNTH"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_cross_system_accepts_pure_lenormand_input",
+        "lines": [
+          399,
+          405
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_cross_system_rejects_tarot_card_reference",
+        "lines": [
+          408,
+          411
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.CROSS_SYSTEM_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_input_port_rejects_tarot_card_reference",
+        "lines": [
+          414,
+          421
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.CROSS_SYSTEM_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_cross_system_rejects_non_lenormand_source_layer",
+        "lines": [
+          427,
+          430
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.FORBIDDEN_PROVENANCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_cross_system_rejects_tarot_system_provenance_tags",
+        "lines": [
+          436,
+          439
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.FORBIDDEN_PROVENANCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_cross_system_provenance_positive_control",
+        "lines": [
+          442,
+          446
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_evidence_port_rejects_tarot_query_object",
+        "lines": [
+          449,
+          472
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.CROSS_SYSTEM_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_evidence_port_rejects_non_lenormand_purpose",
+        "lines": [
+          475,
+          478
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.CROSS_SYSTEM_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_evidence_port_rejects_tarot_layer_in_lenormand_query",
+        "lines": [
+          481,
+          488
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.CROSS_SYSTEM_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_structure_positive_control",
+        "lines": [
+          496,
+          504
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "layout.mode is LayoutMode.THREE_CARD_LINE",
+          "layout.slot_count == 3",
+          "layout.cards == SYNTH",
+          "layout.position_semantics is PositionSemantics.UNDEFINED",
+          "layout.has_dominant_flow is False",
+          "layout.position_meanings == ()"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_three_card_line_rejects_wrong_card_count",
+        "lines": [
+          507,
+          518
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION",
+          "'不得补牌' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_rejects_duplicate_cards",
+        "lines": [
+          521,
+          528
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION",
+          "'重复卡非法' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_domain_layer_rejects_duplicate_cards_too",
+        "lines": [
+          531,
+          548
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "'duplicate cards' in str(_intake_rejection(excinfo))"
+        ],
+        "raises": [
+          "pytest.raises(ValidationError)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_rejects_bad_draw_order",
+        "lines": [
+          551,
+          556
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION",
+          "'draw_order' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_rejects_misaligned_display_positions",
+        "lines": [
+          559,
+          563
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_rejects_duplicate_display_positions",
+        "lines": [
+          566,
+          571
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION",
+          "'槽位不得重号' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_rejects_defined_position_semantics",
+        "lines": [
+          574,
+          579
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION",
+          "'UNDEFINED' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_structure_attestation_is_all_true_for_valid_layout",
+        "lines": [
+          582,
+          587
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "all((getattr(attestation, field) is True for field in type(attestation).model_fields))",
+          "prepared.slots[0].card_ref == SYNTH[0]",
+          "prepared.slots[0].slot == 'slot-1'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_prepare_registers_engineering_only_status",
+        "lines": [
+          590,
+          594
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "prepared.end_to_end_status == ENGINEERING_PATH_ONLY",
+          "prepared.admissions == ()",
+          "prepared.evidence_gate.is_open() is False"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_five_and_nine_card_modes_are_not_opened",
+        "lines": [
+          603,
+          610
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "spec.availability is ModeAvailability.NOT_OPENED",
+          "spec.slot_count == count",
+          "excinfo.value.code is LenormandRefusalCode.MODE_NOT_OPENED",
+          "'拒绝并登记，不发明位置解释' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_runtime_refuses_not_opened_modes_before_any_other_work",
+        "lines": [
+          614,
+          622
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.MODE_NOT_OPENED"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_not_opened_registration_records_reason",
+        "lines": [
+          626,
+          630
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "registration.mode is LayoutMode(mode)",
+          "registration.reason",
+          "registration.contract_version == LN_LAYOUT_EVIDENCE_CONTRACT_VERSION"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_register_not_opened_refuses_open_mode",
+        "lines": [
+          633,
+          636
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_three_card_line_is_structure_only_not_approved_spread",
+        "lines": [
+          639,
+          644
+        ],
+        "test": true,
+        "doc": "三牌线是本批范围，不是已批准牌阵：模式只开放结构子集。",
+        "assertions": [
+          "spec.availability is ModeAvailability.ALLOWED_STRUCTURE_ONLY",
+          "spec.position_semantics_required is PositionSemantics.UNDEFINED"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_three_card_relations_are_line_and_combination",
+        "lines": [
+          652,
+          659
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "kinds.count(RelationKind.ORDERED_LINE_SEQUENCE) == 1",
+          "kinds.count(RelationKind.ORDERED_ADJACENCY) == 2",
+          "kinds.count(RelationKind.FULL_MEMBER_SET) == 1",
+          "len(prepared.relations) == 4",
+          "all((relation.interpretation_status == 'NOT_APPROVED' for relation in prepared.relations))"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_assembly_is_order_sensitive",
+        "lines": [
+          662,
+          669
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "forward_ids != swapped_ids",
+          "_relation_of(forward, RelationKind.ORDERED_ADJACENCY, (SYNTH[0], SYNTH[1])) is not None",
+          "_relation_of(swapped, RelationKind.ORDERED_ADJACENCY, (SYNTH[0], SYNTH[1])) is None"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_reverse_adjacency_is_not_reused",
+        "lines": [
+          672,
+          681
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "lookup_relation(prepared.relations, RelationKind.ORDERED_ADJACENCY, (SYNTH[1], SYNTH[0])) is None",
+          "lookup_relation(prepared.relations, RelationKind.ORDERED_ADJACENCY, (SYNTH[1], SYNTH[2])) is not None"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_full_member_set_requires_all_members",
+        "lines": [
+          684,
+          694
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "combination is not None",
+          "relation_covers_all_members(combination, SYNTH) is True",
+          "relation_covers_all_members(combination, SYNTH[:2]) is False",
+          "relation_covers_all_members(combination, (SYNTH[0],)) is False",
+          "excinfo.value.code is LenormandRefusalCode.RELATION_COVERAGE_VIOLATION",
+          "SYNTH[2] in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_adjacency_requires_both_members",
+        "lines": [
+          697,
+          703
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "adjacency is not None",
+          "excinfo.value.code is LenormandRefusalCode.RELATION_COVERAGE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_relation_instances_are_deduped",
+        "lines": [
+          706,
+          710
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "doubled == prepared.relations",
+          "len({relation.relation_id for relation in doubled}) == len(doubled)"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_dedupe_keeps_distinct_directions",
+        "lines": [
+          713,
+          723
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "forward is not None and reverse is None",
+          "forward.relation_id != f\"{RelationKind.ORDERED_ADJACENCY.value}:{'->'.join((SYNTH[1], SYNTH[0]))}\""
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_assembly_refuses_duplicate_cards",
+        "lines": [
+          726,
+          738
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_recall_is_not_applicability_partial_member_is_narrowed_out",
+        "lines": [
+          746,
+          755
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "combination is not None",
+          "admission.recalled_count == 1",
+          "admission.admitted_items == ()",
+          "admission.narrowed_out_count == 1",
+          "admission.no_match_reason is NoMatchReason.NO_APPROVED_EVIDENCE"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_full_member_evidence_is_admitted",
+        "lines": [
+          758,
+          766
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "combination is not None",
+          "len(admission.admitted_items) == 1",
+          "admission.narrowed_out_count == 0",
+          "admission.no_match_reason is None"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_admission_refuses_tarot_item_mixed_into_lenormand_recall",
+        "lines": [
+          769,
+          802
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "combination is not None",
+          "excinfo.value.code is LenormandRefusalCode.CROSS_SYSTEM_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_no_match_reason_stays_in_closed_four_code_set",
+        "lines": [
+          805,
+          820
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "closed == {'NO_APPROVED_EVIDENCE', 'NO_LAYER_MATCH', 'NO_SNAPSHOT', 'DISABLED_PROVIDER_OFF'}",
+          "combination is not None",
+          "admission.no_match_reason is NoMatchReason.NO_LAYER_MATCH",
+          "admission.no_match_reason.value in closed"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_port_retrieval_over_synthetic_repository",
+        "lines": [
+          823,
+          839
+        ],
+        "test": true,
+        "doc": "离线替身：召回全成员条目；真实投影未批准，合成条目不得当作牌义。",
+        "assertions": [
+          "prepared.evidence_gate.is_open() is True",
+          "all((admission.recalled_count == 1 for admission in prepared.admissions))"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_empty_projection_snapshot_keeps_gate_closed",
+        "lines": [
+          842,
+          861
+        ],
+        "test": true,
+        "doc": "投影未批准 / 无快照时只返回 no-match，不得伪造来源。",
+        "assertions": [
+          "prepared.evidence_gate.is_open() is False",
+          "set(prepared.no_match_reasons()) <= {'NO_SNAPSHOT', 'NO_LAYER_MATCH', 'NO_APPROVED_EVIDENCE'}"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_generation_is_blocked_before_model_call_when_core_not_approved",
+        "lines": [
+          869,
+          882
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.EVIDENCE_NOT_APPROVED",
+          "calls == []",
+          "'模型调用之前阻断' in excinfo.value.detail",
+          "'不得用 Tarot 数据或模型记忆兜底' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_generation_proceeds_when_core_evidence_admitted",
+        "lines": [
+          885,
+          891
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "combination is not None",
+          "admission.admitted_items",
+          "guarded_generate(gate, lambda: 'OK') == 'OK'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_gate_from_admissions_is_closed_without_items",
+        "lines": [
+          894,
+          898
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "gate.is_open() is False"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "_natural_payload",
+        "lines": [
+          906,
+          915
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_output_port_requires_open_gate_before_shape_checks",
+        "lines": [
+          918,
+          926
+        ],
+        "test": true,
+        "doc": "门在形状校验之前生效：无核心证据时连形状都不进入。",
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.EVIDENCE_NOT_APPROVED"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_output_port_renders_natural_judgment_when_gate_open",
+        "lines": [
+          929,
+          938
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "combination is not None",
+          "judgment.main_judgment",
+          "set(judgment.public_payload()) == set(PUBLIC_JUDGMENT_FIELDS)",
+          "'sha256' not in judgment.public_payload()"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_output_shape_rejects_per_card_glossary",
+        "lines": [
+          950,
+          953
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_output_shape_rejects_engineering_fields",
+        "lines": [
+          957,
+          960
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_output_shape_rejects_profile_fields",
+        "lines": [
+          964,
+          967
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_judgment_model_has_no_profile_fields_to_land",
+        "lines": [
+          970,
+          976
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [],
+        "raises": [
+          "pytest.raises(ValidationError)"
+        ]
+      },
+      {
+        "symbol": "test_natural_judgment_payload_passes_shape_check",
+        "lines": [
+          979,
+          980
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_ds07_layout_evidence_is_byte_bound_read_only_input",
+        "lines": [
+          988,
+          991
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "DS07_LAYOUT.is_file()",
+          "sha256_file(DS07_LAYOUT) == DS07_LAYOUT_SHA256",
+          "sha256_file(DS07_LEDGER) == DS07_LEDGER_SHA256"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_layout_evidence_version_binding",
+        "lines": [
+          994,
+          1004
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "document['contract_version'] == LN_LAYOUT_EVIDENCE_CONTRACT_VERSION",
+          "excinfo.value.code is LenormandRefusalCode.EVIDENCE_VERSION_MISMATCH",
+          "'先归因，不投票' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_mode_registry_matches_ds07_availability",
+        "lines": [
+          1007,
+          1012
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "ds07_mode['availability'] == spec.availability.value",
+          "ds07_mode['slot_count'] == spec.slot_count"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_ds07_declares_interpretation_path_missing_and_modes_not_opened",
+        "lines": [
+          1015,
+          1024
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "rules['LN-3L-005']['usable_by_ds08'] == 'NOT_OPENED'",
+          "rules['LN-3L-005']['provenance_class'] == 'MISSING_REQUIRED_BYTES'",
+          "'把五/九牌模式开放' in document['ds08_contract']['not_allowed_now']",
+          "'五/九牌模式未开放时拒绝并登记，不发明位置解释' in document['ds08_contract']['required_refusals']"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_ds07_ledger_keeps_lenormand_without_orientation",
+        "lines": [
+          1027,
+          1044
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "ledger['system'] == 'LENORMAND'",
+          "axes == {'original_access_status': 'NO_ORIGINAL_BYTES_OBTAINED', 'runtime_approval_status': 'NOT_APPROVED'}",
+          "rule['usable_by_ds08'] == 'FORBIDDEN'",
+          "'没有 orientation 维度' in rule['statement']",
+          "set(rule['negative_controls']) == {'orientation=null 必须拒绝', 'orientation=\"\" 必须拒绝', 'orientation=\"UPRIGHT\" 必须拒绝', 'orientation=\"REVERSED\" 必须拒绝'}"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_runtime_scope_notes_keep_uncontracted_faces_as_requests",
+        "lines": [
+          1052,
+          1059
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "notes == LN_RUNTIME_SCOPE_NOTES",
+          "notes['ttl_replay'] == 'NOT_DEFINED_FOR_LN_RUNTIME'",
+          "notes['state_edges'] == 'NO_NEW_EDGES_ADDED'",
+          "notes['model_generation'] == 'BLOCKED_PENDING_CORE_EVIDENCE_APPROVAL'",
+          "notes[face] == 'REQUEST_PENDING_EXACT_CONTRACT'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_runtime_does_not_declare_end_to_end_completion",
+        "lines": [
+          1062,
+          1065
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "prepared.end_to_end_status == ENGINEERING_PATH_ONLY",
+          "'NOT_APPROVED' in prepared.end_to_end_status"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "generator",
+        "lines": [
+          873,
+          875
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      }
+    ]
+  },
+  {
+    "path": "ln_candidate/tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+    "sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+    "lines": 597,
+    "execution": "NOT_RUN",
+    "symbols": [
+      {
+        "symbol": "payload",
+        "lines": [
+          79,
+          87
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "ln_item",
+        "lines": [
+          90,
+          130
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "retrieval_result",
+        "lines": [
+          133,
+          150
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "full_member_relation",
+        "lines": [
+          153,
+          158
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [
+          "relation.members == SYNTH"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_runtime_modules_resolve_into_this_worktree",
+        "lines": [
+          166,
+          169
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "Path(ln_runtime.__file__).resolve().is_relative_to(REPO_ROOT.resolve())"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_non_core_supplement_cannot_open_core_evidence_gate",
+        "lines": [
+          177,
+          189
+        ],
+        "test": true,
+        "doc": "`SUPPLEMENT_ONLY` / `may_establish_core=False` 的条目不得建立核心。",
+        "assertions": [
+          "admission.admitted_items",
+          "admission.admitted_core_items == ()",
+          "excinfo.value.code is LenormandRefusalCode.EVIDENCE_NOT_APPROVED"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_method_only_role_cannot_open_core_evidence_gate",
+        "lines": [
+          192,
+          199
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "admission.admitted_core_items == ()",
+          "gate_from_admissions((admission,)).is_open() is False"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_core_evidence_still_opens_the_gate_positive_control",
+        "lines": [
+          202,
+          209
+        ],
+        "test": true,
+        "doc": "正控：真核心条目（CORE_EVIDENCE + may_establish_core）仍然开门。",
+        "assertions": [
+          "len(admission.admitted_core_items) == 1",
+          "admission.admitted_core_items == admission.admitted_items",
+          "gate_from_admissions((admission,)).is_open() is True"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_foreign_projection_id_is_refused_not_silently_admitted",
+        "lines": [
+          217,
+          223
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.EVIDENCE_PROJECTION_MISMATCH",
+          "'ln-projection-other' in excinfo.value.detail"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_foreign_snapshot_id_is_refused",
+        "lines": [
+          226,
+          231
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.EVIDENCE_PROJECTION_MISMATCH"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_matching_projection_and_snapshot_are_admitted",
+        "lines": [
+          234,
+          243
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "len(admission.admitted_core_items) == 1",
+          "admission.projection_binding_status == 'BOUND_AND_MATCHED'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_unbound_projection_is_reported_not_claimed_as_verified",
+        "lines": [
+          246,
+          251
+        ],
+        "test": true,
+        "doc": "未显式绑定投影时，如实登记「未绑定核对」，不得声称已核 release。",
+        "assertions": [
+          "admission.projection_binding_status == 'UNBOUND_NOT_CLAIMED'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_scoped_foreign_spread_is_narrowed_out",
+        "lines": [
+          259,
+          267
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "admission.admitted_items == ()",
+          "admission.narrowed_out_count == 1",
+          "admission.no_match_reason is NoMatchReason.NO_APPROVED_EVIDENCE"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_scoped_matching_spread_is_admitted",
+        "lines": [
+          270,
+          276
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "len(admission.admitted_core_items) == 1"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_scoped_foreign_domain_and_scenario_are_narrowed_out",
+        "lines": [
+          279,
+          295
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "admission.admitted_items == ()"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_global_scope_is_unrestricted_positive_control",
+        "lines": [
+          298,
+          307
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "len(admission.admitted_core_items) == 1"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_method_purpose_item_is_not_admitted_as_core_evidence",
+        "lines": [
+          315,
+          320
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "admission.admitted_core_items == ()",
+          "gate_from_admissions((admission,)).is_open() is False"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_method_purpose_query_admits_method_item",
+        "lines": [
+          323,
+          338
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "len(admission.admitted_items) == 1",
+          "admission.admitted_core_items == ()"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_kind_outside_the_allowed_set_is_narrowed_out",
+        "lines": [
+          346,
+          363
+        ],
+        "test": true,
+        "doc": "只允许 ADJACENCY 时，组合关系（FULL_MEMBER_SET）不得把证据收进来。",
+        "assertions": [
+          "relation.kind is RelationKind.FULL_MEMBER_SET",
+          "admission.admitted_items == ()",
+          "admission.admitted_core_items == ()",
+          "admission.narrowed_out_count == 1",
+          "any((reason.endswith('RELATION_KIND_NOT_ALLOWED') for reason in admission.narrowed_reasons))",
+          "admission.no_match_reason is NoMatchReason.NO_APPROVED_EVIDENCE"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_kind_inside_the_allowed_set_is_admitted",
+        "lines": [
+          366,
+          373
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "len(admission.admitted_core_items) == 1"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_kind_restriction_can_come_from_the_policy_object",
+        "lines": [
+          376,
+          384
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "admission.admitted_items == ()"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_relation_interpretation_status_is_a_closed_enum",
+        "lines": [
+          392,
+          406
+        ],
+        "test": true,
+        "doc": "未批准 relation 不得进入解释：非 `NOT_APPROVED` 的取值必须构造失败。",
+        "assertions": [
+          "relation.interpretation_status == 'NOT_APPROVED'",
+          "'interpretation_status' in locations"
+        ],
+        "raises": [
+          "pytest.raises(ValidationError)"
+        ]
+      },
+      {
+        "symbol": "test_relation_interpretation_requires_explicit_authority",
+        "lines": [
+          409,
+          417
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.RELATION_INTERPRETATION_NOT_AUTHORIZED"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_unregistered_relation_kind_in_relation_id_is_refused",
+        "lines": [
+          420,
+          425
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.UNKNOWN_RELATION_KIND"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_registered_relation_id_round_trips",
+        "lines": [
+          428,
+          433
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "kind is RelationKind.ORDERED_ADJACENCY",
+          "members == ('ln-synth-a', 'ln-synth-b')"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_mixed_card_ref_and_judgment_keys_are_refused",
+        "lines": [
+          441,
+          448
+        ],
+        "test": true,
+        "doc": "只把「全部键都是牌引用」当词典会漏掉混合 payload。",
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_mixed_card_ref_keys_inside_nested_mapping_are_refused",
+        "lines": [
+          451,
+          456
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_internal_identifier_in_text_value_is_refused",
+        "lines": [
+          459,
+          469
+        ],
+        "test": true,
+        "doc": "越界检测：值里出现本次实际的内部 ID 即拒（按实际绑定对象，不按词表）。",
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_INTERNAL_LEAK"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_hash_shaped_token_in_text_value_is_refused",
+        "lines": [
+          472,
+          477
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_INTERNAL_LEAK"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_nested_sequence_internal_identifier_is_refused",
+        "lines": [
+          480,
+          488
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_INTERNAL_LEAK"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_no_match_code_in_user_visible_text_is_refused",
+        "lines": [
+          491,
+          498
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.OUTPUT_INTERNAL_LEAK"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_natural_language_about_evidence_absence_is_not_over_refused",
+        "lines": [
+          501,
+          512
+        ],
+        "test": true,
+        "doc": "过度限制反证：同样语义、但用自然语言的表达必须通过。",
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_length_and_shape_checks_do_not_reject_negative_wording",
+        "lines": [
+          515,
+          524
+        ],
+        "test": true,
+        "doc": "「阻力/负向信号」不得因为不够暖而被删掉。",
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_blank_topic_is_a_governed_refusal",
+        "lines": [
+          532,
+          537
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.INPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_non_integer_draw_order_is_a_governed_refusal",
+        "lines": [
+          540,
+          545
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.INPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_unknown_spread_mode_is_a_governed_refusal",
+        "lines": [
+          548,
+          553
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.INPUT_SHAPE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_nested_orientation_under_card_ref_is_still_refused",
+        "lines": [
+          556,
+          568
+        ],
+        "test": true,
+        "doc": "orientation 键出现在 card_ref 内也必须是拒绝（不是静默吞掉）。",
+        "assertions": [
+          "excinfo.value.code in {LenormandRefusalCode.ORIENTATION_FORBIDDEN, LenormandRefusalCode.INPUT_SHAPE_VIOLATION}"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_deck_binding_status_is_honest_without_approved_catalog",
+        "lines": [
+          576,
+          580
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "prepared.deck_binding_status == 'UNBOUND_NO_APPROVED_CATALOG'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_cards_outside_supplied_catalog_are_refused",
+        "lines": [
+          583,
+          597
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "prepared.deck_binding_status == 'BOUND_AUTHORIZED_CATALOG'",
+          "excinfo.value.code is LenormandRefusalCode.UNKNOWN_CARD_REFERENCE"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "ln_candidate/tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+    "sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+    "lines": 404,
+    "execution": "NOT_RUN",
+    "symbols": [
+      {
+        "symbol": "three_card_payload",
+        "lines": [
+          60,
+          68
+        ],
+        "test": false,
+        "doc": null,
+        "assertions": [],
+        "raises": []
+      },
+      {
+        "symbol": "test_candidate_state_is_declared_not_approved",
+        "lines": [
+          76,
+          78
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "CANDIDATE_STATE == 'CANDIDATE_DEFAULT_OFF_NOT_APPROVED'",
+          "CANDIDATE_CONTRACT_VERSION == 'lenormand-layout-candidate.v1'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_runtime_registry_is_unchanged_by_the_candidate_module",
+        "lines": [
+          81,
+          84
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "MODE_REGISTRY[mode].availability is ModeAvailability.NOT_OPENED"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_candidate_module_is_not_imported_by_any_consumer_module",
+        "lines": [
+          87,
+          89
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "candidate_module_is_imported_by_consumer() == ()"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_runtime_still_refuses_five_and_nine_card_after_candidate_landed",
+        "lines": [
+          92,
+          106
+        ],
+        "test": true,
+        "doc": "候选落盘后，运行时入口仍必须拒绝五/九牌（不得静默开放）。",
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.MODE_NOT_OPENED"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_candidate_plans_are_flagged_not_runtime_eligible",
+        "lines": [
+          109,
+          112
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "plan.runtime_eligible is False",
+          "plan.default_enabled is False"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_five_card_slot_labels_match_this_batch_statement",
+        "lines": [
+          120,
+          129
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "FIVE_CARD_SLOT_LABELS == ('现状', '助力', '阻力', '隐藏变量', '建议')",
+          "tuple((role.label for role in plan.slot_roles)) == FIVE_CARD_SLOT_LABELS",
+          "plan.pivot_slot == FIVE_CARD_PIVOT_SLOT == 2",
+          "all((role.runtime_eligible is False for role in plan.slot_roles))",
+          "all((role.approval_status is CandidateApprovalStatus.BATCH_SCOPE_ONLY_NOT_APPROVED for role in plan.slot_roles))"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_five_card_adjacency_pairs_are_one_to_two_through_four_to_five",
+        "lines": [
+          132,
+          146
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "[instance.slots for instance in adjacency] == [(0, 1), (1, 2), (2, 3), (3, 4)]",
+          "all((instance.directed for instance in adjacency))",
+          "[instance.members for instance in adjacency] == [(SYNTH_FIVE[0], SYNTH_FIVE[1]), (SYNTH_FIVE[1], SYNTH_FIVE[2]), (SYNTH_FIVE[2], SYNTH_FIVE[3]), (SYNTH_FIVE[3], SYNTH_FIVE[4])]"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_five_card_pivot_is_registered_as_a_structure_fact_only",
+        "lines": [
+          149,
+          157
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "len(pivot) == 1",
+          "pivot[0].slots == (FIVE_CARD_PIVOT_SLOT,)",
+          "pivot[0].members == (SYNTH_FIVE[FIVE_CARD_PIVOT_SLOT],)",
+          "all((instance.interpretation_status == 'NOT_APPROVED' for instance in instances))"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_five_card_pivot_is_not_sole_authority_positive_control",
+        "lines": [
+          160,
+          166
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "participation.pivot_relation_count >= MIN_PIVOT_PARTICIPATION",
+          "participation.relations_without_pivot >= 1",
+          "len(participation.non_pivot_slots_covered_without_pivot) == 4"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_five_card_pivot_being_the_only_bridge_is_refused",
+        "lines": [
+          169,
+          182
+        ],
+        "test": true,
+        "doc": "负控：把两侧邻接都删掉，中轴就成为唯一桥梁，必须失败。",
+        "assertions": [
+          "star",
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_five_card_pivot_with_too_few_relations_is_refused",
+        "lines": [
+          185,
+          192
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_five_card_slot_coverage_is_total",
+        "lines": [
+          195,
+          205
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "partial",
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_nine_card_priority_order_is_center_ring_lines_then_diagonal",
+        "lines": [
+          213,
+          223
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "plan.relation_priority == (CandidateRelationKind.CENTER_CELL, CandidateRelationKind.CENTER_RING, CandidateRelationKind.ROW, CandidateRelationKind.COLUMN, CandidateRelationKind.DIAGONAL_SUPPORT_ONLY)",
+          "plan.pivot_slot == NINE_CARD_CENTER_SLOT == 4",
+          "plan.slot_count == 9"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_nine_card_center_and_ring_are_structural",
+        "lines": [
+          226,
+          237
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "[instance.slots for instance in center] == [(NINE_CARD_CENTER_SLOT,)]",
+          "len(ring) == 1",
+          "ring[0].slots == NINE_CARD_RING_SLOTS",
+          "NINE_CARD_CENTER_SLOT not in ring[0].slots"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_nine_card_rows_and_columns_cover_the_grid",
+        "lines": [
+          240,
+          245
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "rows == [(0, 1, 2), (3, 4, 5), (6, 7, 8)]",
+          "columns == [(0, 3, 6), (1, 4, 7), (2, 5, 8)]"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_nine_card_diagonals_are_support_only",
+        "lines": [
+          248,
+          260
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "[instance.slots for instance in diagonals] == list(NINE_CARD_DIAGONAL_SLOTS)",
+          "all((instance.support_only for instance in diagonals))",
+          "all((instance.priority > 1 for instance in diagonals))"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_diagonal_registered_as_a_row_is_refused",
+        "lines": [
+          263,
+          274
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_diagonal_registered_as_adjacency_is_refused",
+        "lines": [
+          277,
+          290
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_nine_card_center_is_not_sole_determinant",
+        "lines": [
+          293,
+          299
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "participation.pivot_relation_count >= MIN_PIVOT_PARTICIPATION",
+          "len(participation.non_pivot_slots_covered_without_pivot) == 8"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_pivot_participation_helper_reports_counts",
+        "lines": [
+          302,
+          307
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "participation.pivot_slot == FIVE_CARD_PIVOT_SLOT",
+          "participation.non_pivot_slots_total == 4"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_candidate_assembly_does_not_silently_downscale_to_three_cards",
+        "lines": [
+          315,
+          318
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "excinfo.value.code is LenormandRefusalCode.LAYOUT_STRUCTURE_VIOLATION"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_candidate_assembly_has_no_plan_for_the_three_card_line",
+        "lines": [
+          321,
+          327
+        ],
+        "test": true,
+        "doc": "三牌线由生产模块负责；候选模块不得重复定义三牌结构。",
+        "assertions": [
+          "LayoutMode.THREE_CARD_LINE not in CANDIDATE_PLANS",
+          "excinfo.value.code is LenormandRefusalCode.MODE_NOT_OPENED"
+        ],
+        "raises": [
+          "pytest.raises(LenormandRuntimeRefusal)"
+        ]
+      },
+      {
+        "symbol": "test_candidate_plan_shape_has_no_card_meaning_field",
+        "lines": [
+          335,
+          358
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "plan_fields == {'mode', 'slot_count', 'geometry', 'relation_priority', 'relations', 'slot_roles', 'pivot_slot', 'runtime_eligible', 'default_enabled'}",
+          "instance_fields == {'relation_id', 'kind', 'slots', 'members', 'directed', 'priority', 'support_only', 'interpretation_status'}"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_candidate_relations_are_all_unapproved_for_interpretation",
+        "lines": [
+          361,
+          367
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "instance.interpretation_status == 'NOT_APPROVED'"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_rule_differences_are_registered_and_never_silent",
+        "lines": [
+          375,
+          382
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "{'LN-5L-002', 'LN-9L-003', 'LN-9L-002'} <= ids",
+          "any(('not_allowed_now' in difference.upstream_rule_id for difference in RULE_DIFFERENCES))",
+          "difference.current_batch_statement",
+          "difference.resolution",
+          "difference.blocks_runtime is True"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_rule_differences_do_not_claim_owner_approval",
+        "lines": [
+          385,
+          398
+        ],
+        "test": true,
+        "doc": "差异登记不得把上游状态写成已批准：产品批准标记必须不在，未批准标记必须在。",
+        "assertions": [
+          "'APPROVED_PRODUCT' not in status",
+          "not status.startswith('APPROVED')",
+          "any((marker in status for marker in non_approval_markers))"
+        ],
+        "raises": []
+      },
+      {
+        "symbol": "test_repo_root_is_this_worktree",
+        "lines": [
+          401,
+          404
+        ],
+        "test": true,
+        "doc": null,
+        "assertions": [
+          "Path(module.__file__).resolve().is_relative_to(REPO_ROOT.resolve())"
+        ],
+        "raises": []
+      }
+    ]
+  }
+]

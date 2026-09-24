@@ -1,0 +1,21 @@
+{
+  "schema": "lenormand.material-gaps.v1",
+  "must_resolve_for_three_card": [
+    "Exact identity and approval chain for the authorized 36-card LN catalog",
+    "Matthews/Rana source-role and method-profile originals or an explicit owner-held approved projection",
+    "Private retrieval scope, lifecycle states, revocation and single owner evidence"
+  ],
+  "later_for_five_nine": [
+    "Separately approved five-card site profile and adjacent-pair acceptance evidence",
+    "Separately approved nine-card center/line/diagonal profile and disabled-by-default browser/API gate"
+  ],
+  "not_to_add_to_ln": [
+    "Tarot Mentor entries",
+    "Book T/GD evidence",
+    "Tarot orientation or reversals",
+    "Old60/new24/sister Swords6/8 Mentor materials",
+    "Historical 281 Mentor corpus and derivatives"
+  ],
+  "exact_historical_files_missing_in_returns_7": 13,
+  "policy": "Do not reconstruct missing originals from summaries, model memory, same-name files, or majority vote."
+}

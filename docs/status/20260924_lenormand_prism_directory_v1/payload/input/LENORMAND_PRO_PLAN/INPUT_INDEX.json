@@ -1,0 +1,288 @@
+{
+  "schema": "lenormand.pro.input-index.v1",
+  "project": "TarotEngine",
+  "engine_head": "ecdfb895fcbbc3f80cc97269388bc0111bc999e0",
+  "files": [
+    {
+      "path": "input/AGENTS.md",
+      "bytes": 19915,
+      "sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8"
+    },
+    {
+      "path": "input/DOUBAO_ALIGNMENT_AUDIT/BLIND_FINDINGS.json",
+      "bytes": 8545,
+      "sha256": "2d94eaa7df2db9e8706657dcda4707df571c1b0e3f5aa7e4ab59107456e32792"
+    },
+    {
+      "path": "input/DOUBAO_ALIGNMENT_AUDIT/CHECKS.json",
+      "bytes": 2284,
+      "sha256": "5a40b174b8dce16dcef72b551cbaf7e4c31c72c67665e586c256e29144c261d5"
+    },
+    {
+      "path": "input/DOUBAO_ALIGNMENT_AUDIT/DOUBAO_ADJUDICATION.md",
+      "bytes": 4654,
+      "sha256": "9580e43e43baae753f00e43254e1f16cf8b56fd76e84213da80b03195118a97e"
+    },
+    {
+      "path": "input/ENGINE_HEAD.txt",
+      "bytes": 41,
+      "sha256": "ba26089aecc3f65b6f025cf1fbd0f141b4f5b05d69fbe97351aecb6d69469685"
+    },
+    {
+      "path": "input/ENGINE_STATUS_SHORT.txt",
+      "bytes": 4283,
+      "sha256": "f91163c21c69a4ba4a94411a42d0b6e2a9cbc8ce9dd3c6593e4816a899b1755c"
+    },
+    {
+      "path": "input/LN_PLAN/DEPENDENCY_DAG.json",
+      "bytes": 152292,
+      "sha256": "f8fd99c163df5bd0a7c06c4e70768528679ef372e30c9c11be4b73746739f0a7"
+    },
+    {
+      "path": "input/LN_PLAN/GAP_REGISTER.json",
+      "bytes": 28493,
+      "sha256": "27573e56e771496208b628e0a4c5ec01926c2d264b3db6fdfd99fd02644f6e68"
+    },
+    {
+      "path": "input/LN_PLAN/INTERFACE_CONTRACTS.json",
+      "bytes": 50038,
+      "sha256": "53fb0027ba1dd58fa7716416c7737fcc440732ec071112a6b2fe7e4a3303484f"
+    },
+    {
+      "path": "input/LN_PLAN/MASTER_PLAN_CN.md",
+      "bytes": 5956,
+      "sha256": "62f0ca28e82db8ff58fbc984724699437c43ee748d92f7109d49fe56147c01a2"
+    },
+    {
+      "path": "input/LN_PLAN/OWNER_DECISIONS.md",
+      "bytes": 2086,
+      "sha256": "4851d9600c696bd76b2c681cf49a9ef654ea82e3fe9b6466d70f026c86ba5e58"
+    },
+    {
+      "path": "input/LN_PLAN/P01_P07_MASTER_PLAN_CN.md",
+      "bytes": 8260,
+      "sha256": "d37d20732738188ab01f764d551875ffc1d063cdfc63917d4d8e0936c02cb55c"
+    },
+    {
+      "path": "input/LN_PLAN/README_CN.md",
+      "bytes": 2655,
+      "sha256": "e4ecce775403fdf6b0352f856aa20492dc911a1d4dfa5a13f9063e5252ddfed9"
+    },
+    {
+      "path": "input/LN_PLAN/S02/INTERFACE_CONTRACTS.json",
+      "bytes": 12180,
+      "sha256": "f85ed27f8c731d38f92e24419b126688683a09b662652458ac6e8b2e9a8fbc83"
+    },
+    {
+      "path": "input/LN_PLAN/S03/SOURCE_ANCHORS.json",
+      "bytes": 5597,
+      "sha256": "61ad65049ca9d820d210609921d415e9d8d5845f8d178bddc67fc2db3851661c"
+    },
+    {
+      "path": "input/LN_PLAN/S03/SPEC_CN.md",
+      "bytes": 7819,
+      "sha256": "101224fe3d6be0c075a8ed863bf6f5973a820fdbbde1373f97450872e3d933b8"
+    },
+    {
+      "path": "input/LN_PLAN/S03/TASKS.json",
+      "bytes": 234634,
+      "sha256": "d6a4de782b044ecba1ce697df0e3634aab8e22696ad4f47f0475b6e4a3574d60"
+    },
+    {
+      "path": "input/LN_PLAN/S04/TASKS.json",
+      "bytes": 145082,
+      "sha256": "8b16f6411f61680e96d0a05b6d4c71e632c2589b2e7917f5924565aa9965dc8a"
+    },
+    {
+      "path": "input/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+      "bytes": 15774,
+      "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99"
+    },
+    {
+      "path": "input/PROJECT_MAP_CN.md",
+      "bytes": 15513,
+      "sha256": "a1fca9d2cb77f9c7289ee55b906ba8666b288c766d01779335ad39a6a994a19a"
+    },
+    {
+      "path": "input/RECENT_24H/ACCEPTANCE.json",
+      "bytes": 25808,
+      "sha256": "94fc238560f52dcb800339db51b8917c3c6390262bf72191eb9713b4cf682ff9"
+    },
+    {
+      "path": "input/RECENT_24H/ACCEPTANCE.md",
+      "bytes": 8528,
+      "sha256": "ab3e24114eb5c05bb4ff4991b986b70e031d96af8a71e2aebeb9625d12732b57"
+    },
+    {
+      "path": "input/RECENT_24H/ASTRA_B_CHECKS.json",
+      "bytes": 1673,
+      "sha256": "a38117b3647cebce64385b106f85bbf16f36fdef96a5999d6b06937304878f30"
+    },
+    {
+      "path": "input/RECENT_24H/ASTRA_B_COMMON_CN.md",
+      "bytes": 2282,
+      "sha256": "b013ebcae77606d35780bc6c8fbed1b10e2805ad4e9fcb697f07d26b3b8cb737"
+    },
+    {
+      "path": "input/RECENT_24H/ASTRA_B_LATEST_STATUS_CN.md",
+      "bytes": 2850,
+      "sha256": "e97cc884efae77273cb9c8adc46edd3e781257bf3b23092f6ae86dec940471d9"
+    },
+    {
+      "path": "input/RECENT_24H/ASTRA_B_MASTER_PLAN_CN.md",
+      "bytes": 3477,
+      "sha256": "938070b8ee87e2553d6309397f0e7e35ade8bcd6e1f6ea2d08bc0f4de37a151c"
+    },
+    {
+      "path": "input/RECENT_24H/ASTRA_B_PROGRESS.json",
+      "bytes": 864,
+      "sha256": "6146164bebd3bba15f168e0a3e2773e04f65e21fb2a13967cedd488c796fa18a"
+    },
+    {
+      "path": "input/RECENT_24H/ASTRA_B_RETURN_CN.md",
+      "bytes": 1457,
+      "sha256": "add9698c94c1534be1c021e5d0983e17d2805931b8c3bc536ca5ea5b8e0294f1"
+    },
+    {
+      "path": "input/RECENT_24H/BASELINE_COMPARISON.md",
+      "bytes": 7529,
+      "sha256": "6302512cdcfd513528f70b592a8eeb05b945ff59494719d41ae5290e0ab9d1a6"
+    },
+    {
+      "path": "input/RECENT_24H/CALLER_REFERENCE_INDEX.json",
+      "bytes": 64951,
+      "sha256": "0cb8a25056ba345ab0655e132c4312f64b49fe0312136d51195baf7c4e0dcad9"
+    },
+    {
+      "path": "input/RECENT_24H/CALL_CHAIN.md",
+      "bytes": 9648,
+      "sha256": "960119c4eaa374072a303721c52dc9de8a24eb67228186e370d715b650947cdb"
+    },
+    {
+      "path": "input/RECENT_24H/CANDIDATE_FILE_DIFFS.json",
+      "bytes": 4163,
+      "sha256": "15a254a01a7c6c14d56ea31976ca8b7f9a2ae7c05fb64ff7b035d87346f8791d"
+    },
+    {
+      "path": "input/RECENT_24H/CANDIDATE_TEST_REVIEW.json",
+      "bytes": 58277,
+      "sha256": "c1953a44b6356889a817f79bd7bc9e020056484437ac13c7ef13779c3843952f"
+    },
+    {
+      "path": "input/RECENT_24H/CHECKS.json",
+      "bytes": 5471,
+      "sha256": "38b5e9d85dcedac04b3cae63112dc7df8048774cb5e7aef6cab700ec26419137"
+    },
+    {
+      "path": "input/RECENT_24H/DEPENDENCIES.md",
+      "bytes": 4121,
+      "sha256": "fc6a29b655ab628112fc5507142795c7a9995b85095c8921dc27a7e3e913ecac"
+    },
+    {
+      "path": "input/RECENT_24H/DS_OUTPUT_DELTA_REVIEW.txt",
+      "bytes": 4766,
+      "sha256": "644d1937efd89d12c977a1e487bf43b93b93ed9a806023c458e7df9ab3200d4d"
+    },
+    {
+      "path": "input/RECENT_24H/FIVE_NINE_CANDIDATE.md",
+      "bytes": 10616,
+      "sha256": "e8259c0e9eb697a13b39e3dea0e7ad14f06edba9597874d695b02e452cb03a72"
+    },
+    {
+      "path": "input/RECENT_24H/HISTORICAL_CROSSCHECK.md",
+      "bytes": 4437,
+      "sha256": "6f64cb34936beb2ceb437b4344a0f1601d360abe20393ea7db828769ff01e64f"
+    },
+    {
+      "path": "input/RECENT_24H/INPUT_IDENTITIES.json",
+      "bytes": 235589,
+      "sha256": "84eadbde8b1fda9d31f7d68311005f42e5e98b4d62d3d1e389b1b2126179f9a1"
+    },
+    {
+      "path": "input/RECENT_24H/INPUT_VERIFICATION.json",
+      "bytes": 1628,
+      "sha256": "4d31f7be598f27a0f6167ce85417870e0494abfc6c0999d55b10701e5c94e2d7"
+    },
+    {
+      "path": "input/RECENT_24H/INTERFACE_REQUESTS.json",
+      "bytes": 14204,
+      "sha256": "51c036319130369c482fb613230a67ff787978917d362028f5da5a7b13cc2a67"
+    },
+    {
+      "path": "input/RECENT_24H/MAIN_D_FILE_DIFFS.json",
+      "bytes": 102875,
+      "sha256": "e6bba1419204342897dc58bd4c40d412f4b47c14953d458d4b577ed9a96cc159"
+    },
+    {
+      "path": "input/RECENT_24H/MANIFEST.json",
+      "bytes": 4428,
+      "sha256": "0a2de1f4999b93a75ee41f75e31bca85289e0cb4087de076e4b54a75fa3b8ec1"
+    },
+    {
+      "path": "input/RECENT_24H/OVERDESIGN_REVIEW.md",
+      "bytes": 9207,
+      "sha256": "2968753fe83687108cd1fae0fc00d3f4b28ae099e0b52600275f960dc16f19c0"
+    },
+    {
+      "path": "input/RECENT_24H/PATCH_INSPECTION.json",
+      "bytes": 8397,
+      "sha256": "02b2d487022efcc95de454411c0a6b082d821cc253bf8e0d80b26904713d9192"
+    },
+    {
+      "path": "input/RECENT_24H/READING_RECEIPT.json",
+      "bytes": 17662,
+      "sha256": "3655ae76f1b095c74b2d5d24b4e7634da3c6a354e1687f6335fbb382ee7e93be"
+    },
+    {
+      "path": "input/RECENT_24H/RETURN.md",
+      "bytes": 6581,
+      "sha256": "d38112771f872f646aae321cbda66de78284d2eb5f7fac01ae813f2045b85738"
+    },
+    {
+      "path": "input/RECENT_24H/SHA256SUMS",
+      "bytes": 2389,
+      "sha256": "32511364052da06633f18fea541183db81dada37370e4864cd3dc2d0e4fb6df5"
+    },
+    {
+      "path": "input/RECENT_24H/SOURCE_GAPS_AND_OWNER_DECISIONS.md",
+      "bytes": 7189,
+      "sha256": "10c65cee07bb5a75a458c29dd336733a9a10c85638624045c28b7edbc8b2fbd8"
+    },
+    {
+      "path": "input/RECENT_24H/SOURCE_MINING.md",
+      "bytes": 7004,
+      "sha256": "722162b7f2b2605332dc382f774a5bf654e94f0c7257aef1515245ae501eebf7"
+    },
+    {
+      "path": "input/RECENT_24H/SPEC.md",
+      "bytes": 20813,
+      "sha256": "9aeaf927882e81cba1b624c87941a09a803e29517c28f807cd9ff00ae1bad348"
+    },
+    {
+      "path": "input/RECENT_24H/STATE.json",
+      "bytes": 5819,
+      "sha256": "698e418cdac9ce6832be394d9f938a5fdcdd28b0e1f52b48cfad1a9582605c56"
+    },
+    {
+      "path": "input/RECENT_24H/SYMBOL_INDEX.json",
+      "bytes": 681427,
+      "sha256": "d0d6cc5a3edc32641f2e4cb9e7863478faaa07909d9a1faf997da12d4cbe8486"
+    },
+    {
+      "path": "input/RECENT_24H/TASKS.json",
+      "bytes": 50344,
+      "sha256": "24e549e328daa088cd14069d93dbb6642487b65a19e8b609bce1c0c0cf9f763d"
+    },
+    {
+      "path": "input/RECENT_24H/TASKS.md",
+      "bytes": 23907,
+      "sha256": "8225bb247270bc7cf91a68f910ba197e5a6275b56f5bfd9848febbb91df4a7e7"
+    },
+    {
+      "path": "input/SOURCE_LIFECYCLE_CN.md",
+      "bytes": 3716,
+      "sha256": "5b807f2db1c032ab8e1e48a14f04d9974cdad2a526fc194cc8e0c8779aa6ff1d"
+    }
+  ],
+  "agents_sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8"
+}

@@ -1,0 +1,2038 @@
+{
+  "scope": "complete selected src/tests Python files only; lexical references not runtime proof",
+  "references": [
+    {
+      "surface": "M",
+      "path": "src/xiaoxingchen_core/mcp/postgres_tools.py",
+      "line": 32,
+      "text": "class PostgresEvidenceTools:"
+    },
+    {
+      "surface": "M",
+      "path": "src/xiaoxingchen_core/mcp/postgres_tools.py",
+      "line": 36,
+      "text": "def from_url(cls, database_url: str) -> PostgresEvidenceTools:"
+    },
+    {
+      "surface": "M",
+      "path": "src/xiaoxingchen_core/mcp/server.py",
+      "line": 115,
+      "text": "from xiaoxingchen_core.mcp.postgres_tools import PostgresEvidenceTools"
+    },
+    {
+      "surface": "M",
+      "path": "src/xiaoxingchen_core/mcp/server.py",
+      "line": 117,
+      "text": "create_server(tool_set=PostgresEvidenceTools.from_url(database_url)).run(transport=\"stdio\")"
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 76,
+      "text": "from xiaoxingchen_core.mcp.postgres_tools import PostgresEvidenceTools"
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 439,
+      "text": "tools: PostgresEvidenceTools | None = None"
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 442,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 598,
+      "text": "tools: PostgresEvidenceTools | None = None"
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 626,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 721,
+      "text": "tools: PostgresEvidenceTools | None = None"
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 731,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "M",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 871,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/cli.py",
+      "line": 22,
+      "text": "from xiaoxingchen_core.demo.ports import PreviewRuntimePort, UnavailableRuntimePort"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/cli.py",
+      "line": 79,
+      "text": "reply = PreviewRuntimePort().prepare(facts)"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/cli.py",
+      "line": 93,
+      "text": "port_impl=PreviewRuntimePort() if args.preview else UnavailableRuntimePort(),"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/ports.py",
+      "line": 92,
+      "text": "class UnavailableRuntimePort:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/ports.py",
+      "line": 115,
+      "text": "class PreviewRuntimePort:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/server.py",
+      "line": 18,
+      "text": "from xiaoxingchen_core.demo.ports import DemoRuntimePort, UnavailableRuntimePort"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/demo/server.py",
+      "line": 192,
+      "text": "port_impl=port_impl or UnavailableRuntimePort(),"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 17,
+      "text": "LenormandRuntimeRefusal,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 18,
+      "text": "LenormandRuntimeRequest,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 33,
+      "text": "CoreEvidenceGate,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 34,
+      "text": "LenormandEvidencePort,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 36,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 77,
+      "text": "LenormandRuntime,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 79,
+      "text": "port_retriever,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 93,
+      "text": "\"CoreEvidenceGate\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 97,
+      "text": "\"LenormandEvidencePort\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 101,
+      "text": "\"LenormandRuntime\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 102,
+      "text": "\"LenormandRuntimeRefusal\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 103,
+      "text": "\"LenormandRuntimeRequest\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 113,
+      "text": "\"admit_relation_evidence\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 136,
+      "text": "\"port_retriever\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 79,
+      "text": "class LenormandRuntimeRefusal(ValueError):"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 89,
+      "text": "raise LenormandRuntimeRefusal(code, detail)"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 189,
+      "text": "class LenormandRuntimeRequest(StrictModel):"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 214,
+      "text": "def parse_lenormand_request_payload(payload: Mapping[str, Any]) -> LenormandRuntimeRequest:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 215,
+      "text": "\"\"\"独立输入端口：不受信 payload → `LenormandRuntimeRequest`。\"\"\""
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 244,
+      "text": "return LenormandRuntimeRequest("
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 9,
+      "text": "- 核心证据未批准时在模型调用之前阻断（`CoreEvidenceGate`）；本模块自身"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 120,
+      "text": "class LenormandEvidencePort:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 161,
+      "text": "def admit_relation_evidence("
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 198,
+      "text": "class CoreEvidenceGate:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 217,
+      "text": "def guarded_generate[T](gate: CoreEvidenceGate, generator: Callable[[], T]) -> T:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 226,
+      "text": ") -> CoreEvidenceGate:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 232,
+      "text": "return CoreEvidenceGate(admitted_core_items=tuple(items))"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 237,
+      "text": ") -> LenormandEvidencePort:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 240,
+      "text": "return LenormandEvidencePort(router=RepositoryRouter(tarot=tarot, lenormand=lenormand))"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "line": 24,
+      "text": "LenormandRuntimeRequest,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "line": 148,
+      "text": "def validate_layout(request: LenormandRuntimeRequest) -> ValidatedLayout:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "line": 8,
+      "text": "- 生成前必须先过 `CoreEvidenceGate`（核心未批准即在模型调用前阻断）；"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "line": 26,
+      "text": "from xiaoxingchen_core.lenormand_runtime.evidence import CoreEvidenceGate"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "line": 104,
+      "text": "gate: CoreEvidenceGate"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 26,
+      "text": "LenormandRuntimeRequest,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 31,
+      "text": "CoreEvidenceGate,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 32,
+      "text": "LenormandEvidencePort,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 34,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 62,
+      "text": "request: LenormandRuntimeRequest"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 68,
+      "text": "evidence_gate: CoreEvidenceGate"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 82,
+      "text": "def port_retriever("
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 83,
+      "text": "port: LenormandEvidencePort,"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 108,
+      "text": "class LenormandRuntime:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 122,
+      "text": "admit_relation_evidence(relation, self.retriever(relation))"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/mcp/postgres_tools.py",
+      "line": 32,
+      "text": "class PostgresEvidenceTools:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/mcp/postgres_tools.py",
+      "line": 36,
+      "text": "def from_url(cls, database_url: str) -> PostgresEvidenceTools:"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/mcp/server.py",
+      "line": 115,
+      "text": "from xiaoxingchen_core.mcp.postgres_tools import PostgresEvidenceTools"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/mcp/server.py",
+      "line": 117,
+      "text": "create_server(tool_set=PostgresEvidenceTools.from_url(database_url)).run(transport=\"stdio\")"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/stages/__init__.py",
+      "line": 3,
+      "text": "* 执行器：`TarotStageExecutor`（可注入模型 / 证据 / DB / 研究 / 时钟端口）；"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/stages/__init__.py",
+      "line": 24,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/stages/__init__.py",
+      "line": 59,
+      "text": "\"TarotStageExecutor\","
+    },
+    {
+      "surface": "D",
+      "path": "src/xiaoxingchen_core/stages/executor.py",
+      "line": 133,
+      "text": "class TarotStageExecutor:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 77,
+      "text": "from xiaoxingchen_core.mcp.postgres_tools import PostgresEvidenceTools"
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 494,
+      "text": "tools: PostgresEvidenceTools | None = None"
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 497,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 653,
+      "text": "tools: PostgresEvidenceTools | None = None"
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 681,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 776,
+      "text": "tools: PostgresEvidenceTools | None = None"
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 786,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "D",
+      "path": "tests/integration/test_database_postgres.py",
+      "line": 926,
+      "text": "tools = PostgresEvidenceTools.from_url("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 70,
+      "text": "LenormandRuntime,"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 71,
+      "text": "LenormandRuntimeRefusal,"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 75,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 92,
+      "text": "port_retriever,"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 213,
+      "text": "admission = admit_relation_evidence(relation, retrieval_result(items))"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 290,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 304,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 312,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 382,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 409,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 419,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 428,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 437,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 470,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 476,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 482,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 515,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 525,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 553,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 561,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 568,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 576,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 583,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 591,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 607,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 620,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 621,
+      "text": "LenormandRuntime().prepare(raw)"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 634,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 653,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 663,
+      "text": "forward = LenormandRuntime().prepare(payload(cards=SYNTH))"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 664,
+      "text": "swapped = LenormandRuntime().prepare(payload(cards=(SYNTH[0], SYNTH[2], SYNTH[1])))"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 673,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 685,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 691,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 698,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 701,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 707,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 714,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 736,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 747,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 751,
+      "text": "admission = admit_relation_evidence(combination, recalled)"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 759,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 763,
+      "text": "admission = admit_relation_evidence(combination, recalled)"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 772,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 800,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 801,
+      "text": "admit_relation_evidence(combination, retrieval_result((tarot_item,)))"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 813,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 816,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 836,
+      "text": "retriever = port_retriever(port, projection_snapshot=\"ln-snap-1\")"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 837,
+      "text": "prepared = LenormandRuntime(retriever=retriever).prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 854,
+      "text": "retriever = port_retriever(port, projection_snapshot=\"ln-snap-1\")"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 855,
+      "text": "prepared = LenormandRuntime(retriever=retriever).prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 870,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 877,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 886,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 897,
+      "text": "with pytest.raises(LenormandRuntimeRefusal):"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 921,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 922,
+      "text": "port = LenormandRuntime().output_port(prepared)"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 924,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 930,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 934,
+      "text": "port = LenormandRuntime().output_port(replace(prepared, evidence_gate=gate))"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 951,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 958,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 965,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 1001,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 1063,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_bcore_confirmation_chain.py",
+      "line": 40,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_bcore_confirmation_chain.py",
+      "line": 181,
+      "text": "def build_executor() -> tuple[TarotStageExecutor, FakeModel, InMemoryReadingStore, FixedClock]:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_bcore_confirmation_chain.py",
+      "line": 185,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_delivered_answer_readback.py",
+      "line": 5,
+      "text": "真库分支第一次回读即 KeyError，`TarotStageExecutor.verify_delivery` 永远无法通过。"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_chain_and_authority.py",
+      "line": 30,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_chain_and_authority.py",
+      "line": 40,
+      "text": ") -> tuple[TarotStageExecutor, FakeModel, InMemoryReadingStore, FixedClock]:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_chain_and_authority.py",
+      "line": 44,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_chain_and_authority.py",
+      "line": 55,
+      "text": "def open_reading(executor: TarotStageExecutor) -> uuid.UUID:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_chain_and_authority.py",
+      "line": 245,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_conflict_and_isolation.py",
+      "line": 23,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_conflict_and_isolation.py",
+      "line": 32,
+      "text": ") -> tuple[TarotStageExecutor, FakeModel, InMemoryReadingStore, FixedClock]:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_conflict_and_isolation.py",
+      "line": 36,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_conflict_and_isolation.py",
+      "line": 47,
+      "text": "def open_reading(executor: TarotStageExecutor, **kwargs: object) -> uuid.UUID:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_conflict_and_isolation.py",
+      "line": 126,
+      "text": "executor_b = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_intake_and_safety.py",
+      "line": 24,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_intake_and_safety.py",
+      "line": 34,
+      "text": ") -> tuple[TarotStageExecutor, FakeModel, InMemoryReadingStore]:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_intake_and_safety.py",
+      "line": 37,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_intake_and_safety.py",
+      "line": 189,
+      "text": "signature = inspect.signature(TarotStageExecutor.intake)"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_research_and_delivery.py",
+      "line": 32,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_research_and_delivery.py",
+      "line": 139,
+      "text": ") -> tuple[TarotStageExecutor, FakeModel, InMemoryReadingStore, FixedClock]:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_research_and_delivery.py",
+      "line": 143,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_stage_research_and_delivery.py",
+      "line": 155,
+      "text": "def open_and_seal_through_r2(executor: TarotStageExecutor) -> uuid.UUID:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_topic_identity_fix.py",
+      "line": 3,
+      "text": "对照证据（MIXED_R1_007/GLM/G02 F-G02-01）：`TarotStageExecutor._open_isolation_boundary`"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_topic_identity_fix.py",
+      "line": 27,
+      "text": "from xiaoxingchen_core.stages.executor import TarotStageExecutor"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_topic_identity_fix.py",
+      "line": 58,
+      "text": "def _build() -> tuple[TarotStageExecutor, FakeModel, TopicRecordingStore]:"
+    },
+    {
+      "surface": "D",
+      "path": "tests/sprint48/stages/test_topic_identity_fix.py",
+      "line": 61,
+      "text": "executor = TarotStageExecutor("
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 19,
+      "text": "LenormandRuntimeRefusal,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 20,
+      "text": "LenormandRuntimeRequest,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 38,
+      "text": "CoreEvidenceGate,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 40,
+      "text": "LenormandEvidencePort,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 43,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 89,
+      "text": "LenormandRuntime,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 92,
+      "text": "port_retriever,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 106,
+      "text": "\"CoreEvidenceGate\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 113,
+      "text": "\"LenormandEvidencePort\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 118,
+      "text": "\"LenormandRuntime\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 119,
+      "text": "\"LenormandRuntimeRefusal\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 120,
+      "text": "\"LenormandRuntimeRequest\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 132,
+      "text": "\"admit_relation_evidence\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "line": 161,
+      "text": "\"port_retriever\","
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 124,
+      "text": "class LenormandRuntimeRefusal(ValueError):"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 134,
+      "text": "raise LenormandRuntimeRefusal(code, detail)"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 234,
+      "text": "class LenormandRuntimeRequest(StrictModel):"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 293,
+      "text": "def parse_lenormand_request_payload(payload: Mapping[str, Any]) -> LenormandRuntimeRequest:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 294,
+      "text": "\"\"\"独立输入端口：不受信 payload → `LenormandRuntimeRequest`。"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 328,
+      "text": "return LenormandRuntimeRequest("
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "line": 338,
+      "text": "except LenormandRuntimeRefusal:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 9,
+      "text": "- 核心证据未批准时在模型调用之前阻断（`CoreEvidenceGate`）；本模块自身"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 132,
+      "text": "class LenormandEvidencePort:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 237,
+      "text": "def admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 361,
+      "text": "class CoreEvidenceGate:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 382,
+      "text": "def guarded_generate[T](gate: CoreEvidenceGate, generator: Callable[[], T]) -> T:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 391,
+      "text": ") -> CoreEvidenceGate:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 399,
+      "text": "return CoreEvidenceGate("
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 407,
+      "text": ") -> LenormandEvidencePort:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "line": 410,
+      "text": "return LenormandEvidencePort(router=RepositoryRouter(tarot=tarot, lenormand=lenormand))"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "line": 24,
+      "text": "LenormandRuntimeRequest,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "line": 148,
+      "text": "def validate_layout(request: LenormandRuntimeRequest) -> ValidatedLayout:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+      "line": 587,
+      "text": "\"layout_candidates\""
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+      "line": 592,
+      "text": "if alias.name == \"layout_candidates\":"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "line": 8,
+      "text": "- 生成前必须先过 `CoreEvidenceGate`（核心未批准即在模型调用前阻断）；"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "line": 28,
+      "text": "from xiaoxingchen_core.lenormand_runtime.evidence import CoreEvidenceGate"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "line": 192,
+      "text": "gate: CoreEvidenceGate"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 28,
+      "text": "LenormandRuntimeRequest,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 35,
+      "text": "CoreEvidenceGate,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 37,
+      "text": "LenormandEvidencePort,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 39,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 70,
+      "text": "request: LenormandRuntimeRequest"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 76,
+      "text": "evidence_gate: CoreEvidenceGate"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 99,
+      "text": "def port_retriever("
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 100,
+      "text": "port: LenormandEvidencePort,"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 125,
+      "text": "class LenormandRuntime:"
+    },
+    {
+      "surface": "L",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "line": 155,
+      "text": "admit_relation_evidence(relation, self.retriever(relation), policy=policy)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 70,
+      "text": "LenormandRuntime,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 71,
+      "text": "LenormandRuntimeRefusal,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 75,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 92,
+      "text": "port_retriever,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 213,
+      "text": "admission = admit_relation_evidence(relation, retrieval_result(items))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 290,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 304,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 312,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 382,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 409,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 419,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 428,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 437,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 470,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 476,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 482,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 515,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 525,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 553,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 561,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 568,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 576,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 583,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 591,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 607,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 620,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 621,
+      "text": "LenormandRuntime().prepare(raw)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 634,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 653,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 663,
+      "text": "forward = LenormandRuntime().prepare(payload(cards=SYNTH))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 664,
+      "text": "swapped = LenormandRuntime().prepare(payload(cards=(SYNTH[0], SYNTH[2], SYNTH[1])))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 673,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 685,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 691,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 698,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 701,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 707,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 714,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 736,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 747,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 751,
+      "text": "admission = admit_relation_evidence(combination, recalled)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 759,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 763,
+      "text": "admission = admit_relation_evidence(combination, recalled)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 772,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 800,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 801,
+      "text": "admit_relation_evidence(combination, retrieval_result((tarot_item,)))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 813,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 816,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 836,
+      "text": "retriever = port_retriever(port, projection_snapshot=\"ln-snap-1\")"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 837,
+      "text": "prepared = LenormandRuntime(retriever=retriever).prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 854,
+      "text": "retriever = port_retriever(port, projection_snapshot=\"ln-snap-1\")"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 855,
+      "text": "prepared = LenormandRuntime(retriever=retriever).prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 870,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 877,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 886,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 897,
+      "text": "with pytest.raises(LenormandRuntimeRefusal):"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 921,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 922,
+      "text": "port = LenormandRuntime().output_port(prepared)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 924,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 930,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 934,
+      "text": "port = LenormandRuntime().output_port(replace(prepared, evidence_gate=gate))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 951,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 958,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 965,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 1001,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "line": 1063,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 8,
+      "text": "`CoreEvidenceGate`（核心证据门被非核心条目顶开）；"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 50,
+      "text": "admit_relation_evidence,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 59,
+      "text": "LenormandRuntimeRefusal,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 173,
+      "text": "# 1. 无核心来源不得开门（DS08「CoreEvidenceGate」fail-open）"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 184,
+      "text": "admission = admit_relation_evidence(relation, recalled)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 187,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 194,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 206,
+      "text": "admission = admit_relation_evidence(relation, retrieval_result((ln_item(),)))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 220,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 221,
+      "text": "admit_relation_evidence(relation, recalled, expected_projection_id=SYNTH_PROJECTION)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 229,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 230,
+      "text": "admit_relation_evidence(relation, recalled, expected_snapshot_id=SYNTH_SNAPSHOT)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 236,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 250,
+      "text": "admission = admit_relation_evidence(relation, retrieval_result((ln_item(),)))"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 264,
+      "text": "admission = admit_relation_evidence(relation, recalled, expected_spread=\"three-card-line\")"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 275,
+      "text": "admission = admit_relation_evidence(relation, recalled, expected_spread=\"three-card-line\")"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 289,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 300,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 318,
+      "text": "admission = admit_relation_evidence(relation, recalled)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 334,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 352,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 368,
+      "text": "admission = admit_relation_evidence("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 383,
+      "text": "admission = admit_relation_evidence(relation, retrieval_result((ln_item(),)), policy=policy)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 415,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 423,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 444,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 452,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 464,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 475,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 483,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 494,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 535,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 543,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 551,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 563,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 577,
+      "text": "from xiaoxingchen_core.lenormand_runtime import LenormandRuntime"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 579,
+      "text": "prepared = LenormandRuntime().prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 584,
+      "text": "from xiaoxingchen_core.lenormand_runtime import LenormandRuntime"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 588,
+      "text": "prepared = LenormandRuntime(deck_catalog=catalog).prepare(payload())"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 595,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "line": 596,
+      "text": "LenormandRuntime(deck_catalog=catalog).prepare(raw)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 25,
+      "text": "LenormandRuntime,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 26,
+      "text": "LenormandRuntimeRefusal,"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 29,
+      "text": "from xiaoxingchen_core.lenormand_runtime.layout_candidates import ("
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 104,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 105,
+      "text": "LenormandRuntime().prepare(raw)"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 180,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 191,
+      "text": "with pytest.raises(LenormandRuntimeRefusal):"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 203,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 272,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 288,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 316,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 325,
+      "text": "with pytest.raises(LenormandRuntimeRefusal) as excinfo:"
+    },
+    {
+      "surface": "L",
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "line": 402,
+      "text": "import xiaoxingchen_core.lenormand_runtime.layout_candidates as module"
+    }
+  ],
+  "files_scanned": {
+    "M": 115,
+    "D": 222,
+    "L": 13
+  }
+}

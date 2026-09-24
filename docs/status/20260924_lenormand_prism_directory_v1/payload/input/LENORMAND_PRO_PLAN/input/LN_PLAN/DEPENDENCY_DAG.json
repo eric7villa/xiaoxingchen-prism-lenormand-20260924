@@ -1,0 +1,5018 @@
+{
+  "nodes": [
+    {
+      "id": "S02-T01",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 6,
+        "conservative": 12,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/reading.py",
+        "src/xiaoxingchen_core/intake/spread_registry.py",
+        "tests/sprint48/stages/test_stage_intake_and_safety.py"
+      ]
+    },
+    {
+      "id": "S02-T02",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/intake/pipeline.py",
+        "src/xiaoxingchen_core/intake/question_reframe_gate.py",
+        "src/xiaoxingchen_core/intake/safety_gate.py",
+        "tests/unit/test_intake_gates.py"
+      ]
+    },
+    {
+      "id": "S02-T03",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/session/carry.py",
+        "src/xiaoxingchen_core/session/contracts.py",
+        "src/xiaoxingchen_core/session/service.py",
+        "tests/unit/test_session_service.py"
+      ]
+    },
+    {
+      "id": "S02-T04",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 10,
+        "conservative": 20,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/reading.py",
+        "src/xiaoxingchen_core/domain/run_operation.py",
+        "src/xiaoxingchen_core/stages/ports.py",
+        "tests/final_plan/test_s02_t04.py"
+      ]
+    },
+    {
+      "id": "S02-T05",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/reading.py",
+        "src/xiaoxingchen_core/stages/memory_store.py",
+        "src/xiaoxingchen_core/stages/prompt.py",
+        "tests/sprint48/stages/test_stage_conflict_and_isolation.py"
+      ]
+    },
+    {
+      "id": "S02-T06",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/stages/executor.py",
+        "src/xiaoxingchen_core/stages/r1.py",
+        "tests/final_plan/test_s02_t06.py"
+      ]
+    },
+    {
+      "id": "S02-T07",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/mentor_runtime/query_adapter.py",
+        "src/xiaoxingchen_core/stages/executor.py",
+        "src/xiaoxingchen_core/stages/r2.py",
+        "tests/final_plan/test_s02_t07.py"
+      ]
+    },
+    {
+      "id": "S02-T08",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 10,
+        "conservative": 20,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/reading.py",
+        "src/xiaoxingchen_core/stages/conflicts.py",
+        "src/xiaoxingchen_core/stages/executor.py",
+        "tests/final_plan/test_s02_t08.py"
+      ]
+    },
+    {
+      "id": "S02-T09",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/runtime_adapters/model_port.py",
+        "src/xiaoxingchen_core/stages/prompt.py",
+        "src/xiaoxingchen_core/stages/reviewer.py",
+        "tests/final_plan/test_s02_t09.py"
+      ]
+    },
+    {
+      "id": "S02-T10",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/runtime/controller.py",
+        "src/xiaoxingchen_core/stages/executor.py",
+        "tests/final_plan/test_s02_t10.py"
+      ]
+    },
+    {
+      "id": "S02-T11",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/run_operation.py",
+        "src/xiaoxingchen_core/lenormand_runtime/orchestrator.py",
+        "src/xiaoxingchen_core/stages/ports.py",
+        "tests/final_plan/test_s02_t11.py",
+        "tests/sprint48/lenormand/test_b_orchestration.py"
+      ]
+    },
+    {
+      "id": "S02-T12",
+      "owner": "O-RUNTIME",
+      "hours": {
+        "normal": 6,
+        "conservative": 12,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/stages/output_review.py",
+        "src/xiaoxingchen_core/stages/prompt.py",
+        "tests/final_plan/test_s02_t12.py"
+      ]
+    },
+    {
+      "id": "S03-T01",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/conversion/adapters.py",
+        "src/xiaoxingchen_core/conversion/pipeline.py",
+        "src/xiaoxingchen_core/conversion/source_map.py",
+        "src/xiaoxingchen_core/domain/conversion.py",
+        "tests/final_plan/test_s03_t01.py"
+      ]
+    },
+    {
+      "id": "S03-T02",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "schemas/v2/contracts/authorized-retrieval.schema.json",
+        "src/xiaoxingchen_core/domain/evidence.py",
+        "src/xiaoxingchen_core/retrieval/repository.py",
+        "tests/final_plan/test_s03_t02.py"
+      ]
+    },
+    {
+      "id": "S03-T03",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/evidence.py",
+        "src/xiaoxingchen_core/retrieval/core_coverage.py",
+        "src/xiaoxingchen_core/stages/ports.py",
+        "tests/final_plan/test_s03_t03.py"
+      ]
+    },
+    {
+      "id": "S03-T04",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/mentor_matcher.py",
+        "src/xiaoxingchen_core/mentor_runtime/loader.py",
+        "src/xiaoxingchen_core/mentor_runtime/query_adapter.py",
+        "tests/final_plan/test_s03_t04.py"
+      ]
+    },
+    {
+      "id": "S03-T05",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 12,
+        "conservative": 22,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/mentor_runtime/consumer.py",
+        "src/xiaoxingchen_core/mentor_runtime/packet.py",
+        "src/xiaoxingchen_core/mentor_runtime/relationships.py",
+        "tests/final_plan/test_s03_t05.py"
+      ]
+    },
+    {
+      "id": "S03-T06",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 16,
+        "conservative": 28,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/design/data/SCHEMA_COMPATIBILITY.md",
+        "schemas/v2/governance/mentor-candidate.schema.json",
+        "src/xiaoxingchen_core/governance/mentor_candidate_adapter.py",
+        "tests/final_plan/test_s03_t06.py"
+      ]
+    },
+    {
+      "id": "S03-T07",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/book_t_runtime/admission.py",
+        "src/xiaoxingchen_core/book_t_runtime/consumer.py",
+        "src/xiaoxingchen_core/book_t_runtime/contracts.py",
+        "src/xiaoxingchen_core/book_t_runtime/visibility.py",
+        "tests/final_plan/test_s03_t07.py"
+      ]
+    },
+    {
+      "id": "S03-T08",
+      "owner": "O-DATA",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/design/data/MENTOR_APPROVAL_QUEUE.md",
+        "src/xiaoxingchen_core/governance/review.py",
+        "tests/final_plan/test_s03_t08.py",
+        "tests/semantic/test_minimal_mentor_canaries.py"
+      ]
+    },
+    {
+      "id": "S03-LN01",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 8,
+        "conservative": 14,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+        "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+        "tests/final_plan/test_s03_ln01.py",
+        "tests/sprint48/lenormand/test_b_geometry.py"
+      ]
+    },
+    {
+      "id": "S03-LN02",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+        "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "tests/final_plan/test_s03_ln02.py",
+        "tests/sprint48/lenormand/test_b_private_contract.py"
+      ]
+    },
+    {
+      "id": "S03-LN03",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "src/xiaoxingchen_core/lenormand_runtime/source_payloads.py",
+        "tests/final_plan/test_s03_ln03.py",
+        "tests/sprint48/lenormand/test_b_source_payloads.py"
+      ]
+    },
+    {
+      "id": "S03-LN04",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 4,
+        "conservative": 8,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/cross_system.py",
+        "tests/final_plan/test_s03_ln04.py",
+        "tests/sprint48/lenormand/test_b_cross_system.py"
+      ]
+    },
+    {
+      "id": "S03-LN05",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 14,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+        "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+        "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "tests/final_plan/test_s03_ln05.py",
+        "tests/sprint48/lenormand/test_b_authorized_admission.py"
+      ]
+    },
+    {
+      "id": "S03-LN06",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/output.py",
+        "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "tests/final_plan/test_s03_ln06.py",
+        "tests/sprint48/lenormand/test_b_public_output.py"
+      ]
+    },
+    {
+      "id": "S03-LN07",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 8,
+        "conservative": 14,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "tests/final_plan/test_s03_ln07.py",
+        "tests/sprint48/lenormand/test_b_five_candidate.py"
+      ]
+    },
+    {
+      "id": "S03-LN08",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "tests/final_plan/test_s03_ln08.py",
+        "tests/sprint48/lenormand/test_b_nine_candidate.py"
+      ]
+    },
+    {
+      "id": "S03-LN09",
+      "owner": "O-LN",
+      "hours": {
+        "normal": 4,
+        "conservative": 8,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/design/lenormand/MODE_RELEASE_CONTRACT.md",
+        "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+        "tests/final_plan/test_s03_ln09.py",
+        "tests/sprint48/lenormand/test_b_mode_activation.py"
+      ]
+    },
+    {
+      "id": "S04-T01",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/research.py",
+        "src/xiaoxingchen_core/research/gate.py",
+        "src/xiaoxingchen_core/research/seed.py",
+        "tests/final_plan/test_s04_t01.py"
+      ]
+    },
+    {
+      "id": "S04-T02",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 16,
+        "conservative": 28,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/research/coordinator.py",
+        "src/xiaoxingchen_core/runtime_adapters/ladder.py",
+        "src/xiaoxingchen_core/runtime_adapters/providers.py",
+        "tests/final_plan/test_s04_t02.py"
+      ]
+    },
+    {
+      "id": "S04-T03",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 14,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/research/deidentify.py",
+        "src/xiaoxingchen_core/research/egress_policy.py",
+        "src/xiaoxingchen_core/runtime_adapters/guards.py",
+        "src/xiaoxingchen_core/runtime_adapters/transport.py",
+        "tests/final_plan/test_s04_t03.py"
+      ]
+    },
+    {
+      "id": "S04-T04",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 18,
+        "conservative": 30,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/research.py",
+        "src/xiaoxingchen_core/research/claims.py",
+        "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+        "src/xiaoxingchen_core/runtime_adapters/worker.py",
+        "tests/final_plan/test_s04_t04.py"
+      ]
+    },
+    {
+      "id": "S04-T05",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 14,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/research/evidence_gate.py",
+        "src/xiaoxingchen_core/research/support_review.py",
+        "src/xiaoxingchen_core/runtime_adapters/extraction.py",
+        "tests/final_plan/test_s04_t05.py"
+      ]
+    },
+    {
+      "id": "S04-T06",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 6,
+        "conservative": 10,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/research/consultation.py",
+        "src/xiaoxingchen_core/stages/r3.py",
+        "tests/final_plan/test_s04_t06.py"
+      ]
+    },
+    {
+      "id": "S04-T07",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 12,
+        "conservative": 22,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/research/wording.py",
+        "src/xiaoxingchen_core/runtime_adapters/research_port.py",
+        "src/xiaoxingchen_core/stages/executor.py",
+        "src/xiaoxingchen_core/stages/ports.py",
+        "tests/final_plan/test_s04_t07.py"
+      ]
+    },
+    {
+      "id": "S04-T08",
+      "owner": "O-RESEARCH",
+      "hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/research/public_sources.py",
+        "src/xiaoxingchen_core/research/retention_store.py",
+        "src/xiaoxingchen_core/runtime_adapters/retention.py",
+        "tests/final_plan/test_s04_t08.py"
+      ]
+    },
+    {
+      "id": "S04-T09",
+      "owner": "O-HOST",
+      "hours": {
+        "normal": 10,
+        "conservative": 18,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/hosts/pydantic_ai_mcp.py",
+        "src/xiaoxingchen_core/hosts/research_profiles.py",
+        "src/xiaoxingchen_core/hosts/sealed_profile.py",
+        "src/xiaoxingchen_core/runtime_adapters/system.py",
+        "tests/final_plan/test_s04_t09.py"
+      ]
+    },
+    {
+      "id": "S05-T01",
+      "owner": "O-HARNESS",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/domain/harness.py",
+        "src/xiaoxingchen_core/harness/cli.py",
+        "src/xiaoxingchen_core/harness/executor.py",
+        "src/xiaoxingchen_core/harness/guard.py",
+        "src/xiaoxingchen_core/harness/service.py",
+        "tests/final_plan/test_s05_t01.py"
+      ]
+    },
+    {
+      "id": "S05-T02",
+      "owner": "O-DB",
+      "hours": {
+        "normal": 18,
+        "conservative": 32,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "alembic/versions/PROPOSED_0010_approved_internal_reader.py",
+        "src/xiaoxingchen_core/db/approved_projection_reader.py",
+        "src/xiaoxingchen_core/mcp/postgres_tools.py",
+        "tests/final_plan/test_s05_t02.py",
+        "tests/sprint48/lenormand/test_b_postgres_consumption.py"
+      ]
+    },
+    {
+      "id": "S05-T03",
+      "owner": "O-DB",
+      "hours": {
+        "normal": 22,
+        "conservative": 40,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "alembic/versions/PROPOSED_0011_runtime_operations_v2.py",
+        "src/xiaoxingchen_core/domain/reading.py",
+        "src/xiaoxingchen_core/stages/postgres_store.py",
+        "tests/final_plan/test_s05_t03.py"
+      ]
+    },
+    {
+      "id": "S05-T04",
+      "owner": "O-DB",
+      "hours": {
+        "normal": 16,
+        "conservative": 30,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "alembic/versions/PROPOSED_0012_research_wire_ledger.py",
+        "src/xiaoxingchen_core/db/research_attempt_store.py",
+        "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+        "src/xiaoxingchen_core/runtime_adapters/worker.py",
+        "tests/final_plan/test_s05_t04.py"
+      ]
+    },
+    {
+      "id": "S05-T05",
+      "owner": "O-CI",
+      "hours": {
+        "normal": 10,
+        "conservative": 20,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "tests/final_plan/test_s05_t05.py",
+        "tests/integration/pg_reset_safety.py",
+        "tests/integration/test_database_postgres.py",
+        "tests/integration/test_pg_reset_safety.py",
+        "tests/integration/test_reading_runtime_postgres.py"
+      ]
+    },
+    {
+      "id": "S05-T06",
+      "owner": "O-INTEGRATION",
+      "hours": {
+        "normal": 14,
+        "conservative": 28,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/integration/SELECTIVE_PORT_LEDGER.md",
+        "src/xiaoxingchen_core/domain/hash_contracts.py",
+        "tests/final_plan/test_s05_t06.py",
+        "tests/integration/test_foundation_authority_postgres.py",
+        "tests/integration/test_hash_contract_vectors.py",
+        "tests/integration/test_reading_runtime_postgres.py"
+      ]
+    },
+    {
+      "id": "S05-T07",
+      "owner": "O-CI",
+      "hours": {
+        "normal": 10,
+        "conservative": 20,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/docker_build.yml",
+        "scripts/write_ci_evidence.py",
+        "tests/final_plan/test_s05_t07.py",
+        "tests/sprint48/lenormand/test_b_ci_boundaries.py",
+        "tests/unit/test_ci_evidence.py"
+      ]
+    },
+    {
+      "id": "S05-T08",
+      "owner": "O-DB",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "alembic/env.py",
+        "docs/migrations/RUNTIME_V2_MIGRATION_PLAN.md",
+        "scripts/check_migration_identity.py",
+        "tests/final_plan/test_s05_t08.py"
+      ]
+    },
+    {
+      "id": "S05-T09",
+      "owner": "O-RELEASE",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        ".github/workflows/PROPOSED_release_candidate.yml",
+        "ops/release/RELEASE_MANIFEST.schema.json",
+        "ops/runbooks/RELEASE_AND_ROLLBACK.md",
+        "tests/final_plan/test_s05_t09.py"
+      ]
+    },
+    {
+      "id": "S06-T01",
+      "owner": "O-PRODUCT",
+      "hours": {
+        "normal": 14,
+        "conservative": 26,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/demo/handlers.py",
+        "src/xiaoxingchen_core/demo/ports.py",
+        "src/xiaoxingchen_core/product_entry/api.py",
+        "src/xiaoxingchen_core/product_entry/runtime_adapter.py",
+        "src/xiaoxingchen_core/product_entry/templates/intake.html",
+        "tests/browser/test_product_entry_contracts.py",
+        "tests/final_plan/test_s06_t01.py"
+      ]
+    },
+    {
+      "id": "S06-T02",
+      "owner": "O-PRODUCT",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/demo/security.py",
+        "src/xiaoxingchen_core/demo/session.py",
+        "src/xiaoxingchen_core/product_entry/security.py",
+        "src/xiaoxingchen_core/product_entry/session_adapter.py",
+        "src/xiaoxingchen_core/product_entry/templates/status.html",
+        "tests/browser/test_product_entry_contracts.py",
+        "tests/final_plan/test_s06_t02.py"
+      ]
+    },
+    {
+      "id": "S06-T03",
+      "owner": "O-PRODUCT",
+      "hours": {
+        "normal": 10,
+        "conservative": 20,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/demo/projection.py",
+        "src/xiaoxingchen_core/product_entry/templates/answer.html",
+        "src/xiaoxingchen_core/product_entry/view_projection.py",
+        "tests/browser/test_product_entry_contracts.py",
+        "tests/final_plan/test_s06_t03.py"
+      ]
+    },
+    {
+      "id": "S06-T04",
+      "owner": "O-PRODUCT",
+      "hours": {
+        "normal": 8,
+        "conservative": 16,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "src/xiaoxingchen_core/demo/catalog.py",
+        "src/xiaoxingchen_core/product_entry/catalog_adapter.py",
+        "src/xiaoxingchen_core/product_entry/templates/lenormand.html",
+        "tests/browser/test_product_entry_contracts.py",
+        "tests/final_plan/test_s06_t04.py"
+      ]
+    },
+    {
+      "id": "S06-T05",
+      "owner": "O-PRODUCT",
+      "hours": {
+        "normal": 6,
+        "conservative": 12,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/integration/LEGACY_SITE_REQUESTS.md",
+        "src/xiaoxingchen_core/product_entry/example_catalog.py",
+        "src/xiaoxingchen_core/product_entry/templates/help.html",
+        "tests/final_plan/test_s06_t05.py"
+      ]
+    },
+    {
+      "id": "S06-T06",
+      "owner": "O-ACCEPTANCE",
+      "hours": {
+        "normal": 10,
+        "conservative": 20,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/acceptance/HUMAN_SEMANTIC_RUBRIC.md",
+        "tests/browser/test_product_entry_contracts.py",
+        "tests/final_plan/semantic_canary_manifest.json",
+        "tests/final_plan/test_s06_t06.py"
+      ]
+    },
+    {
+      "id": "S07-T01",
+      "owner": "O-INTEGRATION",
+      "hours": {
+        "normal": 4,
+        "conservative": 8,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/planning/PLAN_INTAKE_AND_SCOPE.md",
+        "docs/planning/REFERENCE_DECISIONS.json",
+        "docs/planning/REQUIREMENT_IMPLEMENTATION_TRACE.json",
+        "tests/final_plan/test_s07_t01.py",
+        "tests/sprint48/lenormand/test_b_baseline_binding.py"
+      ]
+    },
+    {
+      "id": "S07-T02",
+      "owner": "O-ACCEPTANCE",
+      "hours": {
+        "normal": 6,
+        "conservative": 12,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/acceptance/DISAGREEMENT_LEDGER.json",
+        "docs/acceptance/GOAL_AND_OPPOSITION_CARDS.json",
+        "docs/acceptance/PREMORTEM.md",
+        "tests/final_plan/test_s07_t02.py"
+      ]
+    },
+    {
+      "id": "S07-T03",
+      "owner": "O-ACCEPTANCE",
+      "hours": {
+        "normal": 12,
+        "conservative": 24,
+        "assumptions": "One familiar implementer, approved contracts, readable fixed references and existing toolchain. Excludes approval wait, model quotas, infrastructure provisioning and source acquisition; not elapsed delivery promise."
+      },
+      "write_set": [
+        "docs/acceptance/ACCEPTANCE_RECORD.json",
+        "docs/acceptance/IMPLEMENTATION_HANDOFF.md",
+        "tests/final_plan/test_end_to_end_contracts.py",
+        "tests/final_plan/test_s07_t03.py"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "S02-T01",
+      "to": "S02-T02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T02",
+      "to": "S02-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T03",
+      "to": "S02-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S02-T05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S02-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T03",
+      "to": "S02-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T06",
+      "to": "S02-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T04",
+      "to": "S02-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T05",
+      "to": "S02-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T07",
+      "to": "S02-T07",
+      "kind": "OPTIONAL_ACTIVATION",
+      "profiles": [
+        "BOOK_T"
+      ],
+      "reason": "IC-10 no-contribution adapter is implemented inside S02-T07; full BookT only when enabled"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S02-T08",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T07",
+      "to": "S02-T08",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S02-T09",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T04",
+      "to": "S02-T09",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T08",
+      "to": "S02-T10",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T09",
+      "to": "S02-T10",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T07",
+      "to": "S02-T10",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T02",
+      "to": "S02-T10",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T03",
+      "to": "S02-T10",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S02-T11",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN05",
+      "to": "S02-T11",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN06",
+      "to": "S02-T11",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T07",
+      "to": "S02-T11",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T03",
+      "to": "S02-T11",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T09",
+      "to": "S02-T12",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S03-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S03-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S03-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T04",
+      "to": "S03-T05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T01",
+      "to": "S03-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S03-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S03-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T06",
+      "to": "S03-T08",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S03-LN02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN01",
+      "to": "S03-LN02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN02",
+      "to": "S03-LN03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN02",
+      "to": "S03-LN04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN03",
+      "to": "S03-LN05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN04",
+      "to": "S03-LN05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S03-LN05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN05",
+      "to": "S03-LN06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN01",
+      "to": "S03-LN07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN01",
+      "to": "S03-LN08",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN05",
+      "to": "S03-LN09",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S04-T01",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T01",
+      "to": "S04-T02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T01",
+      "to": "S04-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T02",
+      "to": "S04-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T02",
+      "to": "S04-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T03",
+      "to": "S04-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T04",
+      "to": "S04-T05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T05",
+      "to": "S04-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S04-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T04",
+      "to": "S04-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T05",
+      "to": "S04-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T09",
+      "to": "S04-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T04",
+      "to": "S04-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T04",
+      "to": "S04-T08",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T05",
+      "to": "S04-T08",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T02",
+      "to": "S04-T09",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S05-T02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T08",
+      "to": "S05-T02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T02",
+      "to": "S05-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T06",
+      "to": "S05-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T08",
+      "to": "S05-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S04-T02",
+      "to": "S05-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T01",
+      "to": "S05-T05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T05",
+      "to": "S05-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T08",
+      "to": "S05-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T05",
+      "to": "S05-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T06",
+      "to": "S05-T07",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T07",
+      "to": "S05-T09",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T08",
+      "to": "S05-T09",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T03",
+      "to": "S06-T01",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T10",
+      "to": "S06-T01",
+      "kind": "SYSTEM_CONDITIONAL",
+      "profiles": [
+        "TAROT"
+      ],
+      "reason": "Entry accepts controlled union adapter; LN does not wait on Tarot executor"
+    },
+    {
+      "from": "S06-T01",
+      "to": "S06-T02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T12",
+      "to": "S06-T03",
+      "kind": "SYSTEM_CONDITIONAL",
+      "profiles": [
+        "TAROT"
+      ],
+      "reason": "LN public prose/review uses S03-LN06"
+    },
+    {
+      "from": "S04-T08",
+      "to": "S06-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S06-T01",
+      "to": "S06-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T11",
+      "to": "S06-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-LN06",
+      "to": "S06-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S06-T01",
+      "to": "S06-T04",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S06-T01",
+      "to": "S06-T05",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S06-T02",
+      "to": "S06-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S06-T03",
+      "to": "S06-T06",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S03-T08",
+      "to": "S06-T06",
+      "kind": "SYSTEM_CONDITIONAL",
+      "profiles": [
+        "TAROT"
+      ],
+      "reason": "Only Tarot semantic acceptance needs the minimum approved Mentor roster; LN uses its own catalog/method/support"
+    },
+    {
+      "from": "S07-T01",
+      "to": "S07-T02",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S05-T07",
+      "to": "S07-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S06-T06",
+      "to": "S07-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S07-T02",
+      "to": "S07-T03",
+      "kind": "IMPLEMENTATION_PREREQUISITE",
+      "profiles": [
+        "ALL"
+      ],
+      "reason": "Declared module prerequisite; external approvals tracked separately"
+    },
+    {
+      "from": "S02-T11",
+      "to": "S06-T01",
+      "kind": "SYSTEM_CONDITIONAL",
+      "profiles": [
+        "LENORMAND"
+      ],
+      "reason": "LN system adapter prerequisite only when LN activated"
+    },
+    {
+      "from": "S03-LN06",
+      "to": "S06-T03",
+      "kind": "SYSTEM_CONDITIONAL",
+      "profiles": [
+        "LENORMAND"
+      ],
+      "reason": "LN output/review projection, no Tarot narrative dependency"
+    },
+    {
+      "from": "S03-LN07",
+      "to": "S03-LN09",
+      "kind": "OPTIONAL_ACTIVATION",
+      "profiles": [
+        "LN_FIVE"
+      ],
+      "reason": "Five mode requires its geometry; not nine"
+    },
+    {
+      "from": "S03-LN08",
+      "to": "S03-LN09",
+      "kind": "OPTIONAL_ACTIVATION",
+      "profiles": [
+        "LN_NINE"
+      ],
+      "reason": "Nine mode requires its geometry; not five"
+    },
+    {
+      "from": "S06-T04",
+      "to": "S07-T03",
+      "kind": "SYSTEM_CONDITIONAL",
+      "profiles": [
+        "LENORMAND"
+      ],
+      "reason": "LN acceptance has its own end-to-end subject"
+    },
+    {
+      "from": "S03-T02",
+      "to": "S03-T03",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/evidence.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T01",
+      "to": "S02-T04",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/reading.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S02-T05",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/reading.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S02-T08",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/reading.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T08",
+      "to": "S05-T03",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/reading.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S04-T01",
+      "to": "S04-T04",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/research.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S02-T11",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/domain/run_operation.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN01",
+      "to": "S03-LN03",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN02",
+      "to": "S03-LN05",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN01",
+      "to": "S03-LN09",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN07",
+      "to": "S03-LN08",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN01",
+      "to": "S03-LN05",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN02",
+      "to": "S03-LN05",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-LN05",
+      "to": "S03-LN06",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-T04",
+      "to": "S02-T07",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/mentor_runtime/query_adapter.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S04-T04",
+      "to": "S05-T04",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S04-T04",
+      "to": "S05-T04",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/runtime_adapters/worker.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T06",
+      "to": "S02-T07",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/executor.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T07",
+      "to": "S02-T08",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/executor.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T08",
+      "to": "S04-T07",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/executor.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S04-T07",
+      "to": "S02-T10",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/executor.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T04",
+      "to": "S03-T03",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/ports.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S03-T03",
+      "to": "S04-T07",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/ports.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S04-T07",
+      "to": "S02-T11",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/ports.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T05",
+      "to": "S02-T09",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/prompt.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S02-T09",
+      "to": "S02-T12",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "src/xiaoxingchen_core/stages/prompt.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S06-T01",
+      "to": "S06-T02",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "tests/browser/test_product_entry_contracts.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S06-T02",
+      "to": "S06-T03",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "tests/browser/test_product_entry_contracts.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S06-T03",
+      "to": "S06-T04",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "tests/browser/test_product_entry_contracts.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S06-T04",
+      "to": "S06-T06",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "tests/browser/test_product_entry_contracts.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    },
+    {
+      "from": "S05-T05",
+      "to": "S05-T06",
+      "kind": "WRITE_SET_SERIALIZATION",
+      "path": "tests/integration/test_reading_runtime_postgres.py",
+      "profiles": [
+        "FULL_DESIGN"
+      ],
+      "reason": "Shared exact file: no simultaneous write; per-profile schedules rebuild active-file order"
+    }
+  ],
+  "topological_order": [
+    "S02-T01",
+    "S02-T02",
+    "S02-T03",
+    "S02-T04",
+    "S02-T05",
+    "S03-LN01",
+    "S03-LN07",
+    "S03-LN08",
+    "S03-T01",
+    "S03-T02",
+    "S03-LN02",
+    "S03-LN03",
+    "S03-LN04",
+    "S03-LN05",
+    "S03-LN06",
+    "S03-LN09",
+    "S03-T03",
+    "S02-T06",
+    "S03-T04",
+    "S03-T05",
+    "S03-T06",
+    "S03-T07",
+    "S02-T07",
+    "S02-T08",
+    "S03-T08",
+    "S04-T01",
+    "S04-T02",
+    "S04-T03",
+    "S04-T04",
+    "S02-T09",
+    "S02-T12",
+    "S04-T05",
+    "S04-T06",
+    "S04-T08",
+    "S04-T09",
+    "S05-T01",
+    "S05-T05",
+    "S05-T08",
+    "S05-T02",
+    "S05-T04",
+    "S04-T07",
+    "S05-T06",
+    "S05-T03",
+    "S02-T10",
+    "S02-T11",
+    "S05-T07",
+    "S05-T09",
+    "S06-T01",
+    "S06-T02",
+    "S06-T03",
+    "S06-T04",
+    "S06-T05",
+    "S06-T06",
+    "S07-T01",
+    "S07-T02",
+    "S07-T03"
+  ],
+  "profiles": {
+    "MIN_TAROT": {
+      "task_ids": [
+        "S02-T01",
+        "S02-T02",
+        "S02-T03",
+        "S02-T04",
+        "S02-T05",
+        "S03-T01",
+        "S03-T02",
+        "S03-T03",
+        "S02-T06",
+        "S03-T04",
+        "S03-T05",
+        "S02-T07",
+        "S02-T08",
+        "S03-T06",
+        "S03-T08",
+        "S04-T01",
+        "S04-T02",
+        "S04-T03",
+        "S04-T04",
+        "S02-T09",
+        "S02-T12",
+        "S04-T05",
+        "S04-T08",
+        "S04-T09",
+        "S05-T01",
+        "S05-T05",
+        "S05-T08",
+        "S05-T02",
+        "S05-T04",
+        "S04-T07",
+        "S05-T06",
+        "S05-T03",
+        "S02-T10",
+        "S05-T07",
+        "S06-T01",
+        "S06-T02",
+        "S06-T03",
+        "S06-T06",
+        "S07-T01",
+        "S07-T02",
+        "S07-T03"
+      ],
+      "task_count": 41,
+      "edges": [
+        {
+          "from": "S02-T01",
+          "to": "S02-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T02",
+          "to": "S02-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T03",
+          "to": "S02-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T03",
+          "to": "S02-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T06",
+          "to": "S02-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T04",
+          "to": "S02-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T05",
+          "to": "S02-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T07",
+          "to": "S02-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S02-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T08",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T09",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T02",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T03",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T09",
+          "to": "S02-T12",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S03-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T04",
+          "to": "S03-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T01",
+          "to": "S03-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T06",
+          "to": "S03-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S04-T01",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T03",
+          "to": "S04-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T09",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T04",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S05-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T02",
+          "to": "S05-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T06",
+          "to": "S05-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S05-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T01",
+          "to": "S05-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T06",
+          "to": "S05-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T03",
+          "to": "S06-T01",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T10",
+          "to": "S06-T01",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "TAROT"
+          ],
+          "reason": "Entry accepts controlled union adapter; LN does not wait on Tarot executor"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T12",
+          "to": "S06-T03",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "TAROT"
+          ],
+          "reason": "LN public prose/review uses S03-LN06"
+        },
+        {
+          "from": "S04-T08",
+          "to": "S06-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T02",
+          "to": "S06-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T03",
+          "to": "S06-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T08",
+          "to": "S06-T06",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "TAROT"
+          ],
+          "reason": "Only Tarot semantic acceptance needs the minimum approved Mentor roster; LN uses its own catalog/method/support"
+        },
+        {
+          "from": "S07-T01",
+          "to": "S07-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T07",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T06",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S07-T02",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/evidence.py"
+        },
+        {
+          "from": "S02-T01",
+          "to": "S02-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T08",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T08",
+          "to": "S05-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/research.py"
+        },
+        {
+          "from": "S03-T04",
+          "to": "S02-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/mentor_runtime/query_adapter.py"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S05-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S05-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/runtime_adapters/worker.py"
+        },
+        {
+          "from": "S02-T06",
+          "to": "S02-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S02-T07",
+          "to": "S02-T08",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S02-T08",
+          "to": "S04-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T10",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S03-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S03-T03",
+          "to": "S04-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T09",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/prompt.py"
+        },
+        {
+          "from": "S02-T09",
+          "to": "S02-T12",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/prompt.py"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T02",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T02",
+          "to": "S06-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T03",
+          "to": "S06-T06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/integration/test_reading_runtime_postgres.py"
+        }
+      ],
+      "parallel_waves": [
+        [
+          "S02-T01",
+          "S03-T01",
+          "S03-T02",
+          "S05-T01",
+          "S05-T08",
+          "S07-T01"
+        ],
+        [
+          "S02-T02",
+          "S03-T06",
+          "S05-T05",
+          "S05-T02",
+          "S07-T02"
+        ],
+        [
+          "S02-T03",
+          "S03-T08",
+          "S05-T06"
+        ],
+        [
+          "S02-T04",
+          "S05-T07"
+        ],
+        [
+          "S02-T05",
+          "S03-T03",
+          "S03-T04"
+        ],
+        [
+          "S02-T06",
+          "S03-T05",
+          "S04-T01"
+        ],
+        [
+          "S02-T07",
+          "S04-T02"
+        ],
+        [
+          "S02-T08",
+          "S04-T03",
+          "S04-T09"
+        ],
+        [
+          "S04-T04",
+          "S05-T03"
+        ],
+        [
+          "S02-T09",
+          "S04-T05",
+          "S05-T04"
+        ],
+        [
+          "S02-T12",
+          "S04-T08",
+          "S04-T07"
+        ],
+        [
+          "S02-T10"
+        ],
+        [
+          "S06-T01"
+        ],
+        [
+          "S06-T02"
+        ],
+        [
+          "S06-T03"
+        ],
+        [
+          "S06-T06"
+        ],
+        [
+          "S07-T03"
+        ]
+      ],
+      "estimated_total_effort_hours": {
+        "normal": 448,
+        "conservative": 850
+      },
+      "estimated_critical_path_work_hours": {
+        "normal": 198,
+        "conservative": 372
+      },
+      "critical_path": {
+        "normal": [
+          "S02-T01",
+          "S02-T02",
+          "S02-T03",
+          "S02-T04",
+          "S02-T05",
+          "S04-T01",
+          "S04-T02",
+          "S04-T03",
+          "S04-T04",
+          "S05-T04",
+          "S04-T07",
+          "S02-T10",
+          "S06-T01",
+          "S06-T02",
+          "S06-T03",
+          "S06-T06",
+          "S07-T03"
+        ],
+        "conservative": [
+          "S02-T01",
+          "S02-T02",
+          "S02-T03",
+          "S02-T04",
+          "S02-T05",
+          "S04-T01",
+          "S04-T02",
+          "S04-T03",
+          "S04-T04",
+          "S05-T04",
+          "S04-T07",
+          "S02-T10",
+          "S06-T01",
+          "S06-T02",
+          "S06-T03",
+          "S06-T06",
+          "S07-T03"
+        ]
+      },
+      "assumptions": "Ideal available independent owners; fixed sources/toolchain; excludes all approval/data/infra/model waits. Not a calendar or completion promise.",
+      "activation": "All actual code/data/runtime/CI/deploy gates remain unexecuted or unapproved. MIN_LN includes the scoped S06-T06/S07-T03 semantic/browser/end-to-end work; these remain NOT_RUN, not a launch approval."
+    },
+    "MIN_LN_THREE": {
+      "task_ids": [
+        "S02-T01",
+        "S02-T02",
+        "S02-T03",
+        "S02-T04",
+        "S02-T05",
+        "S03-LN01",
+        "S03-T02",
+        "S03-LN02",
+        "S03-LN03",
+        "S03-LN04",
+        "S03-LN05",
+        "S03-LN06",
+        "S04-T01",
+        "S04-T02",
+        "S04-T03",
+        "S04-T04",
+        "S04-T05",
+        "S04-T08",
+        "S04-T09",
+        "S05-T01",
+        "S05-T05",
+        "S05-T08",
+        "S05-T02",
+        "S05-T04",
+        "S04-T07",
+        "S05-T06",
+        "S05-T03",
+        "S02-T11",
+        "S05-T07",
+        "S06-T01",
+        "S06-T02",
+        "S06-T03",
+        "S06-T04",
+        "S06-T06",
+        "S07-T01",
+        "S07-T02",
+        "S07-T03"
+      ],
+      "task_count": 37,
+      "edges": [
+        {
+          "from": "S02-T01",
+          "to": "S02-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T02",
+          "to": "S02-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T03",
+          "to": "S02-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN06",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T03",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-LN02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN03",
+          "to": "S03-LN05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN04",
+          "to": "S03-LN05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S03-LN05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S03-LN06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S04-T01",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T03",
+          "to": "S04-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T09",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T04",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S05-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T02",
+          "to": "S05-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T06",
+          "to": "S05-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S05-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T01",
+          "to": "S05-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T06",
+          "to": "S05-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T03",
+          "to": "S06-T01",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T08",
+          "to": "S06-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T11",
+          "to": "S06-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN06",
+          "to": "S06-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T02",
+          "to": "S06-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T03",
+          "to": "S06-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S07-T01",
+          "to": "S07-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T07",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T06",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S07-T02",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T11",
+          "to": "S06-T01",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "LENORMAND"
+          ],
+          "reason": "LN system adapter prerequisite only when LN activated"
+        },
+        {
+          "from": "S03-LN06",
+          "to": "S06-T03",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "LENORMAND"
+          ],
+          "reason": "LN output/review projection, no Tarot narrative dependency"
+        },
+        {
+          "from": "S06-T04",
+          "to": "S07-T03",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "LENORMAND"
+          ],
+          "reason": "LN acceptance has its own end-to-end subject"
+        },
+        {
+          "from": "S02-T01",
+          "to": "S02-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S05-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/research.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T11",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/run_operation.py"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S03-LN06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S05-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S05-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/runtime_adapters/worker.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S04-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T11",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T02",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T02",
+          "to": "S06-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T03",
+          "to": "S06-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T04",
+          "to": "S06-T06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/integration/test_reading_runtime_postgres.py"
+        }
+      ],
+      "parallel_waves": [
+        [
+          "S02-T01",
+          "S03-LN01",
+          "S03-T02",
+          "S05-T01",
+          "S05-T08",
+          "S07-T01"
+        ],
+        [
+          "S02-T02",
+          "S03-LN02",
+          "S05-T05",
+          "S05-T02",
+          "S07-T02"
+        ],
+        [
+          "S02-T03",
+          "S03-LN03",
+          "S03-LN04",
+          "S05-T06"
+        ],
+        [
+          "S02-T04",
+          "S05-T07"
+        ],
+        [
+          "S02-T05",
+          "S03-LN05"
+        ],
+        [
+          "S03-LN06",
+          "S04-T01",
+          "S05-T03"
+        ],
+        [
+          "S04-T02"
+        ],
+        [
+          "S04-T03",
+          "S04-T09"
+        ],
+        [
+          "S04-T04"
+        ],
+        [
+          "S04-T05",
+          "S05-T04"
+        ],
+        [
+          "S04-T08",
+          "S04-T07"
+        ],
+        [
+          "S02-T11"
+        ],
+        [
+          "S06-T01"
+        ],
+        [
+          "S06-T02"
+        ],
+        [
+          "S06-T03"
+        ],
+        [
+          "S06-T04"
+        ],
+        [
+          "S06-T06"
+        ],
+        [
+          "S07-T03"
+        ]
+      ],
+      "estimated_total_effort_hours": {
+        "normal": 402,
+        "conservative": 758
+      },
+      "estimated_critical_path_work_hours": {
+        "normal": 206,
+        "conservative": 388
+      },
+      "critical_path": {
+        "normal": [
+          "S02-T01",
+          "S02-T02",
+          "S02-T03",
+          "S02-T04",
+          "S02-T05",
+          "S04-T01",
+          "S04-T02",
+          "S04-T03",
+          "S04-T04",
+          "S05-T04",
+          "S04-T07",
+          "S02-T11",
+          "S06-T01",
+          "S06-T02",
+          "S06-T03",
+          "S06-T04",
+          "S06-T06",
+          "S07-T03"
+        ],
+        "conservative": [
+          "S02-T01",
+          "S02-T02",
+          "S02-T03",
+          "S02-T04",
+          "S02-T05",
+          "S04-T01",
+          "S04-T02",
+          "S04-T03",
+          "S04-T04",
+          "S05-T04",
+          "S04-T07",
+          "S02-T11",
+          "S06-T01",
+          "S06-T02",
+          "S06-T03",
+          "S06-T04",
+          "S06-T06",
+          "S07-T03"
+        ]
+      },
+      "assumptions": "Ideal available independent owners; fixed sources/toolchain; excludes all approval/data/infra/model waits. Not a calendar or completion promise.",
+      "activation": "All actual code/data/runtime/CI/deploy gates remain unexecuted or unapproved. MIN_LN includes the scoped S06-T06/S07-T03 semantic/browser/end-to-end work; these remain NOT_RUN, not a launch approval."
+    },
+    "FULL_DESIGN": {
+      "task_ids": [
+        "S02-T01",
+        "S02-T02",
+        "S02-T03",
+        "S02-T04",
+        "S02-T05",
+        "S03-LN01",
+        "S03-LN07",
+        "S03-LN08",
+        "S03-T01",
+        "S03-T02",
+        "S03-LN02",
+        "S03-LN03",
+        "S03-LN04",
+        "S03-LN05",
+        "S03-LN06",
+        "S03-LN09",
+        "S03-T03",
+        "S02-T06",
+        "S03-T04",
+        "S03-T05",
+        "S03-T06",
+        "S03-T07",
+        "S02-T07",
+        "S02-T08",
+        "S03-T08",
+        "S04-T01",
+        "S04-T02",
+        "S04-T03",
+        "S04-T04",
+        "S02-T09",
+        "S02-T12",
+        "S04-T05",
+        "S04-T06",
+        "S04-T08",
+        "S04-T09",
+        "S05-T01",
+        "S05-T05",
+        "S05-T08",
+        "S05-T02",
+        "S05-T04",
+        "S04-T07",
+        "S05-T06",
+        "S05-T03",
+        "S02-T10",
+        "S02-T11",
+        "S05-T07",
+        "S05-T09",
+        "S06-T01",
+        "S06-T02",
+        "S06-T03",
+        "S06-T04",
+        "S06-T05",
+        "S06-T06",
+        "S07-T01",
+        "S07-T02",
+        "S07-T03"
+      ],
+      "task_count": 56,
+      "edges": [
+        {
+          "from": "S02-T01",
+          "to": "S02-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T02",
+          "to": "S02-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T03",
+          "to": "S02-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T03",
+          "to": "S02-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T06",
+          "to": "S02-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T04",
+          "to": "S02-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T05",
+          "to": "S02-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T07",
+          "to": "S02-T07",
+          "kind": "OPTIONAL_ACTIVATION",
+          "profiles": [
+            "BOOK_T"
+          ],
+          "reason": "IC-10 no-contribution adapter is implemented inside S02-T07; full BookT only when enabled"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T07",
+          "to": "S02-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S02-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T08",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T09",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T02",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T03",
+          "to": "S02-T10",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN06",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T03",
+          "to": "S02-T11",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T09",
+          "to": "S02-T12",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S03-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T04",
+          "to": "S03-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T01",
+          "to": "S03-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S03-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T06",
+          "to": "S03-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-LN02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN03",
+          "to": "S03-LN05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN04",
+          "to": "S03-LN05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S03-LN05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S03-LN06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S03-LN09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S04-T01",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T03",
+          "to": "S04-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S04-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T09",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T04",
+          "to": "S04-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S04-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T05",
+          "to": "S04-T08",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S04-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S05-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T02",
+          "to": "S05-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T06",
+          "to": "S05-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S04-T02",
+          "to": "S05-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T01",
+          "to": "S05-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T06",
+          "to": "S05-T07",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T07",
+          "to": "S05-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T08",
+          "to": "S05-T09",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T03",
+          "to": "S06-T01",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T10",
+          "to": "S06-T01",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "TAROT"
+          ],
+          "reason": "Entry accepts controlled union adapter; LN does not wait on Tarot executor"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T12",
+          "to": "S06-T03",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "TAROT"
+          ],
+          "reason": "LN public prose/review uses S03-LN06"
+        },
+        {
+          "from": "S04-T08",
+          "to": "S06-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T11",
+          "to": "S06-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-LN06",
+          "to": "S06-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T04",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T05",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T02",
+          "to": "S06-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T03",
+          "to": "S06-T06",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S03-T08",
+          "to": "S06-T06",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "TAROT"
+          ],
+          "reason": "Only Tarot semantic acceptance needs the minimum approved Mentor roster; LN uses its own catalog/method/support"
+        },
+        {
+          "from": "S07-T01",
+          "to": "S07-T02",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S05-T07",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S06-T06",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S07-T02",
+          "to": "S07-T03",
+          "kind": "IMPLEMENTATION_PREREQUISITE",
+          "profiles": [
+            "ALL"
+          ],
+          "reason": "Declared module prerequisite; external approvals tracked separately"
+        },
+        {
+          "from": "S02-T11",
+          "to": "S06-T01",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "LENORMAND"
+          ],
+          "reason": "LN system adapter prerequisite only when LN activated"
+        },
+        {
+          "from": "S03-LN06",
+          "to": "S06-T03",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "LENORMAND"
+          ],
+          "reason": "LN output/review projection, no Tarot narrative dependency"
+        },
+        {
+          "from": "S03-LN07",
+          "to": "S03-LN09",
+          "kind": "OPTIONAL_ACTIVATION",
+          "profiles": [
+            "LN_FIVE"
+          ],
+          "reason": "Five mode requires its geometry; not nine"
+        },
+        {
+          "from": "S03-LN08",
+          "to": "S03-LN09",
+          "kind": "OPTIONAL_ACTIVATION",
+          "profiles": [
+            "LN_NINE"
+          ],
+          "reason": "Nine mode requires its geometry; not five"
+        },
+        {
+          "from": "S06-T04",
+          "to": "S07-T03",
+          "kind": "SYSTEM_CONDITIONAL",
+          "profiles": [
+            "LENORMAND"
+          ],
+          "reason": "LN acceptance has its own end-to-end subject"
+        },
+        {
+          "from": "S03-T02",
+          "to": "S03-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/evidence.py"
+        },
+        {
+          "from": "S02-T01",
+          "to": "S02-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T08",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S02-T08",
+          "to": "S05-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/reading.py"
+        },
+        {
+          "from": "S04-T01",
+          "to": "S04-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/research.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S02-T11",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/domain/run_operation.py"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN09",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py"
+        },
+        {
+          "from": "S03-LN07",
+          "to": "S03-LN08",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py"
+        },
+        {
+          "from": "S03-LN01",
+          "to": "S03-LN05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py"
+        },
+        {
+          "from": "S03-LN02",
+          "to": "S03-LN05",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py"
+        },
+        {
+          "from": "S03-LN05",
+          "to": "S03-LN06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py"
+        },
+        {
+          "from": "S03-T04",
+          "to": "S02-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/mentor_runtime/query_adapter.py"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S05-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/runtime_adapters/receipts.py"
+        },
+        {
+          "from": "S04-T04",
+          "to": "S05-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/runtime_adapters/worker.py"
+        },
+        {
+          "from": "S02-T06",
+          "to": "S02-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S02-T07",
+          "to": "S02-T08",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S02-T08",
+          "to": "S04-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T10",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/executor.py"
+        },
+        {
+          "from": "S02-T04",
+          "to": "S03-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S03-T03",
+          "to": "S04-T07",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S04-T07",
+          "to": "S02-T11",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/ports.py"
+        },
+        {
+          "from": "S02-T05",
+          "to": "S02-T09",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/prompt.py"
+        },
+        {
+          "from": "S02-T09",
+          "to": "S02-T12",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "src/xiaoxingchen_core/stages/prompt.py"
+        },
+        {
+          "from": "S06-T01",
+          "to": "S06-T02",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T02",
+          "to": "S06-T03",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T03",
+          "to": "S06-T04",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S06-T04",
+          "to": "S06-T06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/browser/test_product_entry_contracts.py"
+        },
+        {
+          "from": "S05-T05",
+          "to": "S05-T06",
+          "kind": "WRITE_SET_SERIALIZATION",
+          "path": "tests/integration/test_reading_runtime_postgres.py"
+        }
+      ],
+      "parallel_waves": [
+        [
+          "S02-T01",
+          "S03-LN01",
+          "S03-T01",
+          "S03-T02",
+          "S05-T01",
+          "S05-T08",
+          "S07-T01"
+        ],
+        [
+          "S02-T02",
+          "S03-LN07",
+          "S03-LN02",
+          "S03-T06",
+          "S05-T05",
+          "S05-T02",
+          "S07-T02"
+        ],
+        [
+          "S02-T03",
+          "S03-LN08",
+          "S03-LN03",
+          "S03-LN04",
+          "S03-T08",
+          "S05-T06"
+        ],
+        [
+          "S02-T04",
+          "S05-T07"
+        ],
+        [
+          "S02-T05",
+          "S03-LN05",
+          "S03-T03",
+          "S03-T04",
+          "S05-T09"
+        ],
+        [
+          "S03-LN06",
+          "S03-LN09",
+          "S02-T06",
+          "S03-T05",
+          "S03-T07",
+          "S04-T01"
+        ],
+        [
+          "S02-T07",
+          "S04-T02"
+        ],
+        [
+          "S02-T08",
+          "S04-T03",
+          "S04-T09"
+        ],
+        [
+          "S04-T04",
+          "S05-T03"
+        ],
+        [
+          "S02-T09",
+          "S04-T05",
+          "S05-T04"
+        ],
+        [
+          "S02-T12",
+          "S04-T06",
+          "S04-T08",
+          "S04-T07"
+        ],
+        [
+          "S02-T10",
+          "S02-T11"
+        ],
+        [
+          "S06-T01"
+        ],
+        [
+          "S06-T02",
+          "S06-T05"
+        ],
+        [
+          "S06-T03"
+        ],
+        [
+          "S06-T04"
+        ],
+        [
+          "S06-T06"
+        ],
+        [
+          "S07-T03"
+        ]
+      ],
+      "estimated_total_effort_hours": {
+        "normal": 572,
+        "conservative": 1086
+      },
+      "estimated_critical_path_work_hours": {
+        "normal": 206,
+        "conservative": 388
+      },
+      "critical_path": {
+        "normal": [
+          "S02-T01",
+          "S02-T02",
+          "S02-T03",
+          "S02-T04",
+          "S02-T05",
+          "S04-T01",
+          "S04-T02",
+          "S04-T03",
+          "S04-T04",
+          "S05-T04",
+          "S04-T07",
+          "S02-T10",
+          "S06-T01",
+          "S06-T02",
+          "S06-T03",
+          "S06-T04",
+          "S06-T06",
+          "S07-T03"
+        ],
+        "conservative": [
+          "S02-T01",
+          "S02-T02",
+          "S02-T03",
+          "S02-T04",
+          "S02-T05",
+          "S04-T01",
+          "S04-T02",
+          "S04-T03",
+          "S04-T04",
+          "S05-T04",
+          "S04-T07",
+          "S02-T10",
+          "S06-T01",
+          "S06-T02",
+          "S06-T03",
+          "S06-T04",
+          "S06-T06",
+          "S07-T03"
+        ]
+      },
+      "assumptions": "Ideal available independent owners; fixed sources/toolchain; excludes all approval/data/infra/model waits. Not a calendar or completion promise.",
+      "activation": "All actual code/data/runtime/CI/deploy gates remain unexecuted or unapproved. MIN_LN includes the scoped S06-T06/S07-T03 semantic/browser/end-to-end work; these remain NOT_RUN, not a launch approval."
+    }
+  },
+  "external_approval_gates": "OWNER_DECISIONS.json / GAP_REGISTER.json",
+  "no_global_data_wait": true,
+  "no_execution_authorized": true
+}

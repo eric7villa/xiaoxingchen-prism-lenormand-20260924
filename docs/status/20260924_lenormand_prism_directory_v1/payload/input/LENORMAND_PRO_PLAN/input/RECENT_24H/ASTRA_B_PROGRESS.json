@@ -1,0 +1,30 @@
+{
+  "stage_id": "S01",
+  "status": "PARTIAL",
+  "coverage": {
+    "original_A_F": 107,
+    "V23": 18,
+    "original_ids_bound": 125,
+    "original_ids_individually_annotated": 125,
+    "later_extensions_or_replacements_recorded": 50,
+    "unapproved_NC_recorded": 9,
+    "total_records": 184,
+    "total_requirement_cap": null,
+    "all_functional_capabilities": "UNVERIFIED",
+    "functional_completion_claim_count": 0,
+    "all_extensions_exhaustively_reconciled": false,
+    "stage_COMPLETE": false,
+    "count_is_not_semantic_alignment": true
+  },
+  "S00": "FROZEN_INPUT_PREFLIGHT_ONLY",
+  "S01_required_files_written_and_read_back": true,
+  "current_codex_review": "PENDING",
+  "implementation_or_source_approval": false,
+  "later_stages_started": [],
+  "remaining_s01_work_ids": [
+    "RW-01",
+    "RW-02",
+    "RW-03"
+  ],
+  "stop_after_checkpoint": true
+}

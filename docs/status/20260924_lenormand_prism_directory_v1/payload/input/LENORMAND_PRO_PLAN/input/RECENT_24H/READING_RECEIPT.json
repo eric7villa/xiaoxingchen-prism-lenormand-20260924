@@ -1,0 +1,453 @@
+{
+  "scope": "BYTE_READ_AND_STATIC_INSPECTION_NOT_TEST_EXECUTION_OR_ALL_HISTORICAL_CLAIMS_VERIFIED",
+  "agents": {
+    "path": "base/baseline/main/AGENTS.md",
+    "opening_sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8",
+    "closing_sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8",
+    "full_text_displayed_at_entry_and_before_final_return": true,
+    "lines": 281
+  },
+  "LN_candidate_files": [
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4",
+      "bytes": 5007,
+      "lines": 169,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+      "bytes": 15305,
+      "lines": 368,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/cross_system.py",
+      "sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497",
+      "bytes": 3829,
+      "lines": 107,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+      "bytes": 16803,
+      "lines": 410,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03",
+      "bytes": 9394,
+      "lines": 253,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+      "sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7",
+      "bytes": 23073,
+      "lines": 605,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b",
+      "bytes": 10675,
+      "lines": 274,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/relations.py",
+      "sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+      "bytes": 8218,
+      "lines": 215,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+      "bytes": 7610,
+      "lines": 194,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/tests/sprint48/lenormand/__init__.py",
+      "sha256": "210b95bfd0ea93e933c0702082abcab8e73dcd65aa3ef934999b411d96f868e8",
+      "bytes": 56,
+      "lines": 1,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/tests/sprint48/lenormand/fixtures/LAYOUT_EVIDENCE.json",
+      "sha256": "21230e6b9d24ab3c64a2f1bad0969c691ab81768841228eecd11a882671dd38a",
+      "bytes": 25422,
+      "lines": 544,
+      "inspection": "FULL_BYTES_AND_JSON_NO_PRODUCT_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/tests/sprint48/lenormand/fixtures/LN_SOURCE_IDENTITY_LEDGER.json",
+      "sha256": "ab95efceb078ccc0f469c0dc7815c6a4cbc8493bdd61366187e94e6f873b19e5",
+      "bytes": 15146,
+      "lines": 344,
+      "inspection": "FULL_BYTES_AND_JSON_NO_PRODUCT_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "sha256": "6c89fb92d1aa32f7fb8116b9e8a5f71e301b975aa3174e015d129d3fe1176b85",
+      "bytes": 44745,
+      "lines": 1065,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+      "bytes": 23820,
+      "lines": 597,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    },
+    {
+      "path": "ln_candidate/tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+      "bytes": 16717,
+      "lines": 404,
+      "inspection": "FULL_BYTES_AND_AST_NO_EXECUTION"
+    }
+  ],
+  "recorded_targeted_reads": {
+    "reads.jsonl": [
+      {
+        "path": "base/candidates/LENORMAND_BINDING.json",
+        "sha256": "277e9a155dd45e2aaa0235beccdbf06fb35caead9293457446d47baa970df991",
+        "bytes": 182,
+        "lines": 6,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+        "bytes": 15305,
+        "lines": 368,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+        "bytes": 7610,
+        "lines": 194,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout.py",
+        "sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03",
+        "bytes": 9394,
+        "lines": 253,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/relations.py",
+        "sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+        "bytes": 8218,
+        "lines": 215,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+        "sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+        "bytes": 7610,
+        "lines": 194,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+        "sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+        "bytes": 16803,
+        "lines": 410,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/output.py",
+        "sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b",
+        "bytes": 10675,
+        "lines": 274,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/cross_system.py",
+        "sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497",
+        "bytes": 3829,
+        "lines": 107,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/candidates/DS_INTEGRATED/LN_RESULT.json",
+        "sha256": "e852c680f11eb65a4e9d8436ee3dc1c1483fdb44023bafed748b457404fb7a58",
+        "bytes": 8736,
+        "lines": 93,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/candidates/DS_INTEGRATED/INTERFACE_REQUESTS.json",
+        "sha256": "e5b84a7d17dacf278142e555e0967650c8ea0700cf9cbabb65a75957cc942ba7",
+        "bytes": 3904,
+        "lines": 65,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/candidates/DS_INTEGRATED/OWNER_DECISIONS.json",
+        "sha256": "358a70e17611e26bf3059c88e19194591975825a6ca45e1d8368fb4be74fff22",
+        "bytes": 6002,
+        "lines": 81,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/candidates/DS_INTEGRATED/PATCH_METADATA.json",
+        "sha256": "19f8f22ef5925cb471689a02c3227be31e496e21134d19d87b5ff807bc9356fa",
+        "bytes": 5912,
+        "lines": 67,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/baseline/main/docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md",
+        "sha256": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+        "bytes": 15774,
+        "lines": 233,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/domain/evidence.py",
+        "sha256": "dc40394b89a2fc4168c79c44a539954160adee89d757bc754a47feac2a86a2d5",
+        "bytes": 13256,
+        "lines": 353,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/mcp/postgres_tools.py",
+        "sha256": "33d5b070e4783fd100fadc0f095466e7a1dc7000518e7696cc50f89459846872",
+        "bytes": 12114,
+        "lines": 277,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/retrieval/repository.py",
+        "sha256": "129c14d1aa6200d26125ac824642cc946f574d9cdc51837a3fd9e8e1e4d65d2f",
+        "bytes": 10340,
+        "lines": 278,
+        "mode": "FULL_TEXT_READ"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/demo/catalog.py",
+        "sha256": "48fb3325c89b79f3558031fd383ec68fe2ac98c32be97bf5437f8c939f10ec37",
+        "bytes": 3396,
+        "lines": 88,
+        "mode": "FULL_TEXT_READ"
+      }
+    ],
+    "views.jsonl": [
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/cross_system.py",
+        "start_line": 1,
+        "end_line": 107,
+        "sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "start_line": 231,
+        "end_line": 285,
+        "sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5"
+      },
+      {
+        "path": "base/baseline/main/docs/governance/SOURCE_LIFECYCLE_CN.md",
+        "start_line": 1,
+        "end_line": 84,
+        "sha256": "5b807f2db1c032ab8e1e48a14f04d9974cdad2a526fc194cc8e0c8779aa6ff1d"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "start_line": 1,
+        "end_line": 210,
+        "sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "start_line": 206,
+        "end_line": 405,
+        "sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "start_line": 405,
+        "end_line": 605,
+        "sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7"
+      },
+      {
+        "path": "COMMON_CN.md",
+        "start_line": 1,
+        "end_line": 13,
+        "sha256": "b013ebcae77606d35780bc6c8fbed1b10e2805ad4e9fcb697f07d26b3b8cb737"
+      },
+      {
+        "path": "PROMPT_CN.md",
+        "start_line": 1,
+        "end_line": 19,
+        "sha256": "ef48f4537d8158961702f8985a25cb274171619457841cd7d7478051f56d2ebd"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/demo/ports.py",
+        "start_line": 1,
+        "end_line": 142,
+        "sha256": "5c2a73d2e291811b44be345b9dc9181550a966ce950c46e9edaef406fd9d9e25"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/demo/handlers.py",
+        "start_line": 90,
+        "end_line": 225,
+        "sha256": "4b9885426957aa0ecce4a3d7b604e59125216553193aa722b165ef7fbaa4f085"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/demo/handlers.py",
+        "start_line": 285,
+        "end_line": 341,
+        "sha256": "4b9885426957aa0ecce4a3d7b604e59125216553193aa722b165ef7fbaa4f085"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/mcp/server.py",
+        "start_line": 1,
+        "end_line": 122,
+        "sha256": "20fca8d0b60ad2d776c348c9009f05381a220b0d5ac1161523e01362e461d325"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/stages/executor.py",
+        "start_line": 125,
+        "end_line": 290,
+        "sha256": "4041d1e2637b8e5c749d722ef1b1b0ce0183d38e408e670c19d3ed05f71add32"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/stages/executor.py",
+        "start_line": 490,
+        "end_line": 582,
+        "sha256": "4041d1e2637b8e5c749d722ef1b1b0ce0183d38e408e670c19d3ed05f71add32"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/stages/executor.py",
+        "start_line": 645,
+        "end_line": 727,
+        "sha256": "4041d1e2637b8e5c749d722ef1b1b0ce0183d38e408e670c19d3ed05f71add32"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/stages/ports.py",
+        "start_line": 1,
+        "end_line": 190,
+        "sha256": "d9be07ad2ef743ba45bf710e2df2fe2f8594a7a4403ea2c2c0e23eca40692bc6"
+      },
+      {
+        "path": "base/baseline/d_candidate/alembic/versions/20260825_0001_foundation.py",
+        "start_line": 615,
+        "end_line": 757,
+        "sha256": "72596dc75925c3e6514f56e1522087f3239d41fde80dddb0ef19cb0368de3376"
+      },
+      {
+        "path": "base/baseline/d_candidate/alembic/versions/20260826_0002_foundation_authority.py",
+        "start_line": 1510,
+        "end_line": 1640,
+        "sha256": "5bf45c2dbf0236f95450995675251ade9fa2e597bea572848719398328ee9b8c"
+      },
+      {
+        "path": "base/baseline/d_candidate/alembic/versions/20260919_0008_reading_delivery_binding_p04.py",
+        "start_line": 492,
+        "end_line": 588,
+        "sha256": "0b1fe179772fee4d15f61f843729fa280072163f3182b4e09e242a230c84cd4a"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/domain/conversion.py",
+        "start_line": 1,
+        "end_line": 240,
+        "sha256": "d1226ee03333958f387faa18c5f731c7b14b819e375e37fffba7095523334035"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/domain/reading.py",
+        "start_line": 58,
+        "end_line": 158,
+        "sha256": "4fad63f8cb8fdc5bef38a72758e0d791451b0edffcc41ea1dcf0319c30cf5ac3"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/conversion/promotion.py",
+        "start_line": 1,
+        "end_line": 26,
+        "sha256": "c6e6ce1e96ad84746ea90f25b8161385ae46569a0b46f0394204c355f2bd5e19"
+      },
+      {
+        "path": "base/baseline/d_candidate/src/xiaoxingchen_core/governance/review.py",
+        "start_line": 1,
+        "end_line": 24,
+        "sha256": "65d70eddd36814f2aec0e62ea23a320a76751ad9c576be4ec1e22a57519e840e"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+        "start_line": 1,
+        "end_line": 169,
+        "sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "start_line": 285,
+        "end_line": 368,
+        "sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/output.py",
+        "start_line": 257,
+        "end_line": 274,
+        "sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b"
+      },
+      {
+        "path": "base/baseline/d_candidate/pyproject.toml",
+        "start_line": 1,
+        "end_line": 73,
+        "sha256": "579aa59a8d78516f9a86bbd3ccbd9e6868d734b6fbed7590259214a085b2bf93"
+      },
+      {
+        "path": "ln_candidate/tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+        "start_line": 1,
+        "end_line": 235,
+        "sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426"
+      },
+      {
+        "path": "ln_candidate/tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+        "start_line": 234,
+        "end_line": 409,
+        "sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426"
+      },
+      {
+        "path": "ln_candidate/tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+        "start_line": 746,
+        "end_line": 864,
+        "sha256": "6c89fb92d1aa32f7fb8116b9e8a5f71e301b975aa3174e015d129d3fe1176b85"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+        "start_line": 20,
+        "end_line": 126,
+        "sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5"
+      },
+      {
+        "path": "ln_candidate/src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+        "start_line": 28,
+        "end_line": 115,
+        "sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7"
+      },
+      {
+        "path": "base/INPUT_JSON_DEFECTS.json",
+        "start_line": 1,
+        "end_line": 11,
+        "sha256": "bcf6574ac1085a4a00b885758118383985a5450e8aa9c5d638997049bc9e00c8"
+      }
+    ]
+  },
+  "limitations": [
+    "This is a record of programmatic full reads and logged targeted ranges, not proof of runtime behavior.",
+    "Unlogged shell displays are not retroactively fabricated into exact per-range reading records.",
+    "Historical reports were selectively cross-checked; not all 1183 input files were semantically audited.",
+    "All selected src/tests were statically indexed; dynamic imports, live Git and deployment were not evaluated."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "astra.s01.checks.v1",
+  "stage_status": "PARTIAL",
+  "scope": "LOCAL_FILE_CHECKS_ONLY",
+  "input_revalidation": "S01/evidence/INPUT_REVALIDATION.json",
+  "original_verifier": "S01/evidence/ORIGINAL_VERIFY_PACKAGE.json",
+  "artifact_validation": "S01/evidence/ARTIFACT_VALIDATION.json",
+  "agents_double_read": "S01/evidence/AGENTS_DOUBLE_READ_CHECK.json",
+  "s00_preservation": "S01/evidence/S00_CUMULATIVE_PRESERVATION.json",
+  "readback": "S01/evidence/OUTPUT_READBACK.json",
+  "passed_checks": [
+    "Current S00 manifest and checksum directory closure",
+    "Original 1097 input identities and closed directories",
+    "125 original IDs individually bound",
+    "50 extension and 9 unapproved NC records",
+    "441 source anchor instances: whole hash, line, byte offset, span hash and exact text",
+    "244 preliminary code/test/governance evidence index entries",
+    "14 original S00 gap scopes preserved",
+    "All generated JSON parseable",
+    "Original S00 ZIP matches all 28 frozen members",
+    "Tampered source span rejected by artifact validator"
+  ],
+  "not_run": {
+    "product_tests": "Current user explicitly authorized offline planning and file delivery only.",
+    "DB_Provider_CI_deployment": "Not authorized; no real calls.",
+    "semantic_source_acceptance": "Not in S01, old60/new24/sister6/8 remain unapproved.",
+    "full_caller_audit": "Preliminary index only; later stages responsible.",
+    "all_extended_requirements_reconciliation": "RW-01/RW-02/RW-03 remain, hence PARTIAL."
+  },
+  "zip_verification": "Performed after seal; actual final outcome is in external CHECKPOINT_S01_VERIFICATION.json to avoid ZIP self-reference."
+}

@@ -1,0 +1,94 @@
+{
+  "LN_vs_D": [
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/__init__.py",
+      "LN_sha256": "48202da6225a5a3c53a5a92367224e6fd47af363370f79b006ad4683ad0398f4",
+      "D_sha256": "3ea39d21b6446524de599b03b5cafaa97e3a2a1a50dccbb3b3a568ff07bc3e9c",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/contracts.py",
+      "LN_sha256": "0164984e4de5c71d3e4c40fceded8c8ba3b44033e9c502d3fd19d2ae4d8882f5",
+      "D_sha256": "975324f278e6e23c23b23df7ae1d6b5c136cf1b480dffea8f9f0a9c9575bb10b",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/cross_system.py",
+      "LN_sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497",
+      "D_sha256": "dcea3a8b2e17b103734d20f0e747b116f760e1f9648d700d95deba6572b03497",
+      "difference": "IDENTICAL"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/evidence.py",
+      "LN_sha256": "b7e8b0bf1e7d23265f1ffd389e6ce707e10918edb0f3b7773c43cc9092d2afd5",
+      "D_sha256": "7df63e27250171232699ef9a721db6f2f52030a81b3d5e61e56e319a51837966",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout.py",
+      "LN_sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03",
+      "D_sha256": "9805398a11cfb107b4079afe3f9f2f732632cd3ec595f9a8a49759769959ba03",
+      "difference": "IDENTICAL"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/layout_candidates.py",
+      "LN_sha256": "186fab1debc9cc939b2bcc5ca708fc7600b5a1e5bf7c06c7f2ecf6fbaa9c81c7",
+      "D_sha256": null,
+      "difference": "ADDED"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/output.py",
+      "LN_sha256": "97c192d3204686ac32982496678ee66c0f954342cef37a637ac76b201e1cb76b",
+      "D_sha256": "5bde1cdd632011b5bae650bdcc1c3f8c754dfdbbb8727cc74198cec2588b72ee",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/relations.py",
+      "LN_sha256": "36e02128b9c6056fc50eb45b6876e48117f86278ae6c4a0da27519ea95ec5793",
+      "D_sha256": "6ff24eb9e66c86529afb2969c5db57715605f45862dd37ffddf63454ea11b2b3",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "src/xiaoxingchen_core/lenormand_runtime/runtime.py",
+      "LN_sha256": "7fcc30d65668290d4b086e7ccecbab2b1c2d8a3740b3a215f17ddfb3dabed89e",
+      "D_sha256": "a1402a676e87cf1fda381bdc854444ff0dca4f39c91fe7fe35a11d81560a6b38",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "tests/sprint48/lenormand/__init__.py",
+      "LN_sha256": "210b95bfd0ea93e933c0702082abcab8e73dcd65aa3ef934999b411d96f868e8",
+      "D_sha256": "210b95bfd0ea93e933c0702082abcab8e73dcd65aa3ef934999b411d96f868e8",
+      "difference": "IDENTICAL"
+    },
+    {
+      "path": "tests/sprint48/lenormand/fixtures/LAYOUT_EVIDENCE.json",
+      "LN_sha256": "21230e6b9d24ab3c64a2f1bad0969c691ab81768841228eecd11a882671dd38a",
+      "D_sha256": "21230e6b9d24ab3c64a2f1bad0969c691ab81768841228eecd11a882671dd38a",
+      "difference": "IDENTICAL"
+    },
+    {
+      "path": "tests/sprint48/lenormand/fixtures/LN_SOURCE_IDENTITY_LEDGER.json",
+      "LN_sha256": "ab95efceb078ccc0f469c0dc7815c6a4cbc8493bdd61366187e94e6f873b19e5",
+      "D_sha256": "ab95efceb078ccc0f469c0dc7815c6a4cbc8493bdd61366187e94e6f873b19e5",
+      "difference": "IDENTICAL"
+    },
+    {
+      "path": "tests/sprint48/lenormand/test_ds08_lenormand_runtime.py",
+      "LN_sha256": "6c89fb92d1aa32f7fb8116b9e8a5f71e301b975aa3174e015d129d3fe1176b85",
+      "D_sha256": "c3490cf3971162550533817e895803c8f976264cf02a314fea2f4a2477d5ec3c",
+      "difference": "MODIFIED"
+    },
+    {
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_admission_hardening.py",
+      "LN_sha256": "8687ad904161f4a01bd1fbafcbdfc713fe77121cdb31f8c40551815938218426",
+      "D_sha256": null,
+      "difference": "ADDED"
+    },
+    {
+      "path": "tests/sprint48/lenormand/test_ds_lenormand_layout_candidates.py",
+      "LN_sha256": "8a0700a5be68361f1192ba4a1eb79b67fe590617a8196230524094ba171c5a40",
+      "D_sha256": null,
+      "difference": "ADDED"
+    }
+  ]
+}

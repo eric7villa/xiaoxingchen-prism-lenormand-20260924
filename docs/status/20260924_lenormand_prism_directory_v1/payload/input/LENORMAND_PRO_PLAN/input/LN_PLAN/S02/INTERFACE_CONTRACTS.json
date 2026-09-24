@@ -1,0 +1,201 @@
+{
+  "stage": "S02",
+  "contracts": [
+    {
+      "id": "IC-01",
+      "name": "ConfirmedInput v2",
+      "owner": "O-RUNTIME",
+      "producer": "SessionService.prepare + trusted pending store",
+      "consumer": "RuntimeController.start / TarotStageExecutor / LN operation adapter",
+      "fields": {
+        "schema_version": "confirmed-input.v2",
+        "principal": "server-resolved opaque subject; never caller boolean",
+        "epoch_id": "server-owned UUID",
+        "topic_original_sha256": "original pending text digest",
+        "effective_topic": "IntakeDecision.topic after the accepted choice",
+        "effective_topic_sha256": "UTF-8 exact effective text hash",
+        "input_version": "monotonic within pending/cycle",
+        "cards": "system-discriminated factual user cards; Tarot orientation required, LN orientation key forbidden",
+        "spread": "registry id/version + declared positions",
+        "gate_receipt": "server-owned pending consumption and semantic gate result; not a client permission token"
+      },
+      "invariants": [
+        "Original and rewrite safety checks precede acceptance; a refused original cannot be laundered by rewriting.",
+        "Pending ownership + expiry + CAS single-consumption precede any authority issuance.",
+        "Changing person, topic, card, orientation or spread invalidates old confirmation/artifacts; no re-draw.",
+        "The executor uses effective_topic and its digest, not the original topic or spread slug."
+      ],
+      "failures": [
+        "AWAIT_INPUT",
+        "AWAIT_CONFIRM",
+        "SAFETY_STOP",
+        "STALE_OR_FOREIGN_PENDING",
+        "AUTHENTICATION_UNAVAILABLE"
+      ],
+      "compatibility": "Keep raw v1 input for audit metadata only; adapt trusted SessionResult.effective_topic into v2. Legacy executor intake is internal-only and must not create a second confirmation loop. Unknown fields rejected per version.",
+      "necessity": "One canonical confirmed fact set prevents the current session/executor topic split; this does not add an approval system.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "IC-02",
+      "name": "Runtime authority and operation policy",
+      "owner": "O-RUNTIME",
+      "producer": "existing reading authority DB + authenticated RuntimeController",
+      "consumer": "stage stores / Research worker / delivery transaction",
+      "fields": {
+        "system": "TAROT | LENORMAND",
+        "reading_id": "DB-owned reading binding",
+        "authority_sha256": "existing authority digest, never client assertion",
+        "operations": "Tarot R1..R4 or LN PREPARE/COMPOSE/REALITY_CHECK/REVIEW/DELIVER, discriminated",
+        "ttl_seconds": "explicit positive value <= published server maximum; absent means HOLD",
+        "research_budget": "separate A/B max 3 attempts, explicit network grant; no Harness budget substitution",
+        "operation_nonce": "idempotency nonce bound to reading + input version",
+        "rejudge_budget": "explicit bounded parent budget; absent means no automatic child run"
+      },
+      "invariants": [
+        "A Development Harness grant cannot issue or imply runtime authority.",
+        "No stage semantics enter source records.",
+        "LN shares identity/authority mechanisms, never Tarot stage enum meanings.",
+        "Replays cannot bypass expiry or revocation; a pre-existing delivered answer may be read only with authenticated read permission, not regenerated."
+      ],
+      "failures": [
+        "AUTHORITY_HOLD",
+        "AUTHORITY_EXPIRED",
+        "AUTHORITY_REVOKED",
+        "OPERATION_NOT_ALLOWED",
+        "IDEMPOTENCY_CONFLICT"
+      ],
+      "compatibility": "Tarot v1 stage_allowlist remains decoded exactly. Proposed v2 adds system-discriminated operation_allowlist on the same authority lineage; no parallel LN approval ledger. Migration and SQL owner O-DB, semantics owner O-RUNTIME.",
+      "necessity": "Needed because the existing store protocol is Tarot-stage-shaped and LN must not masquerade as R1–R4.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "IC-03",
+      "name": "Frozen artifact and review manifest v2",
+      "owner": "O-RUNTIME",
+      "producer": "stage assembler + existing sealed-artifact store",
+      "consumer": "subsequent stage / isolated reviewer / delivery verifier",
+      "fields": {
+        "identity": "reading_id, epoch/cycle, system, operation, input_version",
+        "content": "immutable exact UTF-8 payload; separate private structural appendix from model-visible text",
+        "digests": "content_sha256, artifact_sha256, ordered parent digests, input digest, contract version",
+        "dependencies": "actual source snapshot/item digests and research claim-set digest",
+        "retention": "expires_at bounded by published artifact TTL; no long-term or user export copy",
+        "model_receipt": "actual adapter build/model family/context/capability profile; an isolation flag is not proof"
+      },
+      "invariants": [
+        "Verify exact bytes, identity, ordered parents and TTL at every consume, not only initial seal.",
+        "Governance, raw sources, audit reports, long-term profiles and secrets cannot enter model-visible material.",
+        "Source IDs remain in private appendix; model gets only minimal approved content and local ephemeral evidence handles.",
+        "No same-stage overwrite; same request replay returns identical hash after authority check; different bytes fail.",
+        "R4 sees only this manifest and frozen R1–R3 material, with zero retrieval/model tools other than its own completion."
+      ],
+      "failures": [
+        "ARTIFACT_IDENTITY_MISMATCH",
+        "DIGEST_MISMATCH",
+        "PARENT_ORDER_MISMATCH",
+        "EXPIRED_ARTIFACT",
+        "UNAPPROVED_DEPENDENCY"
+      ],
+      "compatibility": "Use explicit digest_version: v1 hashes unchanged; v2 domain-separated canonical fields plus exact content hash. Do not claim Python sort_keys alone is JCS; reuse the repository canonicalization contract and cross-language vectors in S05.",
+      "necessity": "Preserves provenance that the current executor loses when reducing evidence to strings and sealing approved_source_refs=().",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "IC-04",
+      "name": "R2MatchSeed / Mentor query binding",
+      "owner": "O-RUNTIME",
+      "producer": "PROPOSED_NEW stages/r2.py::derive_match_seed after R1 + symbol detail + optional Book T",
+      "consumer": "mentor_runtime/query_adapter.py then approved mechanism registry/matcher",
+      "fields": {
+        "schema_version": "r2-match-seed.v1",
+        "reading_binding": "reading/input/R1 digest; private runtime only",
+        "card_bindings": "actual card and orientation, never inferred",
+        "context": "current-question domain/scenario, explicit known/unknown conditions",
+        "mechanism_candidates": "supported mechanism descriptions + upstream evidence handles + condition boundaries",
+        "registry_binding": "approved registry/version used to resolve mechanism_ref",
+        "result": "resolved match query or optional-layer no-match; never final R2 phenomenon"
+      },
+      "invariants": [
+        "No field depends on final R2 artifact/phenomenon.",
+        "The data consumer receives scalar filters and an opaque runtime binding, not an R1 artifact or stage instructions.",
+        "Natural-language vocabulary absence is not missing source evidence: bounded registry mapping can succeed with an explicit evidence-backed mapping receipt.",
+        "No resolved approved mechanism_ref means card-specific no-match, not synthesizing a mechanism from candidate summaries.",
+        "Global course process is a separately approved scope; it cannot create card meaning or rescue an unmatched card-specific entry."
+      ],
+      "failures": [
+        "NO_APPROVED_EVIDENCE for an existing layer with no valid matching mapping",
+        "NO_LAYER_MATCH / NO_SNAPSHOT according to Source Lifecycle",
+        "INTEGRITY_REFUSAL for altered bindings"
+      ],
+      "compatibility": "This is one runtime-local preparation DTO. Existing MentorQuery/MechanismRef types remain downstream; add an explicit adapter, not fields to raw course records.",
+      "necessity": "Breaks the documented circular dependency between Mentor matching and the final R2 phenomenon while preserving R2 evidence order.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "IC-05",
+      "name": "R2 phenomenon → ResearchSeedPacket",
+      "owner": "O-RUNTIME",
+      "producer": "R2 coordinator after optional layers and conflict resolution",
+      "consumer": "S04 Research planner",
+      "fields": {
+        "schema_version": "research-seed.v1",
+        "r2_artifact_digest": "final coherent frozen R2 identity",
+        "mechanism": "supported phenomenon/mechanism, not card meaning lookup text",
+        "conditions": "current user-provided constraints / explicit unknowns, with private evidence links",
+        "research_goals": "ordered communication then solution questions",
+        "forbidden_payload": "names/contact/exact location/date/private narrative/source labels/whole reading text",
+        "seed_sha256": "exact normalized packet digest"
+      },
+      "invariants": [
+        "Final R2 is produced only after the Mentor lookup terminates; no edge back from this packet to Mentor matching.",
+        "De-identification and egress validation occur before a provider sees any query.",
+        "Research may explain real mechanisms, never backfill cards, user facts or R1 tone."
+      ],
+      "failures": [
+        "UNCOHERENT_R2",
+        "INVALID_SEED_BINDING",
+        "EGRESS_REDACTION_UNRESOLVED"
+      ],
+      "compatibility": "Extend ResearchPort.run with a typed seed and opaque binding; retain query_text only in a versioned test adapter. The current topic_text-only route is not a valid production substitute.",
+      "necessity": "R3 currently searches topic_text; the required final-phenomenon binding needs an explicit producer/consumer boundary.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "IC-06",
+      "name": "Controlled answer commit",
+      "owner": "O-RUNTIME",
+      "producer": "isolated review result + approved dependency manifest",
+      "consumer": "existing DB delivery transaction + S06 public adapter",
+      "fields": {
+        "answer": "natural-language text, system-discriminated visible facts",
+        "bindings": "reading/authority/input/R4 or LN-review/artifact/claim digests, private only",
+        "research_status": "DISABLED / SEARCH_FAILED / NO_RELIABLE_SOLUTION / SUPPORTED with provenance scope",
+        "public_sources": "validated name + canonical URL only when resolving to admitted real claims",
+        "idempotency": "request nonce + answer envelope digest"
+      },
+      "invariants": [
+        "Check authority and source validity before answer commit; return only the DB readback.",
+        "Do not expose an uncommitted draft or arbitrary R3 completion.",
+        "A revoked supporting source invalidates dependent uncommitted claims; never silently switch snapshot.",
+        "No fixed paragraphs, first sentence or last line; public source visibility is not internal source visibility."
+      ],
+      "failures": [
+        "DELIVERY_BINDING_FAILURE",
+        "SOURCE_WITHDRAWN",
+        "AUTHORITY_REVOKED",
+        "REVIEW_REJECTED",
+        "READBACK_MISMATCH"
+      ],
+      "compatibility": "Reuse UserVisibleAnswer/SourceBinding and existing delivery envelope. Versioned extension for LN operations only, not an independent deliverable-state authority.",
+      "necessity": "Absorbs B DELIVERABLE as a derived condition instead of another lifecycle enum.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "scope": "OFFLINE_DESIGN_TRANSPORT_AND_STATIC_CONSISTENCY_ONLY",
+  "checked_at_utc": "2026-09-22T10:16:29.282334+00:00",
+  "checks": [
+    {
+      "id": "INPUT_FILE_SET_UNCHANGED",
+      "status": "PASS",
+      "details": {
+        "files": 1183
+      }
+    },
+    {
+      "id": "INPUT_ALL_BYTES_UNCHANGED",
+      "status": "PASS",
+      "details": {
+        "files": 1183,
+        "mismatches": []
+      }
+    },
+    {
+      "id": "INPUT_ZIP_IDENTITY",
+      "status": "PASS",
+      "details": {
+        "sha256": "4626f0e759c597ed5c4ccb75495dfdf270e251b63fe4438885a80d2794b6e39a"
+      }
+    },
+    {
+      "id": "INPUT_ZIP_SAFE_CRC",
+      "status": "PASS",
+      "details": {
+        "file_members": 1183,
+        "bad_paths": [],
+        "symlinks": [],
+        "crc_bad_member": null
+      }
+    },
+    {
+      "id": "PACKAGE_VERIFIER_RECHECK",
+      "status": "PASS",
+      "details": {
+        "command": "python VERIFY_PACKAGE.py",
+        "cwd": "input/ASTRA_B_LENORMAND_DEEP_20260922",
+        "exit_code": 0,
+        "stdout": "{\"status\": \"PASS\", \"files\": 1183, \"reading_groups\": 5, \"scope\": \"TRANSPORT_AND_REFERENCES_ONLY_NOT_PRODUCT_ACCEPTANCE\"}",
+        "stderr": "",
+        "scope": "TRANSPORT_AND_REFERENCES_ONLY_NOT_PRODUCT_ACCEPTANCE"
+      }
+    },
+    {
+      "id": "PLAN_COUNTS",
+      "status": "PASS",
+      "details": {
+        "tasks": 13,
+        "paired_cases": 44
+      }
+    },
+    {
+      "id": "REQUIREMENTS_COVERED",
+      "status": "PASS",
+      "details": [
+        "B-LN-R01",
+        "B-LN-R02",
+        "B-LN-R03",
+        "B-LN-R04",
+        "B-LN-R05",
+        "B-LN-R06",
+        "B-LN-R07",
+        "B-LN-R08",
+        "B-LN-R09",
+        "B-LN-R10",
+        "B-LN-R11",
+        "B-LN-R12",
+        "B-LN-R13",
+        "B-LN-R14"
+      ]
+    },
+    {
+      "id": "WRITESETS_SYMBOLS_PAIRS_LINKS",
+      "status": "PASS",
+      "details": {
+        "write_set_entries": 47,
+        "all_existing_D_symbols_ast_checked": true,
+        "test_execution": "NOT_RUN"
+      }
+    },
+    {
+      "id": "TASK_DAG_WITH_MODE_CONDITIONS",
+      "status": "PASS",
+      "details": {
+        "conditional_dependencies": {
+          "FIVE_CARD_LINE": [
+            "B-LN-T09"
+          ],
+          "NINE_CARD_GRID_3X3": [
+            "B-LN-T10"
+          ]
+        }
+      }
+    },
+    {
+      "id": "INTERFACE_ANCHORS_AND_OWNERS",
+      "status": "PASS",
+      "details": {
+        "requests": 6,
+        "shared_authority_created": false
+      }
+    },
+    {
+      "id": "CORE_DESIGN_FILES_PRESENT",
+      "status": "PASS",
+      "details": [
+        "BASELINE_COMPARISON.md",
+        "CALL_CHAIN.md",
+        "SPEC.md",
+        "FIVE_NINE_CANDIDATE.md",
+        "TASKS.md",
+        "TASKS.json",
+        "ACCEPTANCE.md",
+        "ACCEPTANCE.json",
+        "DEPENDENCIES.md",
+        "INTERFACE_REQUESTS.json",
+        "SOURCE_GAPS_AND_OWNER_DECISIONS.md",
+        "OVERDESIGN_REVIEW.md",
+        "SOURCE_MINING.md",
+        "HISTORICAL_CROSSCHECK.md"
+      ]
+    },
+    {
+      "id": "OUTPUT_JSON_PARSE",
+      "status": "PASS",
+      "details": {
+        "count_before_final_receipts": 12
+      }
+    },
+    {
+      "id": "LN_15_FULL_BYTE_AST_JSON_RECHECK",
+      "status": "PASS",
+      "details": {
+        "files": 15,
+        "python_files": 13
+      }
+    },
+    {
+      "id": "AGENTS_OPEN_CLOSE_IDENTITY",
+      "status": "PASS",
+      "details": {
+        "path": "base/baseline/main/AGENTS.md",
+        "opening_sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8",
+        "closing_sha256": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8",
+        "full_text_displayed_at_entry_and_before_final_return": true,
+        "lines": 281
+      }
+    }
+  ],
+  "product_tests": "NOT_RUN",
+  "database": "NOT_RUN",
+  "provider": "NOT_RUN",
+  "network": "NOT_USED",
+  "source_semantics": "UNVERIFIED",
+  "real_approvals": "UNVERIFIED",
+  "code_implemented": false,
+  "A_modified": false,
+  "input_files_modified": false,
+  "historical_json_defects_preserved": [
+    "base/candidates/DS_INTEGRATED/MENTOR_RESULT.json"
+  ],
+  "corrected_design_audit_observations": [
+    "L-only parse_relation_id was corrected from an existing-D symbol to a proposed candidate symbol.",
+    "Interface migration anchor draft names were replaced with actual D paths before final validation.",
+    "Local owner-decision references were normalized before final validation.",
+    "Interface audit caught LenormandDeckCatalog as L-only; its anchor was rebound explicitly to the LN candidate rather than D."
+  ],
+  "final_archive_verification": "EXTERNAL_RECEIPT_AFTER_SEAL_TO_AVOID_SELF_REFERENCE",
+  "executed_commands_and_exit_codes": [
+    {
+      "command": "python VERIFY_PACKAGE.py",
+      "root": "original input root",
+      "exit_code": 0,
+      "scope": "transport and reference verification"
+    },
+    {
+      "command": "python <external-source-path>",
+      "exit_code": 0,
+      "scope": "14 offline design/identity/static checks; no product execution"
+    }
+  ],
+  "audit_retry_history": [
+    {
+      "command": "python <external-source-path>",
+      "exit_code": 1,
+      "failure": "LenormandDeckCatalog was anchored to D but is present only in L",
+      "resolution": "Rebound the interface anchor explicitly to ln_candidate; rerun exited 0",
+      "product_code_changed": false,
+      "file_io_failure": false
+    }
+  ]
+}

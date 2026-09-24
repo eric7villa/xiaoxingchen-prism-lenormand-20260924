@@ -1,0 +1,138 @@
+[
+  {
+    "source": "PACKET:received/B_LENORMAND/SPEC.md",
+    "file_sha256": "9aeaf927882e81cba1b624c87941a09a803e29517c28f807cd9ff00ae1bad348",
+    "line_start": 1,
+    "line_end": 161,
+    "span_sha256": "9aeaf927882e81cba1b624c87941a09a803e29517c28f807cd9ff00ae1bad348",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/B_LENORMAND/CALL_CHAIN.md",
+    "file_sha256": "960119c4eaa374072a303721c52dc9de8a24eb67228186e370d715b650947cdb",
+    "line_start": 1,
+    "line_end": 70,
+    "span_sha256": "960119c4eaa374072a303721c52dc9de8a24eb67228186e370d715b650947cdb",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/B_LENORMAND/TASKS.json",
+    "file_sha256": "24e549e328daa088cd14069d93dbb6642487b65a19e8b609bce1c0c0cf9f763d",
+    "line_start": 1,
+    "line_end": 1128,
+    "span_sha256": "24e549e328daa088cd14069d93dbb6642487b65a19e8b609bce1c0c0cf9f763d",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/B_LENORMAND/ACCEPTANCE.json",
+    "file_sha256": "94fc238560f52dcb800339db51b8917c3c6390262bf72191eb9713b4cf682ff9",
+    "line_start": 1,
+    "line_end": 580,
+    "span_sha256": "94fc238560f52dcb800339db51b8917c3c6390262bf72191eb9713b4cf682ff9",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/B_LENORMAND/FIVE_NINE_CANDIDATE.md",
+    "file_sha256": "e8259c0e9eb697a13b39e3dea0e7ad14f06edba9597874d695b02e452cb03a72",
+    "line_start": 1,
+    "line_end": 106,
+    "span_sha256": "e8259c0e9eb697a13b39e3dea0e7ad14f06edba9597874d695b02e452cb03a72",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/B_LENORMAND/INTERFACE_REQUESTS.json",
+    "file_sha256": "51c036319130369c482fb613230a67ff787978917d362028f5da5a7b13cc2a67",
+    "line_start": 1,
+    "line_end": 313,
+    "span_sha256": "51c036319130369c482fb613230a67ff787978917d362028f5da5a7b13cc2a67",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/C_MENTOR_DATA/RETURN.md",
+    "file_sha256": "1d463064c9da2040161ea367991db29ccee0d69897debc0e524f6519fb085316",
+    "line_start": 1,
+    "line_end": 44,
+    "span_sha256": "1d463064c9da2040161ea367991db29ccee0d69897debc0e524f6519fb085316",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/C_MENTOR_DATA/S03_INTERFACE_REQUESTS.md",
+    "file_sha256": "eb1d49cd773a53beeb7df9c12837d1c793caf4ba4e5670fa3b54099694226952",
+    "line_start": 1,
+    "line_end": 58,
+    "span_sha256": "eb1d49cd773a53beeb7df9c12837d1c793caf4ba4e5670fa3b54099694226952",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/C_MENTOR_DATA/PENDING_BY_ID.json",
+    "file_sha256": "46658070517f322996af2d3db38aef09e22d398a906b7bc53e3ae54b9ae92c44",
+    "line_start": 1,
+    "line_end": 2113,
+    "span_sha256": "46658070517f322996af2d3db38aef09e22d398a906b7bc53e3ae54b9ae92c44",
+    "kind": "source"
+  },
+  {
+    "source": "PACKET:received/A_S01_RECONCILED/S01_RECONCILED/SCHEMA_FIELD_RECONCILIATION.json",
+    "file_sha256": "87c8bca14a75dd1b3c675fb84ebba9266b26b15021f66ea82a4c51c7ca0c8a3e",
+    "line_start": 1,
+    "line_end": 28095,
+    "span_sha256": "87c8bca14a75dd1b3c675fb84ebba9266b26b15021f66ea82a4c51c7ca0c8a3e",
+    "kind": "source"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/mentor_runtime/consumer.py",
+    "file_sha256": "146f2ac16e78a3b9ff2ba40950216f07ae2832e2d1a70cdab874608d1c3491f5",
+    "line_start": 197,
+    "line_end": 278,
+    "span_sha256": "bfe5b7c64b3384a2566c7f4ae90e4762dfc0c39c67a0db934f8c958696a6f81f",
+    "kind": "static_code"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/domain/mentor_matcher.py",
+    "file_sha256": "850ea74e461f2a6025c145202ae1d4ca4b9f5b8da365798b86ae3ae6d98eadf9",
+    "line_start": 400,
+    "line_end": 486,
+    "span_sha256": "4cb7720ddcebf6b943ac289cf3d077372f34100251f9fc3d766433093285bc81",
+    "kind": "static_code"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/domain/mentor_matcher.py",
+    "file_sha256": "850ea74e461f2a6025c145202ae1d4ca4b9f5b8da365798b86ae3ae6d98eadf9",
+    "line_start": 598,
+    "line_end": 677,
+    "span_sha256": "3c961f792f680306b0fe5944b06cec32662b72e8ab0f3b723ca6150aa6f65feb",
+    "kind": "static_code"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/retrieval/repository.py",
+    "file_sha256": "129c14d1aa6200d26125ac824642cc946f574d9cdc51837a3fd9e8e1e4d65d2f",
+    "line_start": 80,
+    "line_end": 225,
+    "span_sha256": "38d198535356555adb869b854c3504f1fcf791f25722673c99ae71c8acc2d4f1",
+    "kind": "static_code"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/conversion/pipeline.py",
+    "file_sha256": "88fed488b333b01f838e734b4d22d7a0a8aaaea1c60eeaca3aedfca91ffda563",
+    "line_start": 48,
+    "line_end": 123,
+    "span_sha256": "76e864e1744aa955d04944d4ff819647aea619e37bffc1b9be066485f9912158",
+    "kind": "static_code"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/conversion/adapters.py",
+    "file_sha256": "e8bb28066883bfa73e9a1fdadffe432d989ddff6c68c62cc5d220d6296915d3e",
+    "line_start": 29,
+    "line_end": 71,
+    "span_sha256": "77a855b14f15f7c3d967fe7e17a20ae87e544a78a19bb2f4adbfe0468ec2f000",
+    "kind": "static_code"
+  },
+  {
+    "source": "A_DISPATCH:base/baseline/d_candidate/src/xiaoxingchen_core/book_t_runtime/consumer.py",
+    "file_sha256": "7f6dec47f58e41b011b795adc4a85853de4b4f8bec35417d0ddc944571ee06e4",
+    "line_start": 140,
+    "line_end": 243,
+    "span_sha256": "f7b251736f08974afa829ceea9af6595713f5b86b7355658996fbc4e00315874",
+    "kind": "static_code"
+  }
+]

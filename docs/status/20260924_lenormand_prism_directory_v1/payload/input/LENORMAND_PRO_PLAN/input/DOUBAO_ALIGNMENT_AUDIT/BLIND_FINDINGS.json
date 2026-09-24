@@ -1,0 +1,142 @@
+{
+  "artifact": "BLIND_FINDINGS",
+  "phase": "PHASE_1_BLIND",
+  "auditor": "DOUBAO (independent alignment auditor, read-only)",
+  "generated_utc": "2026-09-23T06:40:34Z",
+  "cloud_local_time": "2026-09-23 14:40:34 +08",
+  "governance_hashes_recomputed": {
+    "PRODUCT_FOUNDATION_REFERENCE_CN.md": "4d890249a04c578ed7bbde530b8706548ddf7d54d0991e466333ea27c92eac99",
+    "AGENTS.md": "c59ebc1cabeb0d63e4a0b57a13375e3a7e863206afa7df0840f5f2f7e4ecbdd8",
+    "SOURCE_LIFECYCLE_CN.md": "5b807f2db1c032ab8e1e48a14f04d9974cdad2a526fc194cc8e0c8779aa6ff1d"
+  },
+  "path_remapping_mac_to_cloud": {
+    "<local-path> (repo root)": "<external-review-workspace>",
+    "docs/governance/PRODUCT_FOUNDATION_REFERENCE_CN.md": "<external-review-workspace>",
+    "AGENTS.md": "<external-review-workspace>",
+    "docs/governance/SOURCE_LIFECYCLE_CN.md": "<external-review-workspace>",
+    "engine tree @5d771be (candidate)": "<external-review-workspace>",
+    "engine tree @ecdfb895 (baseline)": "<external-review-workspace>",
+    "returns/DOUBAO_ALIGNMENT_AUDIT/attempt_001": "<external-review-workspace>"
+  },
+  "counts": {
+    "candidate_py": 647,
+    "baseline_py": 562,
+    "candidate_pytest_tmp": 63,
+    "audit_zip_members": 2669,
+    "a_plan_files": 497,
+    "p01_p07_full_returns_NOT_READ_IN_P1": "2089",
+    "p01_p07_summaries_NOT_READ_IN_P1": "52"
+  },
+  "phase1_read_blackout": [
+    "extracted/common/P01_P07_FULL_RETURNS/**",
+    "extracted/common/P01_P07_RETURN_SUMMARIES/**",
+    "extracted/common/DOUBAO_ADJUDICATION.md"
+  ],
+  "aligned_confirmed": [
+    "治理三 hash 全部匹配锚点",
+    "R1-R4 四阶段固定顺序；系统不代抽(reading.enforce_factual_draw_inputs/enforce_system_card_shape)",
+    "整副牌主基调 R1 先于单牌；无主导流向合法(has_dominant_flow)",
+    "问法三门 hard/confirm/observation + 改写示例(question_reframe_gate)",
+    "换人/换事 epoch 隔离 + 长期画像忽略(IsolationVerdict/new_person_epoch_binding)",
+    "authority 单次消费/时间窗/版本(Authority/require_valid_authority)",
+    "stage artifact 内容寻址 digest + R1<R2<R3 顺序(consume_stage_artifacts)",
+    "Mentor 六维精确匹配 card/orientation/domain/scenario/mechanism/preconditions",
+    "GLOBAL/SCOPED/NOT_STATED scope 分离；GLOBAL 不带 card binding",
+    "no-match 闭集四码 NO_SNAPSHOT/NO_LAYER_MATCH/NO_APPROVED_EVIDENCE/DISABLED_PROVIDER_OFF",
+    "三锁保持 runtime_authorized=False；代码各处 never approval/activation",
+    "Tarot/Lenormand 隔离；LN 无 orientation，键存在即拒(ORIENTATION_FORBIDDEN)",
+    "两通道独立研究 + 去标识 + 7/30 天清理(S04 任务)",
+    "薄产品入口 ProductEntryAPI + 5 个 templates（DA-05 反证：前端资产确实存在）",
+    "无普遍 OCR 硬门；无『觉得够了就零搜索』成功路径",
+    "56 任务均带验收引用；290 验收=230 独立正反+44 复用B+16 浏览器；97 测试文件"
+  ],
+  "findings": [
+    {
+      "id": "BL-01",
+      "priority": "P2",
+      "status": "CONFIRMED",
+      "categories": [
+        "重复工作/卫生",
+        "错误门禁(干扰核验)"
+      ],
+      "evidence": {
+        "candidate_pytest_tmp_files": 63,
+        "unreadable_corrupt_files_count": 31,
+        "examples": [
+          "candidate/docs/status/source_mining/20260910_fable_takeover/dispatch_147/returns/E6_SAFETY_GATE_NOMATCH_EXEC/tmp_red/basetemp_baseline/...",
+          "candidate/docs/status/source_mining/20260910_fable_takeover/dispatch_147/returns/E3A_HARNESS_HARDENING_EXEC/tmp/verify/.pytest_tmp/..."
+        ],
+        "note": "两次字节对账脚本均被这些残留触发 FileNotFoundError"
+      },
+      "product_impact": "非产品源码、不影响 BASE_TO_CANDIDATE(144==144 对齐)；但污染 current-byte 核验、干扰自动化、增大归档，若进镜像属发布卫生缺陷",
+      "minimal_fix": "集成/打包前删除 tmp_red/tmp_verify/.pytest_tmp，.gitignore 覆盖 **/.pytest_tmp、tmp_red、tmp_verify；核验脚本跳过并显式计数；不改产品代码",
+      "good_case": "清理后重开归档，find 不到 .pytest_tmp，对账脚本一次跑通",
+      "bad_case": "残留随镜像发布，下游 current-byte 核验反复被断链文件中断",
+      "needs_father_decision": false,
+      "disposition": "A/Codex 可直接落实清理"
+    },
+    {
+      "id": "BL-02",
+      "priority": "P2",
+      "status": "PARTIALLY_TRUE",
+      "categories": [
+        "遗漏(实现未做)",
+        "职责/结构"
+      ],
+      "evidence": {
+        "reserved_paths_absent_in_5d": [
+          "src/xiaoxingchen_core/mentor_runtime/query_adapter.py",
+          "src/xiaoxingchen_core/runtime_adapters/worker.py",
+          "src/xiaoxingchen_core/stages/executor.py",
+          "src/xiaoxingchen_core/stages/ports.py"
+        ],
+        "plan_tags": {
+          "PROPOSED_NEW": [
+            "S03-T04 mentor_runtime/query_adapter.py",
+            "S04-T06 stages/r3.py"
+          ],
+          "SELECTIVE_PORT_D_NOT_MERGED": [
+            "S04-T07 stages/executor.py+ports.py",
+            "S05-T03 stages/postgres_store.py",
+            "S05-T04 runtime_adapters/worker.py"
+          ]
+        },
+        "current_location": "R1-R4 编排现集中于 domain/reading.py(1203 行)"
+      },
+      "status_breakdown": "成立部分: 缺失文件均已在 A 计划任务化，非合同悬空; 不成立/未做部分: stages 目录整体未创建，DESIGNED_NOT_IMPLEMENTED",
+      "product_impact": "reading.py 单体拆分 + 从未合并 D 候选选择性移植，是风险最集中的一次结构性重构，易引入 R1-R4 回归；SELECTIVE_PORT 依赖 D 源字节，须确认可得",
+      "minimal_fix": "将 reading.py→stages/ 拆分列为独立高风险变更：先补 R1-R4 全链回归(tests/integration+evals)再迁移，逐文件小批、同批校验 digest；D 移植前先核 D 源字节 hash",
+      "good_case": "先红后绿：回归用例齐备后逐文件迁移，每步 digest 校验通过",
+      "bad_case": "一次性大拆分 stages/，无回归兜底，R2/R3 顺序或 artifact 绑定被静默改坏",
+      "needs_father_decision": false,
+      "open_for_phase2": "D 候选源文件字节是否在本包(P01_P07)；若缺则移植路径 UNVERIFIED，需爸爸确认 D 授权/范围",
+      "disposition": "重构在已批准设计内；D 授权缺口(如有)需爸爸"
+    },
+    {
+      "id": "BL-03",
+      "priority": "P3",
+      "status": "CONFIRMED",
+      "categories": [
+        "重复/口径"
+      ],
+      "evidence": {
+        "pre_prompt_status_set": "CONFIRMED/PARTIALLY_TRUE/UNVERIFIED/NOT_RUN/FALSE",
+        "AGENTS_3_authoritative_set": "CONFIRMED/OUTDATED/PARTIALLY_TRUE/FALSE/UNVERIFIED",
+        "extra_markers": "NOT_RUN 仅用于检查未运行；另有 DESIGNED_NOT_IMPLEMENTED"
+      },
+      "product_impact": "状态枚举口径不一致会使下游模型在 NOT_RUN/OUTDATED 使用上歧义",
+      "minimal_fix": "统一以 AGENTS §3 为准：事实五状态 + PASS/NOT_RUN(检查) + DESIGNED_NOT_IMPLEMENTED；本报告即采用",
+      "good_case": "所有 finding 状态取自 AGENTS 权威集，检查未运行单列 NOT_RUN",
+      "bad_case": "把 NOT_RUN 当事实状态、或该用 OUTDATED 处用 UNVERIFIED，导致状态机歧义",
+      "needs_father_decision": false,
+      "disposition": "报告直接统一"
+    }
+  ],
+  "deferred_to_phase2": [
+    "逐条核对 DA-01~08 是否落到任务/验收；重点 DA-05(FALSE) 整改：入口是否基于实际 demo 给『复用/新增』而非错误的『没有前端』前提",
+    "SELECTIVE_PORT D 源文件字节是否在 P01_P07 内可得",
+    "P01_P07 回包与 A 声称一致性；DOUBAO_ADJUDICATION 原文核对",
+    "主控对 DA-01~08 裁定基调的独立复核(不照抄)"
+  ],
+  "method_and_coverage": "阶段一仅读治理/产品基础/生命周期/A_FULL_PLAN/candidate 5d 源码；大 JSON(TASKS/TRACE/ACCEPTANCE)以脚本抽字段；对『无/为0』结论已先找反证(前端 templates、无 OCR、无零搜索)。本文件封存后阶段二不得回改。"
+}

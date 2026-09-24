@@ -1,0 +1,873 @@
+{
+  "contracts": [
+    {
+      "id": "IC-01",
+      "name": "ConfirmedInput v2",
+      "owner": "O-RUNTIME",
+      "producer": "SessionService.prepare + trusted pending store",
+      "consumer": "RuntimeController.start / TarotStageExecutor / LN operation adapter",
+      "fields": {
+        "schema_version": "confirmed-input.v2",
+        "principal": "server-resolved opaque subject; never caller boolean",
+        "epoch_id": "server-owned UUID",
+        "topic_original_sha256": "original pending text digest",
+        "effective_topic": "IntakeDecision.topic after the accepted choice",
+        "effective_topic_sha256": "UTF-8 exact effective text hash",
+        "input_version": "monotonic within pending/cycle",
+        "cards": "system-discriminated factual user cards; Tarot orientation required, LN orientation key forbidden",
+        "spread": "registry id/version + declared positions",
+        "gate_receipt": "server-owned pending consumption and semantic gate result; not a client permission token"
+      },
+      "invariants": [
+        "Original and rewrite safety checks precede acceptance; a refused original cannot be laundered by rewriting.",
+        "Pending ownership + expiry + CAS single-consumption precede any authority issuance.",
+        "Changing person, topic, card, orientation or spread invalidates old confirmation/artifacts; no re-draw.",
+        "The executor uses effective_topic and its digest, not the original topic or spread slug."
+      ],
+      "failures": [
+        "AWAIT_INPUT",
+        "AWAIT_CONFIRM",
+        "SAFETY_STOP",
+        "STALE_OR_FOREIGN_PENDING",
+        "AUTHENTICATION_UNAVAILABLE"
+      ],
+      "compatibility": "Keep raw v1 input for audit metadata only; adapt trusted SessionResult.effective_topic into v2. Legacy executor intake is internal-only and must not create a second confirmation loop. Unknown fields rejected per version.",
+      "necessity": "One canonical confirmed fact set prevents the current session/executor topic split; this does not add an approval system.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RUNTIME",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-02",
+      "name": "Runtime authority and operation policy",
+      "owner": "O-RUNTIME",
+      "producer": "existing reading authority DB + authenticated RuntimeController",
+      "consumer": "stage stores / Research worker / delivery transaction",
+      "fields": {
+        "system": "TAROT | LENORMAND",
+        "reading_id": "DB-owned reading binding",
+        "authority_sha256": "existing authority digest, never client assertion",
+        "operations": "Tarot R1..R4 or LN PREPARE/COMPOSE/REALITY_CHECK/REVIEW/DELIVER, discriminated",
+        "ttl_seconds": "explicit positive value <= published server maximum; absent means HOLD",
+        "research_budget": "separate A/B max 3 attempts, explicit network grant; no Harness budget substitution",
+        "operation_nonce": "idempotency nonce bound to reading + input version",
+        "rejudge_budget": "explicit bounded parent budget; absent means no automatic child run"
+      },
+      "invariants": [
+        "A Development Harness grant cannot issue or imply runtime authority.",
+        "No stage semantics enter source records.",
+        "LN shares identity/authority mechanisms, never Tarot stage enum meanings.",
+        "Replays cannot bypass expiry or revocation; a pre-existing delivered answer may be read only with authenticated read permission, not regenerated."
+      ],
+      "failures": [
+        "AUTHORITY_HOLD",
+        "AUTHORITY_EXPIRED",
+        "AUTHORITY_REVOKED",
+        "OPERATION_NOT_ALLOWED",
+        "IDEMPOTENCY_CONFLICT"
+      ],
+      "compatibility": "Tarot v1 stage_allowlist remains decoded exactly. Proposed v2 adds system-discriminated operation_allowlist on the same authority lineage; no parallel LN approval ledger. Migration and SQL owner O-DB, semantics owner O-RUNTIME.",
+      "necessity": "Needed because the existing store protocol is Tarot-stage-shaped and LN must not masquerade as R1–R4.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RUNTIME",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-03",
+      "name": "Frozen artifact and review manifest v2",
+      "owner": "O-RUNTIME",
+      "producer": "stage assembler + existing sealed-artifact store",
+      "consumer": "subsequent stage / isolated reviewer / delivery verifier",
+      "fields": {
+        "identity": "reading_id, epoch/cycle, system, operation, input_version",
+        "content": "immutable exact UTF-8 payload; separate private structural appendix from model-visible text",
+        "digests": "content_sha256, artifact_sha256, ordered parent digests, input digest, contract version",
+        "dependencies": "actual source snapshot/item digests and research claim-set digest",
+        "retention": "expires_at bounded by published artifact TTL; no long-term or user export copy",
+        "model_receipt": "actual adapter build/model family/context/capability profile; an isolation flag is not proof"
+      },
+      "invariants": [
+        "Verify exact bytes, identity, ordered parents and TTL at every consume, not only initial seal.",
+        "Governance, raw sources, audit reports, long-term profiles and secrets cannot enter model-visible material.",
+        "Source IDs remain in private appendix; model gets only minimal approved content and local ephemeral evidence handles.",
+        "No same-stage overwrite; same request replay returns identical hash after authority check; different bytes fail.",
+        "R4 sees only this manifest and frozen R1–R3 material, with zero retrieval/model tools other than its own completion."
+      ],
+      "failures": [
+        "ARTIFACT_IDENTITY_MISMATCH",
+        "DIGEST_MISMATCH",
+        "PARENT_ORDER_MISMATCH",
+        "EXPIRED_ARTIFACT",
+        "UNAPPROVED_DEPENDENCY"
+      ],
+      "compatibility": "Use explicit digest_version: v1 hashes unchanged; v2 domain-separated canonical fields plus exact content hash. Do not claim Python sort_keys alone is JCS; reuse the repository canonicalization contract and cross-language vectors in S05.",
+      "necessity": "Preserves provenance that the current executor loses when reducing evidence to strings and sealing approved_source_refs=().",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RUNTIME",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-04",
+      "name": "R2MatchSeed / Mentor query binding",
+      "owner": "O-RUNTIME",
+      "producer": "PROPOSED_NEW stages/r2.py::derive_match_seed after R1 + symbol detail + optional Book T",
+      "consumer": "mentor_runtime/query_adapter.py then approved mechanism registry/matcher",
+      "fields": {
+        "schema_version": "r2-match-seed.v1",
+        "reading_binding": "reading/input/R1 digest; private runtime only",
+        "card_bindings": "actual card and orientation, never inferred",
+        "context": "current-question domain/scenario, explicit known/unknown conditions",
+        "mechanism_candidates": "supported mechanism descriptions + upstream evidence handles + condition boundaries",
+        "registry_binding": "approved registry/version used to resolve mechanism_ref",
+        "result": "resolved match query or optional-layer no-match; never final R2 phenomenon"
+      },
+      "invariants": [
+        "No field depends on final R2 artifact/phenomenon.",
+        "The data consumer receives scalar filters and an opaque runtime binding, not an R1 artifact or stage instructions.",
+        "Natural-language vocabulary absence is not missing source evidence: bounded registry mapping can succeed with an explicit evidence-backed mapping receipt.",
+        "No resolved approved mechanism_ref means card-specific no-match, not synthesizing a mechanism from candidate summaries.",
+        "Global course process is a separately approved scope; it cannot create card meaning or rescue an unmatched card-specific entry."
+      ],
+      "failures": [
+        "NO_APPROVED_EVIDENCE for an existing layer with no valid matching mapping",
+        "NO_LAYER_MATCH / NO_SNAPSHOT according to Source Lifecycle",
+        "INTEGRITY_REFUSAL for altered bindings"
+      ],
+      "compatibility": "This is one runtime-local preparation DTO. Existing MentorQuery/MechanismRef types remain downstream; add an explicit adapter, not fields to raw course records.",
+      "necessity": "Breaks the documented circular dependency between Mentor matching and the final R2 phenomenon while preserving R2 evidence order.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RUNTIME",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-05",
+      "name": "System-tagged frozen interpretation origin -> ResearchSeedPacket v2",
+      "owner": "O-RUNTIME",
+      "producer": "Tarot: coherent final R2 after optional layers; Lenormand: coherent authorized COMPOSE artifact after approved support graph evaluation",
+      "consumer": "S04 Research planner",
+      "fields": {
+        "schema_version": "research-seed.v2",
+        "mechanism": "supported phenomenon/mechanism, not card meaning lookup text",
+        "conditions": "current user-provided constraints / explicit unknowns, with private evidence links",
+        "research_goals": "ordered communication then solution questions",
+        "forbidden_payload": "names/contact/exact location/date/private narrative/source labels/whole reading text",
+        "seed_sha256": "exact normalized packet digest",
+        "origin": {
+          "TAROT": "{system:TAROT, operation:R2, artifact_sha256, interpretation_version}",
+          "LENORMAND": "{system:LENORMAND, operation:COMPOSE, artifact_sha256, method_scope_sha256}"
+        },
+        "origin_artifact_sha256": "Digest of the tagged frozen interpretation; r2_artifact_digest is a v1 TAROT-only read alias"
+      },
+      "invariants": [
+        "Final R2 is produced only after the Mentor lookup terminates; no edge back from this packet to Mentor matching.",
+        "De-identification and egress validation occur before a provider sees any query.",
+        "Research may explain real mechanisms, never backfill cards, user facts or R1 tone.",
+        "LENORMAND origin cannot be cast to TAROT/R2 and never invokes Mentor/BookT. Same downstream privacy/receipt/budget/real-research obligations, separate semantic origin.",
+        "Origin artifact and seed refer to the same reading/epoch/system and approved method scope; structured preview is not a coherent interpretation artifact."
+      ],
+      "failures": [
+        "UNCOHERENT_R2",
+        "INVALID_SEED_BINDING",
+        "EGRESS_REDACTION_UNRESOLVED"
+      ],
+      "compatibility": "Extend ResearchPort.run with a typed seed and opaque binding; retain query_text only in a versioned test adapter. The current topic_text-only route is not a valid production substitute. V1 R2 field accepted only for TAROT audit/test adapter; new real calls use tagged v2. No new authority ledger.",
+      "necessity": "R3 currently searches topic_text; the required final-phenomenon binding needs an explicit producer/consumer boundary.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RUNTIME",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-06",
+      "name": "Controlled answer commit",
+      "owner": "O-RUNTIME",
+      "producer": "isolated review result + approved dependency manifest",
+      "consumer": "existing DB delivery transaction + S06 public adapter",
+      "fields": {
+        "answer": "natural-language text, system-discriminated visible facts",
+        "bindings": "reading/authority/input/R4 or LN-review/artifact/claim digests, private only",
+        "research_status": "DISABLED / SEARCH_FAILED / NO_RELIABLE_SOLUTION / SUPPORTED with provenance scope",
+        "public_sources": "validated name + canonical URL only when resolving to admitted real claims",
+        "idempotency": "request nonce + answer envelope digest"
+      },
+      "invariants": [
+        "Check authority and source validity before answer commit; return only the DB readback.",
+        "Do not expose an uncommitted draft or arbitrary R3 completion.",
+        "A revoked supporting source invalidates dependent uncommitted claims; never silently switch snapshot.",
+        "No fixed paragraphs, first sentence or last line; public source visibility is not internal source visibility."
+      ],
+      "failures": [
+        "DELIVERY_BINDING_FAILURE",
+        "SOURCE_WITHDRAWN",
+        "AUTHORITY_REVOKED",
+        "REVIEW_REJECTED",
+        "READBACK_MISMATCH"
+      ],
+      "compatibility": "Reuse UserVisibleAnswer/SourceBinding and existing delivery envelope. Versioned extension for LN operations only, not an independent deliverable-state authority.",
+      "necessity": "Absorbs B DELIVERABLE as a derived condition instead of another lifecycle enum.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RUNTIME",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-07",
+      "name": "受权内部证据与 public 单向投影",
+      "owner": "O-DATA",
+      "producer": "既有来源/审查/用户批准/发布事实，经 S05 受限 SQL 读取",
+      "consumer": "Tarot、Mentor、Book T、LN 消费者；public MCP 只消费去身份投影",
+      "fields": {
+        "version": "authorized-retrieval-v2; extends existing RetrievalResult, not a new approval authority",
+        "header": [
+          "system",
+          "query_hash",
+          "snapshot_id = existing release/projection id",
+          "release_sha256",
+          "release_status",
+          "contract_version",
+          "lexeme_profile"
+        ],
+        "item": [
+          "item_id",
+          "content_sha256",
+          "candidate_id",
+          "candidate_sha256",
+          "review_decision_id",
+          "user_approval_id",
+          "source_version/hash/span",
+          "purpose/layer/scope/usage_boundary",
+          "content"
+        ],
+        "missingness": "header exists independent of zero items",
+        "public": "existing PublicRetrievalResult whitelist unchanged"
+      },
+      "invariants": [
+        "所有身份 AND 同一有效性边界验证；不能从 public 文本或卡名反造",
+        "保持八段过滤顺序；在消费侧加严 scope 不放宽既有治理",
+        "仅 ACTIVE、真实批准、未撤回；synthetic 在测试面有独立标志，不能获得生产资格",
+        "snapshot pin 幂等不证明持续有效，生成与交付重新核验",
+        "四个 public no-match 保持闭集；完整性错误走受控错误不是第五码"
+      ],
+      "failures": [
+        "NO_SNAPSHOT",
+        "NO_LAYER_MATCH",
+        "NO_APPROVED_EVIDENCE",
+        "DISABLED_PROVIDER_OFF",
+        "PRIVATE_INTEGRITY_REJECT",
+        "SOURCE_WITHDRAWN"
+      ],
+      "compatibility": "v1 public 零变更；旧无私有绑定 internal fixture 可用于结构测试，生产 V2 消费须绑定；新增 schemas/v2，不覆写旧 schema/hash",
+      "necessity": "补齐 public PG 结果无法支撑私有消费身份的断边；复用原发布/批准链，不增影子审批表",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DATA",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-08",
+      "name": "Mentor 多候选精确匹配与机制登记",
+      "owner": "O-DATA",
+      "producer": "真实获准 Mentor projection + 经批准的词表/机制 registry",
+      "consumer": "S02 IC-04 匹配适配器",
+      "fields": {
+        "query": [
+          "system=TAROT",
+          "purpose=MENTOR_METHOD",
+          "scope=CARD or GLOBAL",
+          "card/ref + explicit orientation for CARD",
+          "domain/scenario/preconditions",
+          "approved mechanism_ref",
+          "projection_snapshot",
+          "opaque operation_hint"
+        ],
+        "result": [
+          "matched_packets[] with identity/conditions/causal_slots",
+          "relations[]: DUPLICATE/COMPLEMENT/CONDITION_MISSING/CONTEXT_MISSING/TRUE_CONFLICT",
+          "unresolved_local[]",
+          "truncated",
+          "no_match_reason"
+        ],
+        "registry": "versioned entries bind mechanism_ref to reviewed definitions and approval identity; no free-form model slug becomes authority"
+      },
+      "invariants": [
+        "CARD/GLOBAL 分查询，不能用 card filter 丢 GLOBAL，也不拿 GLOBAL 补某卡牌义",
+        "NOT_STATED/UNSPECIFIED 不默认 UPRIGHT/ANY；ANY 仍须明确允许与条目证据",
+        "具名两个旧目标 UPRIGHT_ONLY 精确到 target identity；不对整张牌扩展",
+        "GLOBAL 来源的方向 NEUTRAL 仅表不依赖牌，不是 CARD 通配符",
+        "全部匹配按稳定身份排序只为可复现，不按首条、次数、置信度或投票决真；冲突保留",
+        "预算不足截断时禁止假称穷尽，恢复游标与覆盖不足明确返回"
+      ],
+      "failures": [
+        "NO_APPROVED_EVIDENCE + internal scope/condition codes",
+        "REGISTRY_VERSION_MISMATCH",
+        "LOCAL_RECORD_QUARANTINED",
+        "TRUE_CONFLICT_REQUIRES_S02_REVIEW",
+        "INCOMPLETE_COVERAGE"
+      ],
+      "compatibility": "保留 v1 单 packet 只读回放；V2 新消费者使用 packets[]，不得向 v1 静默丢第二条；未知词保留治理候选而非改 GLOBAL",
+      "necessity": "解决 D _outcome 首条选择，以及机制自由文本到受权 registry 的实际断边",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DATA",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-09",
+      "name": "资料候选 V2 无损兼容及 C 来源坐标",
+      "owner": "O-DATA",
+      "producer": "旧60、新24、师姐四条各自 native schema；历史 descriptive mining draft",
+      "consumer": "治理适配与后续人工复审，不直接进入 Runtime/RAG",
+      "fields": {
+        "source_identity": [
+          "declared_original_hash (unverified when bytes absent)",
+          "actual_view_hash",
+          "container_hash",
+          "decoded_content_hash",
+          "slice_hash",
+          "coordinate_system=UTF8_BYTES_HALF_OPEN",
+          "spans[] each source version and range",
+          "normalization_rule + raw and normalized excerpts"
+        ],
+        "layers": [
+          "teacher_claim",
+          "user_calibration",
+          "analyst_interpretation",
+          "external_reference",
+          "approval_link separate"
+        ],
+        "missingness": [
+          "STATED",
+          "NOT_STATED",
+          "UNKNOWN",
+          "VOCABULARY_MISSING",
+          "READ_REQUEST"
+        ],
+        "orientation_value": "UPRIGHT/REVERSED/UNSPECIFIED; missingness independent; never automatic ANY",
+        "six_rhetoric_axes": [
+          "literal_text",
+          "figurative_expression",
+          "discourse_function",
+          "plain_mechanism",
+          "rhetorical_force",
+          "alternative_readings"
+        ],
+        "causal_slots": [
+          "observed_phenomenon",
+          "cause",
+          "mechanism",
+          "branch_or_tendency",
+          "cost",
+          "choice_or_strategy",
+          "verification_signal",
+          "exit"
+        ],
+        "scheduling_signals": "all numeric confidence/count/priority only queue signals",
+        "runtime_stage_hint": "opaque nullable controller-owned reference, not stage definition"
+      },
+      "invariants": [
+        "原候选字节与原 hash 永不覆写；新 V2 映射产生新 identity/hash 和完整差异，旧批准不继承",
+        "DONE != source fidelity independent approval != candidate approval != runtime permission",
+        "保留新旧关系、工作、人生阶段条件及不适用分支，null 附理由不补造",
+        "ASR 保留原字和疑点；图片不存在不得填像素/时间/方位",
+        "UNRECOVERABLE 保留上下文扩展历史进局部队列，不删整源",
+        "四层解释分离，批准读取白名单只投影明确批准的 teacher/method content；审计和角色草案不作为牌义"
+      ],
+      "failures": [
+        "INVALID_BYTE_RANGE",
+        "DECLARED_ORIGINAL_UNVERIFIED",
+        "NORMALIZATION_RULE_MISSING",
+        "FIELD_TYPE_CONFLICT",
+        "LOCAL_READ_REQUEST",
+        "SCHEMA_VERSION_UNSUPPORTED"
+      ],
+      "compatibility": "三族显式 adapters + readonly legacy roundtrip；unknown keys 保留隔离原件并拒绝可消费映射，不静默忽略；draft空串不实例化成STATED",
+      "necessity": "为真实缺字段/类型/坐标差异建立版本化合同，不凭字段缺名否认原义；本轮不执行适配与挖掘",
+      "visibility": "GOVERNANCE_ONLY_NEVER_RUNTIME",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DATA",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-10",
+      "name": "Book T 可空补充与 ordinary/four 隔离",
+      "owner": "O-DATA",
+      "producer": "已批准 Book T projection + S02 已封存 R1",
+      "consumer": "S02 R2 的 Symbol→Book T→Mentor 组合",
+      "fields": {
+        "request": "existing BookTContributionRequest/QueryEnvelope; system/spread/card/orientation/R1digest/authority/purpose=BOOK_T_ENRICHMENT",
+        "result": "existing BookTContribution items[] or four-code no-match; bound release and ticket",
+        "modes": "ordinary vs four-card path distinct configuration and explicit scope"
+      },
+      "invariants": [
+        "may_establish_core=false and may_override_core=false",
+        "正常 Tarot R1 完整时 Book T 空命中直接继续；真实冲突返 R1 而不是可选层反客为主",
+        "普通模式不得注入四牌位置表；四牌不得以 ordinary 宽泛命中绕过位置限定",
+        "内容身份不能只依 content_hash 归并：同文不同 source/approval/scope 逐项绑定",
+        "teacher translation 主来源与外部52页见证分开；synthetic G04 不是源批准"
+      ],
+      "failures": [
+        "OPTIONAL_NO_MATCH",
+        "BINDING_MISMATCH",
+        "RETURN_TO_R1",
+        "INCOMPLETE_SCOPE"
+      ],
+      "compatibility": "复用 D admission/consumer/contracts；补复合身份映射与 S02 接线，保留 v1 历史工件",
+      "necessity": "保留可用候选而不把 optional Book T 变首发全量阻塞",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DATA",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-11",
+      "name": "LN catalog/method/支持图最小合同",
+      "owner": "O-DATA",
+      "producer": "IC-07 私有受权 LN 核心/方法与本站布局版本",
+      "consumer": "LN prepare/generation gate/reviewer",
+      "fields": {
+        "catalog": "CandidateItem.content, profile ln-catalog-v1: 36 unique stable refs, names/language/version, one-to-one aliases; governance fields remain in existing envelope",
+        "method": "profile ln-method-v1: relation kind/arity/order/conditions/counterexamples/scope/role; source-author vs site-rule explicit",
+        "support_graph": "claim → relation instance → approved method applications + each member core evidence + conditions/alternatives; ephemeral, not new approval DB",
+        "geometry": "three user slots; optional five/nine site modes default off; no orientation anywhere"
+      },
+      "invariants": [
+        "STRUCTURE_ONLY/UNBOUND 不可语义生成；catalog对象存在不等于批准",
+        "method和member core分查；GLOBAL无cards方法不被card过滤排除",
+        "Matthews主结构，Rana补充；不强求每条双作者，不用Rana填缺核心",
+        "整线/邻接/成员集合区分；有向边不按集合等同",
+        "同一证据重复不充覆盖，非空core/名称遍历不证明主张充分",
+        "五/九各自开放授权；九牌对角仅辅助，缺辅助不阻完整非对角主干"
+      ],
+      "failures": [
+        "CORE_NOT_AUTHORIZED",
+        "METHOD_NOT_AUTHORIZED",
+        "CATALOG_UNBOUND",
+        "LAYOUT_NOT_OPEN",
+        "INCOMPLETE_SUPPORT",
+        "SOURCE_WITHDRAWN"
+      ],
+      "compatibility": "继承 B SPEC 和 profile 推荐；替换 unbound 仍放行的旧 fixture 期待；不新增第五 no-match/来源层/审批表",
+      "necessity": "复用 B 六接口与13任务中数据部分；共享 DB归S05、运行编排归S02，非重新设计一套 LN",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DATA",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-12",
+      "name": "研究run、kind与channel分轴及共用有界预算",
+      "owner": "O-RESEARCH",
+      "producer": "IC-05 v2 tagged Tarot R2 or LN COMPOSE + IC-02 authority",
+      "consumer": "独立Grok/Tavily MCP worker与S05预算/回执函数",
+      "fields": {
+        "run": [
+          "run_id",
+          "reading_id",
+          "input_version",
+          "origin_artifact_sha256",
+          "seed_sha256",
+          "authority_sha256",
+          "budget_policy_version",
+          "expires_at"
+        ],
+        "kind_results": "ordered COMMUNICATION_DOWNSHIFT then LEVERAGE_UPSHIFT; no stage R5",
+        "channel_facts": "GROK_SEARCH then independently TAVILY_SEARCH_FETCH; append-only attempts[] each channel/run index",
+        "budget": "one run ledger shared by both kinds, Grok<=3/Tavily<=3 attempt ceilings; physical wire counters separate, explicitly granted, no implicit child request quota",
+        "derived_route": "RESEARCH_COMPLETED/PARTIAL/FAILED/GATED only mechanically from facts, never substitute for per-kind evidence"
+      },
+      "invariants": [
+        "通信降维检索/适用评估先于结构解决检索/适用评估；两kind不能各重置全梯",
+        "Tavily凭自己query搜索并获取正文，不依赖Grok返回URL/共享credentials/session",
+        "Grok失败/429/进程坏只关该channel，Tavily拥有自己的预留额度",
+        "当前grant未声明预算粒度/物理上限则禁真实发送，不擅自放大旧grant",
+        "可用预检不是SUPPORTED；无实际出站无operation receipt，网络未准与凭据缺失分开"
+      ],
+      "failures": [
+        "PREATTEMPT_NETWORK_NOT_GRANTED",
+        "PREATTEMPT_CREDENTIAL_MISSING",
+        "PREATTEMPT_PRIVACY_REJECTED",
+        "PREATTEMPT_BUDGET_EXHAUSTED",
+        "CHANNEL_FAILED",
+        "RESEARCH_COMPLETED_WITHOUT_SUPPORTED_SOLUTION",
+        "SOURCE_CONFLICT",
+        "SOURCE_UNTRUSTWORTHY"
+      ],
+      "compatibility": "V2保留既有两kind终态与route兼容读取；增加多channel/attempt事实，v1每kind单leg无法承载完整梯只读回放；不扩大NoMatchReason",
+      "necessity": "修复kind/channel混淆、重试与DB预留粒度断边及原Topic直接研究；不添第二套runtime authority",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RESEARCH",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-13",
+      "name": "真实outbound事实、receipt、claim闭合",
+      "owner": "O-RESEARCH",
+      "producer": "受限连接port与S05持久化实际session_user/时钟",
+      "consumer": "R3证据评估、R4冻结manifest、交付验证",
+      "fields": {
+        "attempt": [
+          "run_id",
+          "channel",
+          "channel_attempt_index",
+          "operation_kind",
+          "wire_index",
+          "reservation_id",
+          "request_id",
+          "request_payload_sha256",
+          "wire_request_sha256",
+          "started_at/observed_at",
+          "actual_worker_identity",
+          "transport_outcome",
+          "response_sha256 nullable"
+        ],
+        "receipt": "only observed response: status/canonical_url/response_bytes hash/content type/time; timeout has attempt fact, not made-up response receipt",
+        "claim": [
+          "claim_id/hash",
+          "exact extracted source span or bounded evidence locator",
+          "source canonical URL/name/date",
+          "receipt_id",
+          "response hash",
+          "kind",
+          "condition/applicability",
+          "status=SUPPORTED/NO_SUPPORT/CONFLICT/UNTRUSTWORTHY",
+          "expiry"
+        ],
+        "binding": "query hash, seed hash, redacted payload hash, physical request hash are separate named axes"
+      },
+      "invariants": [
+        "客户端不能传worker_login冒session_user；时间不由结束时间减一秒伪造",
+        "出站前guard拒绝只记录preflight，已发送/可能发送不退预算；超时/429真实事实不可丢",
+        "同request id相同字节幂等回读不再发；不同字节相同id拒绝；迟到响应不改已ABANDONED终态",
+        "同一次receipt可显式支持两kind但不复制计费；每claim指具体receipt及正文范围",
+        "请求canonical payload被复扫与发送载荷相同；注入凭据后的wire hash单独测量，二者不假装同一坐标",
+        "R4只看已验证claim及必要摘录，不能凭receipt存在即支持任何建议"
+      ],
+      "failures": [
+        "REQUEST_IDENTITY_CONFLICT",
+        "OUTBOUND_COST_UNCERTAIN",
+        "RECEIPT_UNOBSERVED",
+        "CLAIM_UNBOUND",
+        "CLAIM_EXPIRED",
+        "LATE_RESPONSE_AUDIT_ONLY"
+      ],
+      "compatibility": "复用既有reading research reservations/attempts/claim表与receipt对象，S05扩字段/函数；旧synthetic时钟和caller worker仅测试，不能生产适配",
+      "necessity": "消除D executor伪时间/首receipt绑定及 ASSERT: 作为可靠性判据；记录实见事实而非生成事件",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RESEARCH",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-14",
+      "name": "受限Provider/MCP物理profile与出站契约",
+      "owner": "O-HOST",
+      "producer": "部署时受权sealed profile registry + verified offline vendor API profile",
+      "consumer": "两个独立MCP research workers；R4无MCP",
+      "fields": {
+        "profiles": [
+          "grok-research-v1",
+          "tavily-research-fetch-v1",
+          "source-readonly-v1"
+        ],
+        "sealed_physical": [
+          "absolute command + executable hash",
+          "allowlisted cwd",
+          "closed args/env key set",
+          "credential reference only",
+          "DB role class",
+          "transport=stdio or pinned authorized endpoint",
+          "provider API contract hash/version",
+          "operation whitelist",
+          "domain/port allowlist",
+          "request/token/byte/cost/time/redirect caps"
+        ],
+        "adapter_profile": [
+          "verified endpoint/method/path/auth scheme",
+          "request field mapping",
+          "response result/url/content mapping",
+          "pagination/error/retry contract",
+          "credential injection boundary"
+        ],
+        "result": "typed IC-12/13 only; no raw page as instruction"
+      },
+      "invariants": [
+        "运行用户只传profile_id，不能带command/cwd/env/DSN",
+        "Grok与Tavily独立进程、凭据、故障与capability；控制器同一共享预算事实",
+        "默认无profile/未批准网络时0发送；dev local_readonly_mcp_toolset不可接runtime grant",
+        "实际供应商合同缺件只阻对应real adapter激活；不靠记忆编API",
+        "R4 worker持有0工具/0provider研究权限，不仅prompt写禁止"
+      ],
+      "failures": [
+        "UNKNOWN_PROFILE",
+        "PROFILE_HASH_DRIFT",
+        "API_CONTRACT_ABSENT",
+        "CREDENTIAL_UNRESOLVED",
+        "HOST_IDENTITY_MISMATCH",
+        "CAPABILITY_DENIED"
+      ],
+      "compatibility": "复用HostProfileResolver封存模式，新profile默认关闭；dev seam保持provider-off，不原地扩权",
+      "necessity": "最小可测独立故障拓扑，避免一处Grok MCP故障同时切断Tavily",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-HOST",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-15",
+      "name": "研究内容寿命、公众来源和可空Consultation",
+      "owner": "O-RESEARCH",
+      "producer": "IC-13支持claim + 已获准Consultation可选方法",
+      "consumer": "S02 R3/R4及S06公开答案",
+      "fields": {
+        "retention": "web body and research claims <=7days; minimum audit metadata<=30days, authority may shorten",
+        "public_sources": "only verified name + canonical HTTPS URL bound to observed receipt/claim, private ids removed",
+        "consultation": "optional method binding, coherent R1/R2 required; product timing Q-3 remains pending; recommended only after research terminal facts, not on both-network-failed fallback",
+        "artifact_expiry": "any sealed body containing research claims/quotes expires at min(research expiry, authority TTL); hashes minimal audit only thereafter"
+      },
+      "invariants": [
+        "7天清除包括副本/cache/派生artifact里的研究摘录和claim正文，不以R3封存名义绕过",
+        "清理不复活预算/撤权/终态；保留最少防重放摘要不含正文，到30天清后过期authority仍不可重发",
+        "普通对外来源名/URL允许，内部教材/候选/approval/hash/path绝不展示",
+        "Consultation不作为R1/R2核心，不强制NVC；结构性风险改变建议需可追溯且有限条件",
+        "两路真实失败仅R1/R2，不新引Consultation方法伪研究结论"
+      ],
+      "failures": [
+        "CONTENT_EXPIRED",
+        "PUBLIC_SOURCE_UNBOUND",
+        "CONSULTATION_TIMING_PENDING",
+        "NO_OPTIONAL_METHOD",
+        "POST_RETENTION_REPLAY_DENIED"
+      ],
+      "compatibility": "public answer shape可复用；private provenance做字段单向剥离，旧泛化全禁URL规则不沿用；新寿命绑定不重新签旧工件",
+      "necessity": "使来源可核对又不泄内部身份；明确残余Q-3只冻结可选方法调用时点",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-RESEARCH",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-16",
+      "name": "Development Harness execution/closure v2",
+      "owner": "O-HARNESS",
+      "producer": "scoped task controller + trusted executor",
+      "consumer": "repository writer/test runner/closure recorder",
+      "fields": {
+        "manifest": "task_id, repo/origin/base/head, allowed_paths, exact input/output hashes, required capabilities, budgets, required_acceptance_ids",
+        "start": "DB-recorded actual session_user, manifest/grant set hashes, repo identity, clean disposable worktree identity",
+        "execution": "command allowlist, scope-bound cwd, code_write capability, actual stdout/stderr/exit hashes, independent executor attestation",
+        "closure": "ending commit/tree, actual diff incl rename/deletion/untracked, declared-output checks, all required cases or explicit NOT_RUN"
+      },
+      "invariants": [
+        "Development grants never authorize Reading/Provider/data approval/deployment",
+        "Caller actor_ref is display only; trust actual execution principal",
+        "Empty tests can close document-only tasks as NOT_TESTED; cannot satisfy an implementation acceptance manifest",
+        "No clean-up of user dirty files; create authorized isolated worktree from pinned base instead"
+      ],
+      "failures": [
+        "GRANT_EXPIRED",
+        "SCOPE_ESCAPE",
+        "OUTPUT_DRIFT",
+        "INDEPENDENT_EXECUTOR_UNVERIFIED",
+        "REQUIRED_TEST_NOT_RUN"
+      ],
+      "compatibility": "Retain existing START/CLOSE DB receipts; version manifest required_acceptance_ids; legacy empty tests remain non-green",
+      "necessity": "Existing CLI records START/CLOSE but has no guarded code-write subcommand; capability must be enforced at real execution boundary, not inferred from receipt.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-HARNESS",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-17",
+      "name": "Approved projection DB read/lock and provenance v2",
+      "owner": "O-DB",
+      "producer": "non-login owner SECURITY DEFINER read function",
+      "consumer": "IC-07/BookT/LN/Mentor adapters",
+      "fields": {
+        "request": "system, reading_id UUID, epoch_id UUID, operation, layer, frozen scope, expected release/version",
+        "result": "IC-07 internal bindings: release/snapshot/candidate/user_approval IDs and hashes, lifecycle, source raw hash, span descriptor, content hash, purpose scope",
+        "public": "existing reduced Evidence public projection only; internal field values never through public MCP"
+      },
+      "invariants": [
+        "Verify complete release→candidate→user approval→source/span/content chain, not equal-looking caller hashes",
+        "Same transaction checks current ACTIVE at read/seal/consume/delivery; withdrawn content cannot be reactivated by rollback",
+        "Shared ordering: authority/reading→research account→sorted release/candidate/approval→artifacts/claims→delivery; governance revocation takes same suffix order and never waits on reading while holding release",
+        "Review/governance/raw tables denied to runtime LOGIN; definer exposes minimal approved projection only"
+      ],
+      "failures": [
+        "NO_SNAPSHOT",
+        "NO_LAYER_MATCH",
+        "NO_APPROVED_EVIDENCE",
+        "DISABLED_PROVIDER_OFF",
+        "INTEGRITY_REFUSAL_INTERNAL"
+      ],
+      "compatibility": "No shadow LN/BookT approval tables; explicit V2 internal endpoint with V1 public DTO preserved. Empty approved header is NO_APPROVED_EVIDENCE not NO_SNAPSHOT.",
+      "necessity": "Closes binding gaps using existing authority tables and narrow functions, not making RAG an execution engine.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DB",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-18",
+      "name": "Reading/attempt transaction protocol v2",
+      "owner": "O-DB",
+      "producer": "controller, stage/research worker, independent reviewer",
+      "consumer": "atomic DB procedures + S02/S04 ports",
+      "fields": {
+        "ids": "reading/epoch/authority UUID, operation enum and version, idempotency key, parent seal/claim digests",
+        "attempt": "channel + logical_attempt_id + physical_request_id, attempt_unit, shared run caps, actual session_user/clock",
+        "commit": "sealed inputs, source set version, review manifest, expected state CAS, answer envelope hash codec/version"
+      },
+      "invariants": [
+        "Distinct exclusive LOGIN roles; no SET ROLE impersonation and no development identity as runtime grant",
+        "Idempotent replay may return historical reservation but cannot newly dispatch after expiry/revocation; every actual outbound rechecks authority",
+        "Reserve atomically; mark outbound before dispatch; maybe-sent never recycled as free; late/duplicate receipts audit only",
+        "All-scope authority failure stops; optional source revocation invalidates derived seals and re-runs affected chain, never silently edits old evidence",
+        "LN operations map into same authority lineage with versioned operation tags, not Tarot stage names or second shadow ledger"
+      ],
+      "failures": [
+        "AUTHORITY_ABSENT",
+        "AUTHORITY_EXPIRED",
+        "OPERATION_NOT_GRANTED",
+        "PARAM_CONFLICT",
+        "BUDGET_EXHAUSTED",
+        "REPLAY_AUDIT_ONLY",
+        "SOURCE_REVOKED",
+        "SEAL_INPUT_CHANGED"
+      ],
+      "compatibility": "Preserve 0007/0008 immutable existing semantics for replay/audit; add versioned procedures and adapters, not reinterpret old grants",
+      "necessity": "Needed for process concurrency and true physical worker identity, cannot be solved by caller-side bool flags.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DB",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-19",
+      "name": "CI and release evidence v2",
+      "owner": "O-CI",
+      "producer": "trusted CI runner + environment deployer",
+      "consumer": "reviewer/release gate",
+      "fields": {
+        "subject": "repository, checked-out commit/tree, workflow file hash, run_id/attempt, runner/image/tool lock versions",
+        "gates": "ci 17 + docker 5 separate mode required sets; actual outcome + evidence location/hash",
+        "test_summary": "all JUnit suites, discovered/executed/passed/failed/error/skipped; mutation observed counts and explicit threshold policy",
+        "release": "image digest + SBOM/provenance + migration range + contract versions + approved source versions + distinct environment grant + rollback target"
+      },
+      "invariants": [
+        "PASS requires evidence on exact subject; skipped/cancelled/not-run stay non-green",
+        "A writer process returning 0 without enforcement is not a workflow pass; workflows must enforce their mode and still upload evidence on failure",
+        "No test count alone proves semantic approval; no synthetic source passes real-data gate",
+        "Build-no-push success is independent of mechanical-contracts; it does not clear failing CI",
+        "No mutable tag selection, credential values, automatic staging→production promotion"
+      ],
+      "failures": [
+        "MISSING_ARTIFACT",
+        "SUBJECT_MISMATCH",
+        "ZERO_EXECUTED_REQUIRED_CASES",
+        "REQUIRED_GATE_NOT_PASS",
+        "UNVERIFIED_SERVER_PROTECTION",
+        "RESTORE_NOT_REHEARSED"
+      ],
+      "compatibility": "Keep current evidence schema readable; emit v2 explicit scope and migration evidence separately; no fabricated 100% mutation threshold",
+      "necessity": "Makes CI and CD mechanically inspectable without pretending remote protection or deployment already exists.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-CI",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-20",
+      "name": "Content/candidate/LPTE envelope identity codec",
+      "owner": "O-DB",
+      "producer": "source asset / candidate publisher / seal encoder",
+      "consumer": "projection reader, Postgres functions and Python mirror",
+      "fields": {
+        "content_sha256": "sha256 of exact stored UTF-8 bytes; no whitespace/case/Unicode normalization",
+        "source_span": "raw source hash + [start_byte,end_byte) + exact span hash; transformed view additionally transformation/version/origin map",
+        "candidate_v2": "domain-separated length-prefixed UTF-8 serialization of ordered typed scalar fields; candidate content hash, source-span identity, scope/version, mechanism applicability and lifecycle-relevant candidate fields; candidate ID not substitute for content",
+        "release_v2": "ordered candidate identity tuples sorted by stable candidate ID + version; duplicates rejected; catalog/method scopes and schema version included",
+        "legacy": "existing LPTE SQL/Python field order retained under named v1; null and empty use distinct type tags; no JCS claim",
+        "vectors": "ASCII/Chinese/emoji/combining forms, null/empty, key/order changes, UTC offsets, boolean/int, forbidden NaN/Infinity/float ambiguity, duplicate JSON keys, source chunk rearrangement"
+      },
+      "invariants": [
+        "Codec name+version part of domain; no silently equal cross-codec digest",
+        "Snapshot.source_sha256 cannot mean one physical file for multi-source snapshot: source manifest hash versioned and separate member raw_source_sha256",
+        "Provenance resolution must validate raw byte bounds, not only nonempty opaque IDs",
+        "UUID conversion canonical lowercase hyphen form; invalid OpaqueId for real reading refuses, synthetic path explicitly separate",
+        "Frozen candidate hash change invalidates former approval; recomputing approval fields locally does not create approval"
+      ],
+      "failures": "HASH_CODEC_MISMATCH / UNRESOLVED_PROVENANCE / CANDIDATE_IDENTITY_CHANGED",
+      "compatibility": "Use existing LPTE v1 for old records; v2 explicit serialization spec + cross-language vectors before real adoption; RFC JCS only if separately selected/verifiably implemented, not json.dumps(sort_keys=True) New v2 uses the explicit codec in HASH_CODEC_V2.md, not a claim to be existing LPTE or RFC JCS.",
+      "necessity": "Closes DS real-input hash holes without recreating a full generic serialization platform.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-DB",
+      "implementation_authorized": false,
+      "serialization_spec": "HASH_CODEC_V2.md"
+    },
+    {
+      "id": "IC-21",
+      "name": "New product entry HTTP/host API",
+      "owner": "O-PRODUCT",
+      "producer": "browser/host adapter",
+      "consumer": "trusted SessionService + RuntimeController",
+      "fields": {
+        "intake": "system, spread_id/version, user topic, card refs + Tarot orientation only, draw order, defined position facts, same-person/new-person/unknown claim; no memory/profile field",
+        "confirmation": "opaque pending_ref, pending_version, selected option or allowed original; same-session CSRF and idempotency key",
+        "run": "server-side confirmed-input ref and explicit UI request; opaque client run_handle maps to internal reading id privately",
+        "response": "finite UI state + safe message + allowed user actions + expiry/deadline + public answer only after controlled committed delivery",
+        "error": "safe error class/action only; backend reason, identities/hashes/Provider/DB details private"
+      },
+      "invariants": [
+        "Browser cannot post approved/skip_gate/DSN/model/profile identifiers as authority",
+        "Changing person/cards/topic invalidates pending; selected rewrite MUST become effective topic",
+        "GET/status read never triggers/retries model/Provider call; POST run/cancel idempotent and principal-bound",
+        "UI has no raw/governance/DB/model connection; host adapter calls approved services only",
+        "No invented account facts; principal is opaque session identity, not user profile"
+      ],
+      "failures": "403 session/CSRF; 409 stale confirm/state conflict; 422 factual shape; 429 configured limit; 503 unavailable; all without content/credentials in logs",
+      "compatibility": "Reuse D demo validation/projection concepts via adapters, keep local demo loopback/preview; new product paths explicit PROPOSED_NEW and no PHP assumptions",
+      "necessity": "Actual browser flow needs confirmed-input/run/status/cancel boundary; avoids UI owning a second workflow/approval system.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-PRODUCT",
+      "implementation_authorized": false
+    },
+    {
+      "id": "IC-22",
+      "name": "Public answer and state projection v2",
+      "owner": "O-PRODUCT",
+      "producer": "DB readback of approved delivery + S04 terminal aggregate",
+      "consumer": "HTML/host user view",
+      "fields": {
+        "view": "UI state, run_kind, safe status/next action, bounded deadline; transient opaque UI handle not internal IDs",
+        "answer": "natural text, verified source name+https URL, honest research notice; never raw seals/approval tokens/registry IDs",
+        "optional": "state-only notice for absence; contributed text only if approved and included in final answer",
+        "terminal": "LIVE_READING only committed answer; preview/block/not_attempted never carry successful research or answer"
+      },
+      "invariants": [
+        "Source names/URLs are permitted when bound; do not ban arbitrary public names or numbers by engineering keyword substring",
+        "No R4 unreviewed streaming; progress uses safe finite states only",
+        "Research two-channel + two-kind aggregate comes from S04, not simplistic one outcome coercion",
+        "Expiry/retention deletes server answer copy with research-derived material per IC-15; client-held copy cannot be technically clawed back and must not be claimed deleted",
+        "Accessibility and content safety do not impose fixed opening/closing phrases on answers"
+      ],
+      "failures": "EXPIRED / STOPPED / NO_RELIABLE_SOLUTION / SEARCH_FAILED / SOURCE_UNUSABLE / NOT_ATTEMPTED with distinct honest explanation",
+      "compatibility": "V1 VisibleAnswerView adapted, do not equate label LIVE_READING with trusted delivery; require server proof out of public DTO",
+      "necessity": "Necessary separation of engineering metadata and human answer; content-matching privacy rules alone are insufficient.",
+      "visibility": "INTERNAL_NOT_USER_VISIBLE",
+      "status": "DESIGN_CANDIDATE_NOT_AUTHORIZED",
+      "single_owner": "O-PRODUCT",
+      "implementation_authorized": false
+    }
+  ],
+  "normalization_overlay": "NORMALIZATION_OVERLAY.json",
+  "all_status": "DESIGN_CANDIDATE_NOT_AUTHORIZED"
+}
