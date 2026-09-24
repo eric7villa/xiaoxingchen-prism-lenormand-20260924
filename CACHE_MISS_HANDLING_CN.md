@@ -10,9 +10,9 @@
 
 按以下 commit 固定地址尝试，不要只依赖默认分支缓存：
 
-1. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/blob/f25cbb5056e81e95070e14f073c0ce4fd9b17317/START_HERE_CN.md`
-2. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/raw/f25cbb5056e81e95070e14f073c0ce4fd9b17317/START_HERE_CN.md`
-3. `https://raw.githubusercontent.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/f25cbb5056e81e95070e14f073c0ce4fd9b17317/START_HERE_CN.md`
+1. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/blob/687043ce1b7a305ff1070e18426551830fbcced8/START_HERE_CN.md`
+2. `https://github.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/raw/687043ce1b7a305ff1070e18426551830fbcced8/START_HERE_CN.md`
+3. `https://raw.githubusercontent.com/eric7villa/xiaoxingchen-prism-lenormand-20260924/687043ce1b7a305ff1070e18426551830fbcced8/START_HERE_CN.md`
 
 成功读到入口后，再按 `START_HERE_CN.md` 的相对路径读取其余文件。不要把公共镜像的 `PUBLIC_MIRROR_SHA256SUMS` 当作原始输入包校验单；脱敏副本使用公共镜像校验单。
 
